@@ -18,7 +18,7 @@ MEDIA_CONFIG = {
     "주요뉴스": [
         {
             "name": "매일신문",
-            "rss_url": "https://www.imaeil.com/rss/imaeil_news.xml",
+            "rss_url": "https://www.imaeil.com/rss/",
             "site_url": "https://www.imaeil.com/",
             "type": "DUAL"
         },

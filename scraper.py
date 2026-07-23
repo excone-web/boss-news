@@ -3,7 +3,7 @@ import requests
 import feedparser
 import re
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from urllib.parse import urljoin
 
@@ -11,33 +11,45 @@ from config import MEDIA_CONFIG, USER_AGENT, CRAWL_DELAY_SECONDS
 from database import save_articles, purge_old_articles, purge_duplicate_articles
 from category_agent import classify_article
 
+KST = timezone(timedelta(hours=9))
+
 def parse_pub_date(raw_date: str) -> str:
-    """RSS pubDate 및 다양한 포맷의 날짜 문자열을 YYYY-MM-DD HH:MM:SS 형태로 변환"""
+    """RSS pubDate 및 다양한 포맷의 날짜 문자열을 한국 표준시(KST) YYYY-MM-DD HH:MM:SS 형태로 변환"""
     if not raw_date:
-        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return ""
 
     try:
         dt = parsedate_to_datetime(raw_date)
+        if dt.tzinfo is not None:
+            dt = dt.astimezone(KST)
         return dt.strftime("%Y-%m-%d %H:%M:%S")
     except Exception:
         pass
 
-    for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d %H:%M:%S", "%Y.%m.%d %H:%M", "%Y-%m-%d"):
+    for fmt in (
+        "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S", 
+        "%Y%m%dT%H%M%S", "%Y-%m-%d %H:%M:%S", "%Y.%m.%d %H:%M", "%Y/%m/%d %H:%M:%S", "%Y-%m-%d"
+    ):
         try:
             dt = datetime.strptime(raw_date, fmt)
+            if dt.tzinfo is not None:
+                dt = dt.astimezone(KST)
             return dt.strftime("%Y-%m-%d %H:%M:%S")
         except ValueError:
             continue
 
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return ""
 
 def is_within_hours(published_at_str: str, hours: int = 96) -> bool:
-    """기사 발행시간이 최근 N시간 이내인지 확인 (기본 96시간 = 4일)"""
+    """기사 발행시간이 최근 N시간 이내 및 미래시각 방지 검증"""
     if not published_at_str:
         return True
     try:
         dt = datetime.strptime(published_at_str[:19], "%Y-%m-%d %H:%M:%S")
-        cutoff = datetime.now() - timedelta(hours=hours)
+        now = datetime.now()
+        cutoff = now - timedelta(hours=hours)
+        if dt > now + timedelta(minutes=15):
+            return False
         return dt >= cutoff
     except Exception:
         return True
@@ -74,8 +86,10 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
                 continue
             seen_keys.add(norm_key)
 
-            raw_date = entry.get("published", entry.get("updated", ""))
+            raw_date = entry.get("published", entry.get("updated", entry.get("pubDate", "")))
             published_at = parse_pub_date(raw_date)
+            if not published_at:
+                published_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             if not is_within_hours(published_at, hours=96):
                 continue
@@ -104,19 +118,19 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
     return articles
 
 def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> str:
-    """한미일보 본문 상세페이지에서 원래 작성/업로드된 정확한 시각 추출"""
+    """한미일보 본문 상세페이지에서 원래 승인/입력된 정확한 시각 추출"""
     try:
         res = session.get(article_url, timeout=3)
         if res.status_code == 200:
-            m = re.search(r'20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}', res.text)
+            m = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})', res.text)
             if m:
-                return parse_pub_date(m.group(0))
-            m2 = re.search(r'20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2}', res.text)
+                return parse_pub_date(m.group(1))
+            m2 = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2})', res.text)
             if m2:
-                return parse_pub_date(m2.group(0))
+                return parse_pub_date(m2.group(1))
     except Exception:
         pass
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return ""
 
 def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[dict]:
     """HTML 메인 및 뉴스 목록 정밀 스크래핑 (중복 교차 검증)"""
@@ -165,12 +179,35 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 seen_urls.add(full_url)
                 seen_titles.add(norm_key)
 
+                pub_date = ""
                 if "hanmiilbo" in site_url:
                     pub_date = fetch_hanmiilbo_detail_date(session, full_url)
                 else:
                     parent_text = a_tag.parent.get_text() if a_tag.parent else ""
                     m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
-                    pub_date = parse_pub_date(m.group(0)) if m else parse_pub_date("")
+                    pub_date = parse_pub_date(m.group(0)) if m else ""
+
+                if not pub_date:
+                    try:
+                        detail_res = session.get(full_url, timeout=3)
+                        if detail_res.status_code == 200:
+                            m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_res.text, re.I)
+                            if m_det:
+                                pub_date = parse_pub_date(m_det.group(1))
+                            if not pub_date:
+                                m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_res.text)
+                                if m_body:
+                                    pub_date = parse_pub_date(m_body.group(1))
+                    except Exception:
+                        pass
+
+                if not pub_date:
+                    m_url = re.search(r'(20\d{2})(\d{2})(\d{2})', full_url)
+                    if m_url:
+                        pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
+
+                if not pub_date:
+                    pub_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                 if not is_within_hours(pub_date, hours=96):
                     continue
