@@ -45,27 +45,16 @@ st.markdown("""
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }
 
-    /* 메인 컨테이너 상단 여백 콤팩트화 */
+    /* 메인 여백 콤팩트화 */
     .block-container {
-        padding-top: 2rem !important;
+        padding-top: 1.5rem !important;
         padding-bottom: 1rem !important;
         max-width: 100% !important;
     }
 
-    /* 좌측 상단 사이드바 열기/접기 버튼 100% 선명하게 유지 */
-    header[data-testid="stHeader"] {
-        background: transparent !important;
-        z-index: 99999 !important;
-    }
-    button[data-testid="stSidebarCollapseButton"] {
-        visibility: visible !important;
-        display: flex !important;
-        opacity: 1 !important;
-    }
-
-    /* 우측 상단 불필요한 툴바/메뉴 숨김 */
-    [data-testid="stToolbar"],
-    [data-testid="stAppViewerToolbar"],
+    /* 우측 상단 툴바 및 Manage app 버튼만 숨김 (좌측 상단 사이드바 열기/접기 버튼은 100% 보존) */
+    div[data-testid="stToolbar"],
+    div[data-testid="stAppViewerToolbar"],
     .stAppViewerToolbar,
     [data-testid="manage-app-button"],
     #MainMenu,
@@ -157,9 +146,10 @@ st.markdown("""
         white-space: nowrap;
     }
 
-    /* 100% 완벽한 텍스트 기반 페이지네이션: 메인 하단 컬럼 버튼 테두리/배경/박스 완전 제거 */
+    /* 100% 정밀 타겟팅: 메인 하단 컬럼 페이지네이션 버튼 테두리/배경 완전 제거 */
     div[data-testid="stColumn"] button,
     div[data-testid="column"] button,
+    div[data-testid="stHorizontalBlock"] div.stButton > button,
     button[data-testid*="stBaseButton"] {
         background: transparent !important;
         background-color: transparent !important;
