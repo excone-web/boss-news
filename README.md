@@ -1,15 +1,15 @@
-# 📰 언론사 뉴스 헤드라인 및 요약 큐레이션 시스템 (MVP)
+# 📰 보수 언론사 속보 뉴스 큐레이션 (Cloudflare Pages)
 
-속보 중심의 언론사 주요 뉴스를 자동 수집하고 카테고리별로 큐레이팅하여 최신 정보와 원문 링크를 고밀도 텍스트 UI로 제공하는 웹 서비스입니다.
+매일신문, 한미일보, 프리진뉴스, 트루스데일리, 펜앤드마이크, 독립신문의 최근 96시간 실시간 속보 및 원문 헤드라인을 큐레이션하여 파스텔 모던 텍스트 UI로 제공하는 웹 서비스입니다.
 
 ---
 
-## 1. 주요 특징
-* **저작권 준수:** 헤드라인, 발행시간, 언론사명 및 원문 링크 위주의 정보 제공
-* **자동 스케줄링:** APScheduler 기반 2시간 간격 자동 RSS 수집 (서버 부하 및 차단 방지)
-* **스마트 중복 제거:** SQLite `UNIQUE(url)` 제약조건 및 `INSERT OR IGNORE` 기반 중복 방지
-* **검색 & 필터링:** 카테고리(정치, 경제, 사회), 키워드 검색, 언론사별 필터, 최신순/인기순 정렬
-* **미래 확장성:** `processor.py`에 요약 생성 인터페이스(`summary` 컬럼 및 placeholder 함수) 준비
+## 1. 주요 특징 및 기술 스택
+- **호스팅 & 프론트엔드:** Cloudflare Pages (HTML5, Vanilla CSS, JavaScript)
+- **데이터 파이프라인:** Python RSS & HTML Scraper (`scraper.py`), SQLite (`news.db`), `articles.json`
+- **자동 갱신:** `build_data.py` 실행 시 96시간 이내 최신 기사 수집 ➔ `articles.json` 및 `sitemap.xml` 자동 갱신
+- **검색엔진 최적화(SEO):** Schema.org JSON-LD, Open Graph, Twitter Cards, Sitemap.xml, Naver Search Advisor 인증
+- **저작권 준수:** 원문 헤드라인, 배포시간, 언론사명 및 원문 링크 전용 제공
 
 ---
 
@@ -17,57 +17,36 @@
 
 ```
 /news_curation
-├── config.py              # 언론사·카테고리 매핑 및 스케줄러/크롤러 설정
-├── database.py            # SQLite 연결, 테이블 생성, CRUD, 중복 방지 저장 로직
-├── scraper.py             # RSS + BeautifulSoup 스크래핑 로직 (Polite crawling)
-├── processor.py           # 요약 placeholder 함수 (추후 LLM 연동용 인터페이스)
-├── scheduler.py           # APScheduler 백그라운드 구동 로직
-├── app.py                 # Streamlit 대시보드 UI
-├── requirements.txt       # 의존성 패키지 목록
-└── README.md              # 실행 가이드 문서
+├── index.html                 # Cloudflare Pages 메인 HTML 화면
+├── style.css                  # 모던 디자인 CSS
+├── app.js                     # 프론트엔드 필터링 및 articles.json 데이터 바인딩
+├── articles.json              # 최근 96시간 큐레이션 기사 데이터셋
+├── config.py                  # 언론사 카테고리 매핑 및 크롤러 설정
+├── database.py                # SQLite 연결, 테이블 생성, CRUD, 중복 검증
+├── scraper.py                 # RSS + HTML 정밀 스크래핑 로직
+├── scheduler.py               # 백그라운드 주기적 수집 스케줄러
+├── build_data.py              # 데이터 수집 및 articles.json/sitemap.xml 빌드
+├── generate_sitemap.py        # sitemap.xml 자동 생성 스크립트
+├── robots.txt                 # 검색엔진 크롤링 지침
+├── sitemap.xml                # SEO 사이트맵
+├── naverc008d57c...html       # 네이버 서치어드바이저 소유 확인
+├── requirements.txt           # Python 크롤링 의존성 라이브러리 목록
+└── README.md                  # 실행 및 운영 안내 문서
 ```
 
 ---
 
-## 3. 실행 방법
+## 3. 실행 및 데이터 빌드 방법
 
-### 1) 의존성 패키지 설치
+### 1) 크롤링 패키지 설치
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2) 데이터베이스 초기화 및 최초 뉴스 수집 (선택)
+### 2) 뉴스 수집 및 articles.json / sitemap.xml 빌드
 ```bash
-python scraper.py
+python build_data.py
 ```
 
-### 3) Streamlit 웹 애플리케이션 실행
-```bash
-streamlit run app.py
-```
-
-실행 후 웹 브라우저에서 `http://localhost:8501`로 접속할 수 있습니다.
-
----
-
-## 4. 데이터베이스 스키마
-
-```sql
-CREATE TABLE IF NOT EXISTS articles (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    media_name TEXT,
-    category TEXT,
-    title TEXT,
-    url TEXT UNIQUE,
-    published_at TEXT,
-    summary TEXT,           -- MVP에서는 NULL 또는 placeholder
-    click_count INTEGER DEFAULT 0,
-    scraped_at TEXT
-);
-```
-
----
-
-## 5. 추후 확장 계획
-* **AI 요약 생성:** `processor.py`의 `generate_summary()` 함수에 OpenAI / Gemini API를 연결하여 자동으로 3줄 요약을 생성하도록 구현 예정
-* **카테고리/언론사 추가:** `config.py` 파일의 `MEDIA_CONFIG` 수정을 통해 추가 코드 작성 없이 간편하게 확장 가능
+### 3) 로컬 웹 테스트
+`index.html` 파일을 웹 브라우저로 직접 열거나 로컬 웹 서버(예: `python -m http.server 8000`)로 실행하여 확인할 수 있습니다.
