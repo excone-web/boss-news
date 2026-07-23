@@ -1,0 +1,344 @@
+:root {
+    --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    --primary-color: #2563eb;
+    --active-color: #dc2626;
+    --text-color: #334155;
+    --bg-color: #ffffff;
+    --sidebar-bg: #f8fafc;
+    --badge-bg: #eff6ff;
+    --badge-color: #1d4ed8;
+    --date-color: #64748b;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.25s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-280px);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.filter-group {
+    margin-bottom: 16px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+.filter-group input[type="text"],
+.filter-group input[type="password"],
+.filter-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.radio-group label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* 메인 영역 */
+.main-container {
+    flex: 1;
+    margin-left: 280px;
+    padding: 16px 28px;
+    transition: margin-left 0.25s ease;
+    width: calc(100% - 280px);
+}
+
+.main-container.expanded {
+    margin-left: 0;
+    width: 100%;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.toggle-btn {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #1e293b;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    color: #166534;
+    background: #dcfce7;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* 100% 가로 전면 확장 헤더 박스 */
+.header-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.header-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin-top: 6px;
+}
+
+/* 카테고리 탭 */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.tab-btn.active {
+    color: var(--active-color);
+    border-bottom: 2px solid var(--active-color);
+    border-radius: 0;
+}
+
+.category-caption {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin-bottom: 14px;
+}
+
+/* 뉴스 리스트 */
+.news-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.article-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 140px;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.media-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--badge-bg);
+    color: var(--badge-color);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    height: 24px;
+    white-space: nowrap;
+}
+
+.title-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title-link:hover {
+    color: var(--primary-color);
+}
+
+.date-span {
+    font-size: 0.82rem;
+    color: var(--date-color);
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* 순수 미니멀 텍스트 페이지네이션 (버튼 외곽선/배경 100% 없음) */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.page-link {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1d4ed8;
+    cursor: pointer;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+
+.page-link.active {
+    color: var(--active-color) !important; /* 빨간색 강하게 시각화 */
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+}
+
+.page-link:hover {
+    color: #2563eb;
+}
+
+.page-link.disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* 히든 유틸리티 */
+.hidden {
+    display: none !important;
+}
+
+/* 피드백 폼 */
+.feedback-section {
+    background: #f8fafc;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.btn-submit {
+    background: var(--active-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
