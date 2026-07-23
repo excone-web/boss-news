@@ -67,6 +67,8 @@ function setupEventListeners() {
             e.target.classList.add("active");
             currentCategory = e.target.getAttribute("data-category");
 
+            trackGAEvent('select_category', { 'category_name': currentCategory });
+
             if (currentCategory === "💡 의견/피드백 보내기") {
                 document.getElementById("newsListContainer").classList.add("hidden");
                 document.getElementById("paginationContainer").classList.add("hidden");
@@ -91,6 +93,7 @@ function setupEventListeners() {
             document.getElementById("masterAuthMsg").style.color = "#166534";
             document.getElementById("masterFeedbackSection").classList.remove("hidden");
             renderMasterFeedbacks();
+            trackGAEvent('master_login', { 'status': 'success' });
         } else {
             document.getElementById("masterAuthMsg").innerText = "비밀번호가 일치하지 않습니다.";
             document.getElementById("masterAuthMsg").style.color = "#dc2626";
@@ -121,14 +124,25 @@ function setupEventListeners() {
 
         document.getElementById("feedbackContent").value = "";
         document.getElementById("feedbackSubmitMsg").innerText = "소중한 의견이 성공적으로 접수되었습니다! 감사합니다.";
+        trackGAEvent('submit_feedback', { 'feedback_type': fType });
         if (isMaster) renderMasterFeedbacks();
     });
+}
+
+function trackGAEvent(eventName, params) {
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, params);
+    }
 }
 
 function applyFilters() {
     const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
     const selectedMedia = document.getElementById("mediaSelect").value;
     const sortOrder = document.querySelector("input[name='sortOrder']:checked").value;
+
+    if (keyword) {
+        trackGAEvent('search', { 'search_term': keyword });
+    }
 
     filteredArticles = allArticles.filter(art => {
         const matchCat = (currentCategory === "전체") || (art.category === currentCategory);
@@ -167,10 +181,12 @@ function renderArticles() {
     let html = "";
     pageData.forEach(item => {
         const pubDate = (item.published_at || "").substring(0, 16);
+        const titleSafe = escapeHtml(item.title);
+        const mediaSafe = escapeHtml(item.media_name || "언론사");
         html += `
             <div class="article-row">
-                <span class="media-badge">${item.media_name || "언론사"}</span>
-                <a href="${item.url}" target="_blank" class="title-link">${escapeHtml(item.title)}</a>
+                <span class="media-badge">${mediaSafe}</span>
+                <a href="${item.url}" target="_blank" class="title-link" onclick="trackGAEvent('click_article', {'article_title': '${titleSafe.replace(/'/g, "\\'")}', 'media_name': '${mediaSafe}'})">${titleSafe}</a>
                 <span class="date-span">🕒 ${pubDate}</span>
             </div>
         `;

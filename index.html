@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 네이버 서치어드바이저 사이트 소유 확인 태그 -->
+    <meta name="naver-site-verification" content="80558d6091b7a76c5146e2c04de74b43191bd184" />
+
+    <!-- 기본 SEO 메타 태그 -->
+    <title>보수 언론사 속보 뉴스 큐레이션 (최근 96시간)</title>
+    <meta name="description" content="매일신문, 한미일보, 프리진뉴스, 트루스데일리, 펜앤드마이크, 독립신문의 최근 96시간 실시간 속보 뉴스 및 주요 헤드라인 원문 모음 서비스입니다.">
+    <meta name="keywords" content="보수뉴스, 속보뉴스, 뉴스큐레이션, 매일신문, 한미일보, 프리진뉴스, 트루스데일리, 펜앤드마이크, 독립신문, 정치뉴스, 실시간뉴스">
+    <meta name="author" content="보수 언론사 뉴스 큐레이션">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://boss-news.pages.dev/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- Open Graph (Facebook, 카카오톡 등 SNS 공유 메타 태그) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="보수 언론사 속보 뉴스 큐레이션">
+    <meta property="og:title" content="보수 언론사 속보 뉴스 큐레이션 (최근 96시간)">
+    <meta property="og:description" content="주요 보수 언론사 6곳의 최근 96시간 최신 속보 및 원문 헤드라인을 한눈에 확인하세요.">
+    <meta property="og:url" content="https://boss-news.pages.dev/">
+    <meta property="og:image" content="https://boss-news.pages.dev/og-image.png">
+
+    <!-- Twitter Cards 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="보수 언론사 속보 뉴스 큐레이션">
+    <meta name="twitter:description" content="주요 보수 언론사 6곳의 최근 96시간 최신 속보 및 원문 헤드라인을 한눈에 확인하세요.">
+    <meta name="twitter:image" content="https://boss-news.pages.dev/og-image.png">
+
+    <!-- Google Analytics (GA4 - gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CG0SG2PQSM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-CG0SG2PQSM');
+      gtag('config', 'G-CG0SG2PQSM', {
+        'page_title': document.title,
+        'page_path': window.location.pathname + window.location.search
+      });
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보수 언론사 속보 뉴스 큐레이션</title>
+
+    <!-- Schema.org 구조화 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "보수 언론사 속보 뉴스 큐레이션",
+      "url": "https://boss-news.pages.dev/",
+      "description": "매일신문, 한미일보, 프리진뉴스, 트루스데일리, 펜앤드마이크, 독립신문의 최근 96시간 실시간 속보 뉴스 및 주요 헤드라인 큐레이션",
+      "sameAs": []
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 </head>

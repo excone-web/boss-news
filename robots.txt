@@ -1,0 +1,7 @@
+# Google, Naver, Bing 등 주요 검색 엔진 수집 허용
+User-agent: *
+Allow: /
+
+# 검색 엔진용 사이트맵 경로
+Sitemap: https://boss-news.pages.dev/sitemap.xml
+
