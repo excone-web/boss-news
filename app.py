@@ -251,7 +251,7 @@ with st.sidebar:
         st.divider()
         
         stats = get_db_stats()
-        st.info(f"📊 **DB 현황 (최근 96시간)**\n- 총 기사: `{stats['total_count']:,} 건`\n- 최근 수집: `{stats['last_scraped']}`")
+        st.info(f"📊 **DB 현황 (최근 96시간)**\n- 총 기사: `{stats['total_count']:,} 건`\n- 최근 갱신: `{stats['last_scraped']}`\n- 수집 주기: `2시간 간격 자동 수집`")
 
         # 3분 쿨다운 과부하 방지
         CRAWL_COOLDOWN_SECONDS = 180
@@ -304,7 +304,7 @@ with st.sidebar:
 st.markdown("""
 <div class="header-box">
     <div class="header-title">📰 보수 언론사 속보 뉴스 큐레이션 (최근 96시간)</div>
-    <div class="header-desc">매일신문 · 한미일보 · 프리진뉴스 · 트루스데일리 · 펜앤드마이크 · 독립신문의 최근 96시간 속보 및 원문 링크를 제공합니다.</div>
+    <div class="header-desc">매일신문 · 한미일보 · 프리진뉴스 · 트루스데일리 · 펜앤드마이크 · 독립신문의 최근 96시간 속보 및 원문 링크를 2시간 주기로 자동 갱신하여 제공합니다.</div>
 </div>
 """, unsafe_allow_html=True)
 

@@ -34,8 +34,9 @@ def generate_sitemap(domain="https://boss-news.pages.dev"):
     if os.path.exists(json_path):
         try:
             with open(json_path, "r", encoding="utf-8") as f:
-                articles = json.load(f)
+                data = json.load(f)
                 
+            articles = data.get("articles", data) if isinstance(data, dict) else data
             # 최근 100개 기사만 sitemap-news로 등록
             for art in articles[:100]:
                 art_url = ET.SubElement(urlset, "url")

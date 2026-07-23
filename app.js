@@ -14,12 +14,28 @@ async function initApp() {
     await loadArticlesData();
 }
 
+let lastUpdatedAt = "";
+let crawlIntervalHours = 2;
+
 async function loadArticlesData() {
     try {
         const response = await fetch("articles.json?t=" + new Date().getTime());
         if (response.ok) {
-            allArticles = await response.json();
-            document.getElementById("dbStatusBadge").innerText = `🟢 DB 정상가동 (최근 96시간 기사 ${allArticles.length.toLocaleString()}건)`;
+            const data = await response.json();
+            if (Array.isArray(data)) {
+                allArticles = data;
+            } else {
+                allArticles = data.articles || [];
+                lastUpdatedAt = data.updated_at || "";
+                crawlIntervalHours = data.interval_hours || 2;
+            }
+
+            if (!lastUpdatedAt && allArticles.length > 0) {
+                lastUpdatedAt = (allArticles[0].published_at || "").substring(0, 16);
+            }
+
+            const timeStr = lastUpdatedAt ? ` | 🕒 최근 갱신: ${lastUpdatedAt}` : "";
+            document.getElementById("dbStatusBadge").innerText = `🟢 DB 정상가동 (최근 96시간 기사 ${allArticles.length.toLocaleString()}건${timeStr} · ${crawlIntervalHours}시간 주기 갱신)`;
         } else {
             console.error("articles.json 로드 실패");
             document.getElementById("dbStatusBadge").innerText = "⚠️ 기사 데이터 수집 중...";

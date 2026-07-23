@@ -33,12 +33,20 @@ def build_static_articles_json():
 
     articles = [dict(row) for row in rows]
 
+    build_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    export_data = {
+        "updated_at": build_time,
+        "interval_hours": 2,
+        "total_count": len(articles),
+        "articles": articles
+    }
+
     # JSON 저장
     json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "articles.json")
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(articles, f, ensure_ascii=False, indent=2)
+        json.dump(export_data, f, ensure_ascii=False, indent=2)
 
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] articles.json 생성 완료! 총 {len(articles)}건 저장됨.")
+    print(f"[{build_time}] articles.json 생성 완료! 총 {len(articles)}건 저장됨. (갱신 시각: {build_time})")
 
     # 3. Sitemap.xml 자동 생성
     try:
