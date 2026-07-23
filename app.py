@@ -52,7 +52,7 @@ st.markdown("""
         max-width: 100% !important;
     }
 
-    /* 헤더는 투명하게 유지하여 좌측 사이드바 열기/접기 버튼을 100% 사용 가능하도록 조치 (요구사항 3) */
+    /* 좌측 상단 사이드바 열기/접기 버튼 100% 선명하게 유지 */
     header[data-testid="stHeader"] {
         background: transparent !important;
         z-index: 99999 !important;
@@ -63,7 +63,7 @@ st.markdown("""
         opacity: 1 !important;
     }
 
-    /* 우측 상단 불필요한 툴바/메뉴만 숨김 */
+    /* 우측 상단 불필요한 툴바/메뉴 숨김 */
     [data-testid="stToolbar"],
     [data-testid="stAppViewerToolbar"],
     .stAppViewerToolbar,
@@ -157,13 +157,13 @@ st.markdown("""
         white-space: nowrap;
     }
 
-    /* 이미지1 요구사항: 버튼 외곽선/배경 완전 제거 100% 순수 텍스트 페이지네이션 */
-    .page-nav-container button,
-    .page-nav-container button[data-testid*="stBaseButton"],
-    .page-nav-container div.stButton > button {
+    /* 100% 완벽한 텍스트 기반 페이지네이션: 메인 하단 컬럼 버튼 테두리/배경/박스 완전 제거 */
+    div[data-testid="stColumn"] button,
+    div[data-testid="column"] button,
+    button[data-testid*="stBaseButton"] {
         background: transparent !important;
         background-color: transparent !important;
-        border: none !important;
+        border: 0px none transparent !important;
         border-radius: 0px !important;
         box-shadow: none !important;
         outline: none !important;
@@ -174,19 +174,21 @@ st.markdown("""
         font-size: 0.95rem !important;
         font-weight: 500 !important;
         color: #1d4ed8 !important;
-        text-decoration: none !important;
     }
-    .page-nav-container button[kind="primary"],
-    .page-nav-container button[data-testid*="stBaseButton-primary"] {
-        color: #dc2626 !important; /* 현재 페이지: 빨간색 강조 */
+
+    div[data-testid="stColumn"] button[kind="primary"],
+    div[data-testid="stColumn"] button[data-testid*="stBaseButton-primary"],
+    button[data-testid*="stBaseButton-primary"] {
+        color: #dc2626 !important; /* 선택된 페이지: 빨간색 강조 */
         font-weight: 700 !important;
         text-decoration: underline !important;
         background: transparent !important;
         background-color: transparent !important;
-        border: none !important;
+        border: 0px none transparent !important;
         box-shadow: none !important;
     }
-    .page-nav-container button:hover {
+
+    div[data-testid="stColumn"] button:hover {
         color: #2563eb !important;
         background: transparent !important;
         border: none !important;
@@ -405,7 +407,6 @@ for idx, tab_name in enumerate(category_tabs):
                         
                     page_numbers = list(range(start_p, end_p + 1))
                     
-                    st.markdown("<div class='page-nav-container'>", unsafe_allow_html=True)
                     p_cols = st.columns([2.0] + [0.5] * len(page_numbers) + [0.5, 0.5, 2.0])
                     
                     with p_cols[0]:
@@ -431,8 +432,6 @@ for idx, tab_name in enumerate(category_tabs):
                         if st.button("▶|", key=f"t_last_{idx}", disabled=(curr_page >= total_pages), use_container_width=True):
                             st.session_state[page_key] = total_pages
                             st.rerun()
-
-                    st.markdown("</div>", unsafe_allow_html=True)
 
 query_params = st.query_params
 if "click_id" in query_params:
