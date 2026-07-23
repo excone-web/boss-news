@@ -8,7 +8,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import urljoin
 
 from config import MEDIA_CONFIG, USER_AGENT, CRAWL_DELAY_SECONDS
-from database import save_articles, purge_old_articles
+from database import save_articles, purge_old_articles, purge_duplicate_articles
 from category_agent import classify_article
 
 def parse_pub_date(raw_date: str) -> str:
@@ -42,8 +42,12 @@ def is_within_hours(published_at_str: str, hours: int = 96) -> bool:
     except Exception:
         return True
 
+def normalize_title(title: str) -> str:
+    """중복 방지를 위한 제목 공백/특수문자 정규화 키 생성"""
+    return re.sub(r'[\s\W]+', '', title).lower()
+
 def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dict]:
-    """RSS 피드 파싱 (최근 96시간 기사 필터링 포함)"""
+    """RSS 피드 파싱 (중복 방지 및 최근 96시간 기사 필터링)"""
     articles = []
     if not rss_url:
         return articles
@@ -56,6 +60,7 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             return articles
 
         feed = feedparser.parse(response.content)
+        seen_keys = set()
 
         for entry in feed.entries:
             title = entry.get("title", "").strip()
@@ -63,6 +68,11 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
 
             if not title or not url:
                 continue
+
+            norm_key = (media_name, normalize_title(title))
+            if norm_key in seen_keys:
+                continue
+            seen_keys.add(norm_key)
 
             raw_date = entry.get("published", entry.get("updated", ""))
             published_at = parse_pub_date(raw_date)
@@ -109,7 +119,7 @@ def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> 
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[dict]:
-    """HTML 메인 및 뉴스 목록 정밀 스크래핑 (기사 수집량 극대화)"""
+    """HTML 메인 및 뉴스 목록 정밀 스크래핑 (중복 교차 검증)"""
     articles = []
     if not site_url:
         return articles
@@ -124,13 +134,13 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
         soup = BeautifulSoup(response.text, "html.parser")
         seen_urls = set()
+        seen_titles = set()
 
         for a_tag in soup.find_all("a"):
             href = a_tag.get("href", "").strip()
             if not href or href.startswith("javascript:") or href == "#":
                 continue
 
-            # 뉴스 기사 URL 패턴 탐지
             if any(k in href for k in ["idx=", "view", "article", "news", "read"]):
                 full_url = urljoin(site_url, href)
                 if full_url in seen_urls:
@@ -148,9 +158,13 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 if len(clean_title) > 120:
                     clean_title = clean_title[:120] + "..."
 
-                seen_urls.add(full_url)
+                norm_key = normalize_title(clean_title)
+                if norm_key in seen_titles:
+                    continue
 
-                # 한미일보는 본문 정밀 파서 사용
+                seen_urls.add(full_url)
+                seen_titles.add(norm_key)
+
                 if "hanmiilbo" in site_url:
                     pub_date = fetch_hanmiilbo_detail_date(session, full_url)
                 else:
@@ -182,9 +196,9 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
     return articles
 
 def run_news_crawler() -> int:
-    """보수 언론사 6곳 RSS + HTML 듀얼 크롤링 (수집량 최적화)"""
+    """보수 언론사 6곳 DUAL 크롤링 및 100% 교차 중복제거"""
     all_articles = []
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 보수 언론사 6곳 듀얼 크롤링 시작...")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 보수 언론사 6곳 듀얼 크롤링 및 중복 검증 시작...")
 
     for category, media_list in MEDIA_CONFIG.items():
         for media in media_list:
@@ -196,18 +210,16 @@ def run_news_crawler() -> int:
             if rss_url:
                 rss_articles = fetch_rss_feed(rss_url, media_name, category)
                 all_articles.extend(rss_articles)
-                print(f" -> [{media_name} (RSS)] {len(rss_articles)}건 수집")
 
-            # RSS 수집건수가 적거나 HTML 전용 언론사인 경우 HTML 파싱 백업 실행 (기사 수집량 보장)
             if len(rss_articles) < 15 and site_url:
                 html_articles = scrape_html_feed(site_url, media_name, category)
                 all_articles.extend(html_articles)
-                print(f" -> [{media_name} (HTML 보충)] {len(html_articles)}건 수집")
 
             time.sleep(CRAWL_DELAY_SECONDS)
 
     inserted_count = save_articles(all_articles)
     purge_old_articles(hours=96)
+    purge_duplicate_articles()
     
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 뉴스 크롤링 완료. 신규 기사 {inserted_count}건 저장됨.")
     return inserted_count

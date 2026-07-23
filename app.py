@@ -45,30 +45,31 @@ st.markdown("""
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }
 
-    /* 이미지2 요구사항: 메인 상단 대형 여백 제거 (상단 여백 콤팩트화) */
+    /* 메인 컨테이너 상단 여백 콤팩트화 */
     .block-container {
-        padding-top: 1.2rem !important;
+        padding-top: 2rem !important;
         padding-bottom: 1rem !important;
         max-width: 100% !important;
     }
 
-    /* 이미지1 요구사항: 상단 툴바 및 Manage app 우하단 버튼 숨김 */
+    /* 헤더는 투명하게 유지하여 좌측 사이드바 열기/접기 버튼을 100% 사용 가능하도록 조치 (요구사항 3) */
     header[data-testid="stHeader"] {
-        visibility: hidden !important;
-        height: 0px !important;
+        background: transparent !important;
+        z-index: 99999 !important;
     }
-    #MainMenu {
-        visibility: hidden !important;
+    button[data-testid="stSidebarCollapseButton"] {
+        visibility: visible !important;
+        display: flex !important;
+        opacity: 1 !important;
     }
-    footer {
-        visibility: hidden !important;
-    }
-    .stApp > header {
-        display: none !important;
-    }
-    div[data-testid="stAppViewerToolbar"],
+
+    /* 우측 상단 불필요한 툴바/메뉴만 숨김 */
+    [data-testid="stToolbar"],
+    [data-testid="stAppViewerToolbar"],
     .stAppViewerToolbar,
-    [data-testid="manage-app-button"] {
+    [data-testid="manage-app-button"],
+    #MainMenu,
+    footer {
         display: none !important;
         visibility: hidden !important;
     }
@@ -156,26 +157,36 @@ st.markdown("""
         white-space: nowrap;
     }
 
-    /* 초깔끔 텍스트 기반 미니멀 페이지네이션 (버튼 테두리/배경 완전 제거) */
-    .page-nav-container div[data-testid="stColumn"] button {
+    /* 이미지1 요구사항: 버튼 외곽선/배경 완전 제거 100% 순수 텍스트 페이지네이션 */
+    .page-nav-container button,
+    .page-nav-container button[data-testid*="stBaseButton"],
+    .page-nav-container div.stButton > button {
         background: transparent !important;
+        background-color: transparent !important;
         border: none !important;
+        border-radius: 0px !important;
         box-shadow: none !important;
-        padding: 0 2px !important;
+        outline: none !important;
+        padding: 0 4px !important;
         margin: 0 !important;
         min-height: 24px !important;
         height: 24px !important;
-        font-size: 0.9rem !important;
+        font-size: 0.95rem !important;
         font-weight: 500 !important;
         color: #1d4ed8 !important;
         text-decoration: none !important;
     }
-    .page-nav-container div[data-testid="stColumn"] button[kind="primary"] {
-        color: #dc2626 !important;
+    .page-nav-container button[kind="primary"],
+    .page-nav-container button[data-testid*="stBaseButton-primary"] {
+        color: #dc2626 !important; /* 현재 페이지: 빨간색 강조 */
         font-weight: 700 !important;
         text-decoration: underline !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
-    .page-nav-container div[data-testid="stColumn"] button:hover {
+    .page-nav-container button:hover {
         color: #2563eb !important;
         background: transparent !important;
         border: none !important;
@@ -189,7 +200,6 @@ def start_background_services():
     init_db()
     init_scheduler()
     
-    # 클라우드 첫 실행 시 기사가 비어있으면 즉시 수집 가동
     stats = get_db_stats()
     if stats.get("total_count", 0) == 0:
         try:
@@ -383,7 +393,7 @@ for idx, tab_name in enumerate(category_tabs):
                     with cols[2]:
                         st.markdown(f"<span class='date-span'>🕒 {formatted_date}</span>", unsafe_allow_html=True)
 
-                # 초깔끔 미니멀 텍스트 페이지네이션
+                # 순수 텍스트 링크 기반 미니멀 페이지네이션
                 if total_pages > 1:
                     st.divider()
                     

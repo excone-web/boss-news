@@ -1,4 +1,5 @@
 import sqlite3
+import re
 from datetime import datetime, timedelta
 from config import DB_PATH
 
@@ -10,7 +11,7 @@ def get_connection():
     return conn
 
 def init_db():
-    """데이터베이스 테이블 생성 및 미디어명 업데이트 (AI뉴스 -> 독립신문)"""
+    """데이터베이스 테이블 생성 및 미디어명 업데이트"""
     conn = get_connection()
     cursor = conn.cursor()
     
@@ -44,13 +45,32 @@ def init_db():
     );
     """)
 
-    # 기존 DB 내 'AI뉴스' 미디어명을 '독립신문'으로 일괄 변경
     cursor.execute("UPDATE articles SET media_name = '독립신문' WHERE media_name = 'AI뉴스';")
 
     conn.commit()
     conn.close()
 
+def purge_duplicate_articles():
+    """DUAL 수집 시 발생할 수 있는 중복 기사 (동일 언론사 + 동일 제목) 완전 자동 정제"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""
+            DELETE FROM articles 
+            WHERE id NOT IN (
+                SELECT MIN(id) 
+                FROM articles 
+                GROUP BY media_name, title
+            );
+        """)
+        conn.commit()
+    except Exception as e:
+        print(f"[Purge Duplicates Error] {e}")
+    finally:
+        conn.close()
+
 def save_articles(articles: list[dict]) -> int:
+    """중복방지(URL UNIQUE 및 제목 중복 검증) 기사 저장"""
     if not articles:
         return 0
 
@@ -82,6 +102,10 @@ def save_articles(articles: list[dict]) -> int:
 
     conn.commit()
     conn.close()
+
+    # 제목 기준 2차 중복 완전 제거
+    purge_duplicate_articles()
+    
     return inserted_count
 
 def purge_old_articles(hours: int = 96) -> int:
@@ -106,7 +130,6 @@ def get_articles(
     conn = get_connection()
     cursor = conn.cursor()
 
-    # 최근 96시간 기준 시간
     cutoff = (datetime.now() - timedelta(hours=96)).strftime("%Y-%m-%d %H:%M:%S")
 
     query = "SELECT * FROM articles WHERE 1=1 AND (published_at >= ? OR published_at IS NULL OR published_at = '')"
