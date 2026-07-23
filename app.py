@@ -44,6 +44,21 @@ st.markdown("""
     html, body, [class*="css"] {
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }
+
+    /* 이미지1 요구사항: 상단 Streamlit 우측 메뉴/툴바 100% 안보이게 숨김 */
+    header[data-testid="stHeader"] {
+        visibility: hidden !important;
+        height: 0px !important;
+    }
+    #MainMenu {
+        visibility: hidden !important;
+    }
+    footer {
+        visibility: hidden !important;
+    }
+    .stApp > header {
+        display: none !important;
+    }
     
     div[data-testid="stMarkdownContainer"],
     div[data-testid="stMarkdownContainer"] > div,
@@ -143,7 +158,7 @@ st.markdown("""
         text-decoration: none !important;
     }
     .page-nav-container div[data-testid="stColumn"] button[kind="primary"] {
-        color: #dc2626 !important; /* 현재 선택된 페이지: 빨간색 강조 */
+        color: #dc2626 !important;
         font-weight: 700 !important;
         text-decoration: underline !important;
     }
@@ -160,6 +175,16 @@ st.markdown("""
 def start_background_services():
     init_db()
     init_scheduler()
+    
+    # 이미지2 요구사항: 클라우드 초기 배포 시 DB가 비어있으면 자동 즉시 크롤링 수행
+    stats = get_db_stats()
+    if stats.get("total_count", 0) == 0:
+        try:
+            from scraper import run_news_crawler
+            run_news_crawler()
+        except Exception as e:
+            print(f"[Auto Crawl Startup Error] {e}")
+            
     return True
 
 start_background_services()
@@ -332,7 +357,6 @@ for idx, tab_name in enumerate(category_tabs):
                     title = item["title"]
                     url = item["url"]
                     published_at = item["published_at"] or ""
-                    # 버그 수정: len(published_at)으로 수정
                     formatted_date = published_at[:16] if len(published_at) >= 16 else published_at
                     
                     cols = st.columns([1.1, 8.9, 2.0])
