@@ -54,6 +54,24 @@ def is_within_hours(published_at_str: str, hours: int = 96) -> bool:
     except Exception:
         return True
 
+INVALID_SECTION_TITLES = {
+    "많이 본 뉴스", "방송·미디어", "엔터테인먼트", "오피니언", "카테고리", "메뉴", "전체",
+    "정치", "경제", "사회", "IT/과학", "문화", "지역", "사설", "칼럼", "포토", "영상",
+    "PDF", "구독", "로그인", "회원가입", "마이페이지", "제보", "회사소개", "주요뉴스",
+    "실시간 뉴스", "최신기사", "인기기사", "전체기사", "분야별 뉴스", "공지사항", "이벤트"
+}
+
+def is_valid_article_title(title: str) -> bool:
+    clean = title.strip()
+    if not clean or len(clean) < 8:
+        return False
+    if clean in INVALID_SECTION_TITLES:
+        return False
+    # 기사 제목은 2개 이상의 단어로 이루어지므로 띄어쓰기 필수
+    if " " not in clean:
+        return False
+    return True
+
 def normalize_title(title: str) -> str:
     """중복 방지를 위한 제목 공백/특수문자 정규화 키 생성"""
     return re.sub(r'[\s\W]+', '', title).lower()
@@ -78,7 +96,7 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             title = entry.get("title", "").strip()
             url = entry.get("link", "").strip()
 
-            if not title or not url:
+            if not title or not url or not is_valid_article_title(title):
                 continue
 
             norm_key = (media_name, normalize_title(title))
@@ -155,6 +173,16 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
             if not href or href.startswith("javascript:") or href == "#":
                 continue
 
+            href_lower = href.lower()
+
+            # 목록/카테고리/섹션/검색 URL 제외
+            if any(ex in href_lower for ex in ["list.php", "section.php", "category", "pdf_list", "search", "tag", "member", "login", "user"]):
+                continue
+
+            # 한미일보 기사 뷰 URL (view.php?idx=숫자) 전용 검증
+            if "hanmiilbo" in site_url and not re.search(r'view\.php\?idx=\d+', href_lower):
+                continue
+
             if any(k in href for k in ["idx=", "view", "article", "news", "read"]):
                 full_url = urljoin(site_url, href)
                 if full_url in seen_urls:
@@ -167,8 +195,9 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                     lines = [line.strip() for line in a_tag.get_text("\n").split("\n") if line.strip()]
                     clean_title = lines[0] if lines else ""
 
-                if not clean_title or len(clean_title) < 6:
+                if not is_valid_article_title(clean_title):
                     continue
+
                 if len(clean_title) > 120:
                     clean_title = clean_title[:120] + "..."
 
