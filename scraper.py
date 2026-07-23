@@ -45,12 +45,14 @@ def is_within_hours(published_at_str: str, hours: int = 96) -> bool:
 def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dict]:
     """RSS 피드 파싱 (최근 96시간 기사 필터링 포함)"""
     articles = []
+    if not rss_url:
+        return articles
+
     headers = {"User-Agent": USER_AGENT}
 
     try:
-        response = requests.get(rss_url, headers=headers, timeout=10)
+        response = requests.get(rss_url, headers=headers, timeout=8)
         if response.status_code != 200:
-            print(f"[{media_name}] RSS 요청 실패 (HTTP {response.status_code}): {rss_url}")
             return articles
 
         feed = feedparser.parse(response.content)
@@ -65,7 +67,6 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             raw_date = entry.get("published", entry.get("updated", ""))
             published_at = parse_pub_date(raw_date)
 
-            # 최근 96시간 이내 기사만 수집 (요구사항 2)
             if not is_within_hours(published_at, hours=96):
                 continue
 
@@ -95,7 +96,7 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
 def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> str:
     """한미일보 본문 상세페이지에서 원래 작성/업로드된 정확한 시각 추출"""
     try:
-        res = session.get(article_url, timeout=4)
+        res = session.get(article_url, timeout=3)
         if res.status_code == 200:
             m = re.search(r'20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}', res.text)
             if m:
@@ -108,33 +109,34 @@ def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> 
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[dict]:
-    """한미일보 HTML 수집 (최신 idx 추출, 원본 업로드 시간 파싱 및 최근 96시간 기사 필터링)"""
+    """HTML 메인 및 뉴스 목록 정밀 스크래핑 (기사 수집량 극대화)"""
     articles = []
+    if not site_url:
+        return articles
+
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
 
     try:
-        response = session.get(site_url, timeout=10)
+        response = session.get(site_url, timeout=8)
         if response.status_code != 200:
-            print(f"[{media_name}] HTML 요청 실패 (HTTP {response.status_code}): {site_url}")
             return articles
 
         soup = BeautifulSoup(response.text, "html.parser")
-        items_dict = {}
+        seen_urls = set()
 
         for a_tag in soup.find_all("a"):
             href = a_tag.get("href", "").strip()
-            if not href:
+            if not href or href.startswith("javascript:") or href == "#":
                 continue
 
-            if ("idx=" in href or "view" in href or "article" in href):
-                m_idx = re.search(r'idx=(\d+)', href)
-                if not m_idx:
+            # 뉴스 기사 URL 패턴 탐지
+            if any(k in href for k in ["idx=", "view", "article", "news", "read"]):
+                full_url = urljoin(site_url, href)
+                if full_url in seen_urls:
                     continue
-                
-                idx_num = int(m_idx.group(1))
 
-                title_el = a_tag.find(class_=["title", "subject", "tit"]) or a_tag.find(["h1", "h2", "h3", "h4", "strong", "b"])
+                title_el = a_tag.find(class_=["title", "subject", "tit", "headline"]) or a_tag.find(["h1", "h2", "h3", "h4", "strong", "b"])
                 if title_el:
                     clean_title = title_el.get_text(strip=True)
                 else:
@@ -146,42 +148,33 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 if len(clean_title) > 120:
                     clean_title = clean_title[:120] + "..."
 
-                full_url = f"https://www.hanmiilbo.kr/news/view.php?idx={idx_num}"
+                seen_urls.add(full_url)
 
-                if idx_num not in items_dict or len(clean_title) > len(items_dict[idx_num]["title"]):
-                    items_dict[idx_num] = {
-                        "title": clean_title,
-                        "url": full_url,
-                        "idx": idx_num
-                    }
+                # 한미일보는 본문 정밀 파서 사용
+                if "hanmiilbo" in site_url:
+                    pub_date = fetch_hanmiilbo_detail_date(session, full_url)
+                else:
+                    parent_text = a_tag.parent.get_text() if a_tag.parent else ""
+                    m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
+                    pub_date = parse_pub_date(m.group(0)) if m else parse_pub_date("")
 
-        if not items_dict:
-            return articles
+                if not is_within_hours(pub_date, hours=96):
+                    continue
 
-        sorted_indices = sorted(items_dict.keys(), reverse=True)
+                assigned_category = classify_article(title=clean_title, raw_category=raw_category)
 
-        for idx_num in sorted_indices[:45]:
-            item = items_dict[idx_num]
-            detail_url = item["url"]
-            title = item["title"]
+                articles.append({
+                    "media_name": media_name,
+                    "category": assigned_category,
+                    "title": clean_title,
+                    "url": full_url,
+                    "published_at": pub_date,
+                    "summary": None,
+                    "content_body": ""
+                })
 
-            pub_date = fetch_hanmiilbo_detail_date(session, detail_url)
-
-            # 최근 96시간 이내 기사만 수집 (요구사항 2)
-            if not is_within_hours(pub_date, hours=96):
-                continue
-
-            assigned_category = classify_article(title=title, raw_category=raw_category)
-
-            articles.append({
-                "media_name": media_name,
-                "category": assigned_category,
-                "title": title,
-                "url": detail_url,
-                "published_at": pub_date,
-                "summary": None,
-                "content_body": ""
-            })
+                if len(articles) >= 100:
+                    break
 
     except Exception as e:
         print(f"[{media_name}] HTML 스크래핑 에러 ({site_url}): {e}")
@@ -189,9 +182,9 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
     return articles
 
 def run_news_crawler() -> int:
-    """최근 96시간 이내 기사 수집 및 오래된 기사 자동 정리"""
+    """보수 언론사 6곳 RSS + HTML 듀얼 크롤링 (수집량 최적화)"""
     all_articles = []
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 보수 언론사 6곳 뉴스 크롤링 시작 (최근 96시간 기사)...")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 보수 언론사 6곳 듀얼 크롤링 시작...")
 
     for category, media_list in MEDIA_CONFIG.items():
         for media in media_list:
@@ -199,20 +192,21 @@ def run_news_crawler() -> int:
             rss_url = media.get("rss_url")
             site_url = media.get("site_url")
 
+            rss_articles = []
             if rss_url:
-                fetched = fetch_rss_feed(rss_url, media_name, category)
-                all_articles.extend(fetched)
-                print(f" -> [{media_name} (RSS)] {len(fetched)}건 수집 완료 (96시간 이내)")
-            elif site_url:
-                fetched = scrape_html_feed(site_url, media_name, category)
-                all_articles.extend(fetched)
-                print(f" -> [{media_name} (HTML)] {len(fetched)}건 원본 발행시간 수집 완료")
+                rss_articles = fetch_rss_feed(rss_url, media_name, category)
+                all_articles.extend(rss_articles)
+                print(f" -> [{media_name} (RSS)] {len(rss_articles)}건 수집")
+
+            # RSS 수집건수가 적거나 HTML 전용 언론사인 경우 HTML 파싱 백업 실행 (기사 수집량 보장)
+            if len(rss_articles) < 15 and site_url:
+                html_articles = scrape_html_feed(site_url, media_name, category)
+                all_articles.extend(html_articles)
+                print(f" -> [{media_name} (HTML 보충)] {len(html_articles)}건 수집")
 
             time.sleep(CRAWL_DELAY_SECONDS)
 
     inserted_count = save_articles(all_articles)
-    
-    # DB 내 96시간 경과 기사 자동 정리
     purge_old_articles(hours=96)
     
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 뉴스 크롤링 완료. 신규 기사 {inserted_count}건 저장됨.")

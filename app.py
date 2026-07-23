@@ -45,7 +45,14 @@ st.markdown("""
         font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }
 
-    /* 이미지1 요구사항: 상단 Streamlit 우측 메뉴/툴바 100% 안보이게 숨김 */
+    /* 이미지2 요구사항: 메인 상단 대형 여백 제거 (상단 여백 콤팩트화) */
+    .block-container {
+        padding-top: 1.2rem !important;
+        padding-bottom: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    /* 이미지1 요구사항: 상단 툴바 및 Manage app 우하단 버튼 숨김 */
     header[data-testid="stHeader"] {
         visibility: hidden !important;
         height: 0px !important;
@@ -58,6 +65,12 @@ st.markdown("""
     }
     .stApp > header {
         display: none !important;
+    }
+    div[data-testid="stAppViewerToolbar"],
+    .stAppViewerToolbar,
+    [data-testid="manage-app-button"] {
+        display: none !important;
+        visibility: hidden !important;
     }
     
     div[data-testid="stMarkdownContainer"],
@@ -176,7 +189,7 @@ def start_background_services():
     init_db()
     init_scheduler()
     
-    # 이미지2 요구사항: 클라우드 초기 배포 시 DB가 비어있으면 자동 즉시 크롤링 수행
+    # 클라우드 첫 실행 시 기사가 비어있으면 즉시 수집 가동
     stats = get_db_stats()
     if stats.get("total_count", 0) == 0:
         try:
