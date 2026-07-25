@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function initApp() {
+    if (window.innerWidth <= 768) {
+        itemsPerPage = 20;
+        const selectEl = document.getElementById("itemsPerPage");
+        if (selectEl) selectEl.value = "20";
+    }
     setupEventListeners();
     await loadArticlesData();
 }
