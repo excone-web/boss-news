@@ -41,10 +41,10 @@ def build_static_articles_json():
         "articles": articles
     }
 
-    # JSON 저장
+    # JSON 저장 (LTE 속도 최적화를 위해 초슬림 압축 저장)
     json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "articles.json")
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(export_data, f, ensure_ascii=False, indent=2)
+        json.dump(export_data, f, ensure_ascii=False, separators=(',', ':'))
 
     print(f"[{build_time}] articles.json 생성 완료! 총 {len(articles)}건 저장됨. (갱신 시각: {build_time})")
 

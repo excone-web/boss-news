@@ -24,7 +24,9 @@ let crawlIntervalHours = 2;
 
 async function loadArticlesData() {
     try {
-        const response = await fetch("articles.json?t=" + new Date().getTime());
+        // LTE 네트워크 로딩 속도 최적화: 2분 단위 캐시 키 적용 (매 초 재다운로드 방지 및 HTTP 304 활용)
+        const cacheKey = Math.floor(Date.now() / 120000);
+        const response = await fetch("articles.json?v=" + cacheKey);
         if (response.ok) {
             const data = await response.json();
             if (Array.isArray(data)) {
