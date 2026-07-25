@@ -168,14 +168,34 @@ body {
     white-space: nowrap;
 }
 
+/* 상태 바 깔끔한 2행 줄바꿈 레이아웃 */
 .status-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
     font-size: 0.8rem;
     color: #166534;
     background: #dcfce7;
-    padding: 4px 10px;
-    border-radius: 20px;
+    padding: 5px 12px;
+    border-radius: 10px;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.35;
+    text-align: right;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.status-badge .badge-line1 {
+    display: block;
+    white-space: nowrap;
+}
+
+.status-badge .badge-line2 {
+    display: block;
+    font-size: 0.74rem;
+    color: #15803d;
+    opacity: 0.95;
+    white-space: nowrap;
+    margin-top: 1px;
 }
 
 /* 100% 가로 전면 확장 헤더 박스 */
@@ -402,7 +422,7 @@ body {
 }
 
 /* ==========================================================================
-   📱 모바일 전용 단일 행 페이지네이션 및 반응형 UI
+   📱 모바일 전용 반응형 UI 및 상태 바
    ========================================================================== */
 @media screen and (max-width: 768px) {
     body {
@@ -435,14 +455,23 @@ body {
     }
 
     .status-badge {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-        line-height: 1.25;
+        font-size: 0.72rem;
+        padding: 4px 10px;
+        line-height: 1.3;
         text-align: right;
-        max-width: 78%;
-        word-break: keep-all;
-        white-space: normal;
-        border-radius: 12px;
+        max-width: 82%;
+        border-radius: 8px;
+        align-items: flex-end;
+    }
+
+    .status-badge .badge-line1 {
+        font-size: 0.72rem;
+        white-space: nowrap;
+    }
+
+    .status-badge .badge-line2 {
+        font-size: 0.68rem;
+        white-space: nowrap;
     }
 
     .header-box {
@@ -538,7 +567,6 @@ body {
         width: 100%;
     }
 
-    /* 모바일 100% 단일 행 페이지네이션 최적화 (절대 줄바꿈 방지) */
     .pagination-container {
         display: flex !important;
         flex-wrap: nowrap !important;

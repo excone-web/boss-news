@@ -39,11 +39,15 @@ async function loadArticlesData() {
                 lastUpdatedAt = (allArticles[0].published_at || "").substring(0, 16);
             }
 
-            const timeStr = lastUpdatedAt ? ` | 🕒 최근 갱신: ${lastUpdatedAt}` : "";
-            document.getElementById("dbStatusBadge").innerText = `🟢 DB 정상가동 (최근 96시간 기사 ${allArticles.length.toLocaleString()}건${timeStr} · ${crawlIntervalHours}시간 주기 갱신)`;
+            const line1 = `🟢 DB 정상가동 ( 최근 96시간 기사 ${allArticles.length.toLocaleString()}건 )`;
+            const line2 = lastUpdatedAt 
+                ? `최근 갱신: ${lastUpdatedAt} · ${crawlIntervalHours}시간 주기 갱신` 
+                : `${crawlIntervalHours}시간 주기 갱신`;
+
+            document.getElementById("dbStatusBadge").innerHTML = `<span class="badge-line1">${line1}</span><span class="badge-line2">${line2}</span>`;
         } else {
             console.error("articles.json 로드 실패");
-            document.getElementById("dbStatusBadge").innerText = "⚠️ 기사 데이터 수집 중...";
+            document.getElementById("dbStatusBadge").innerHTML = `<span class="badge-line1">⚠️ 기사 데이터 수집 중...</span>`;
         }
     } catch (e) {
         console.error("데이터 통신 오류:", e);
