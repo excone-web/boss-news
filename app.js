@@ -122,6 +122,24 @@ function setupEventListeners() {
         radio.addEventListener("change", applyFilters);
     });
 
+    // 사이드바 의견/피드백 보내기 버튼
+    const openFeedbackBtn = document.getElementById("openFeedbackBtn");
+    if (openFeedbackBtn) {
+        openFeedbackBtn.addEventListener("click", () => {
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            document.getElementById("newsListContainer").classList.add("hidden");
+            document.getElementById("paginationContainer").classList.add("hidden");
+            document.getElementById("categoryCaption").classList.add("hidden");
+            document.getElementById("feedbackSection").classList.remove("hidden");
+
+            trackGAEvent('select_category', { 'category_name': '의견/피드백 보내기' });
+
+            if (window.innerWidth <= 768) {
+                closeSidebar();
+            }
+        });
+    }
+
     // 카테고리 탭
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -131,18 +149,11 @@ function setupEventListeners() {
 
             trackGAEvent('select_category', { 'category_name': currentCategory });
 
-            if (currentCategory === "💡 의견/피드백 보내기") {
-                document.getElementById("newsListContainer").classList.add("hidden");
-                document.getElementById("paginationContainer").classList.add("hidden");
-                document.getElementById("categoryCaption").classList.add("hidden");
-                document.getElementById("feedbackSection").classList.remove("hidden");
-            } else {
-                document.getElementById("newsListContainer").classList.remove("hidden");
-                document.getElementById("paginationContainer").classList.remove("hidden");
-                document.getElementById("categoryCaption").classList.remove("hidden");
-                document.getElementById("feedbackSection").classList.add("hidden");
-                applyFilters();
-            }
+            document.getElementById("newsListContainer").classList.remove("hidden");
+            document.getElementById("paginationContainer").classList.remove("hidden");
+            document.getElementById("categoryCaption").classList.remove("hidden");
+            document.getElementById("feedbackSection").classList.add("hidden");
+            applyFilters();
         });
     });
 

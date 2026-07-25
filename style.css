@@ -128,6 +128,33 @@ body {
     margin-top: 6px;
 }
 
+/* 사이드바 피드백 버튼 */
+.btn-feedback {
+    width: 100%;
+    padding: 10px;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+}
+
+.btn-feedback:hover {
+    background-color: #0369a1;
+}
+
+.btn-feedback:active {
+    transform: scale(0.98);
+}
+
 .divider {
     border: none;
     border-top: 1px solid var(--border-color);
