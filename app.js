@@ -15,6 +15,13 @@ async function initApp() {
         const selectEl = document.getElementById("itemsPerPage");
         if (selectEl) selectEl.value = "20";
     }
+    if (sessionStorage.getItem("bossNews_isMaster") === "true") {
+        isMaster = true;
+        const loginForm = document.getElementById("masterLoginForm");
+        const loggedMenu = document.getElementById("masterLoggedMenu");
+        if (loginForm) loginForm.classList.add("hidden");
+        if (loggedMenu) loggedMenu.classList.remove("hidden");
+    }
     setupEventListeners();
     await loadArticlesData();
 }
@@ -198,6 +205,7 @@ function setupEventListeners() {
             document.getElementById("newsListContainer").classList.add("hidden");
             document.getElementById("paginationContainer").classList.add("hidden");
             document.getElementById("categoryCaption").classList.add("hidden");
+            document.getElementById("masterFeedbackSection").classList.add("hidden");
             document.getElementById("feedbackSection").classList.remove("hidden");
 
             trackGAEvent('select_category', { 'category_name': '의견/피드백 보내기' });
@@ -221,25 +229,81 @@ function setupEventListeners() {
             document.getElementById("paginationContainer").classList.remove("hidden");
             document.getElementById("categoryCaption").classList.remove("hidden");
             document.getElementById("feedbackSection").classList.add("hidden");
+            document.getElementById("masterFeedbackSection").classList.add("hidden");
             applyFilters();
         });
     });
 
-    // 마스터 로그인 (비밀번호: maya1009)
-    document.getElementById("masterLoginBtn").addEventListener("click", () => {
-        const inputPw = document.getElementById("masterPassword").value;
+    // 마스터 로그인 처리 (비밀번호: maya1009)
+    const masterLoginBtn = document.getElementById("masterLoginBtn");
+    const masterPwInput = document.getElementById("masterPassword");
+    
+    function handleMasterLogin() {
+        const inputPw = masterPwInput.value;
+        const authError = document.getElementById("masterAuthErrorMsg");
         if (inputPw === "maya1009") {
             isMaster = true;
-            document.getElementById("masterAuthMsg").innerText = "🔓 마스터 인증 성공!";
-            document.getElementById("masterAuthMsg").style.color = "#166534";
-            document.getElementById("masterFeedbackSection").classList.remove("hidden");
-            renderMasterFeedbacks();
+            sessionStorage.setItem("bossNews_isMaster", "true");
+            if (authError) authError.innerText = "";
+            document.getElementById("masterLoginForm").classList.add("hidden");
+            document.getElementById("masterLoggedMenu").classList.remove("hidden");
+            masterPwInput.value = "";
+            showMasterFeedbackView();
             trackGAEvent('master_login', { 'status': 'success' });
         } else {
-            document.getElementById("masterAuthMsg").innerText = "비밀번호가 일치하지 않습니다.";
-            document.getElementById("masterAuthMsg").style.color = "#dc2626";
+            if (authError) {
+                authError.innerText = "비밀번호가 일치하지 않습니다.";
+                authError.style.color = "#dc2626";
+            }
         }
-    });
+    }
+
+    if (masterLoginBtn) {
+        masterLoginBtn.addEventListener("click", handleMasterLogin);
+    }
+    if (masterPwInput) {
+        masterPwInput.addEventListener("keyup", (e) => {
+            if (e.key === "Enter") handleMasterLogin();
+        });
+    }
+
+    // 마스터 전용 메뉴 버튼 이벤트
+    const openMasterFeedbackBtn = document.getElementById("openMasterFeedbackBtn");
+    if (openMasterFeedbackBtn) {
+        openMasterFeedbackBtn.addEventListener("click", () => {
+            showMasterFeedbackView();
+        });
+    }
+
+    const closeMasterFeedbackBtn = document.getElementById("closeMasterFeedbackBtn");
+    if (closeMasterFeedbackBtn) {
+        closeMasterFeedbackBtn.addEventListener("click", () => {
+            document.getElementById("masterFeedbackSection").classList.add("hidden");
+            document.getElementById("newsListContainer").classList.remove("hidden");
+            document.getElementById("paginationContainer").classList.remove("hidden");
+            document.getElementById("categoryCaption").classList.remove("hidden");
+            const activeTab = document.querySelector(".tab-btn[data-category='" + currentCategory + "']");
+            if (activeTab) activeTab.classList.add("active");
+            applyFilters();
+        });
+    }
+
+    const masterLogoutBtn = document.getElementById("masterLogoutBtn");
+    if (masterLogoutBtn) {
+        masterLogoutBtn.addEventListener("click", () => {
+            isMaster = false;
+            sessionStorage.removeItem("bossNews_isMaster");
+            document.getElementById("masterLoggedMenu").classList.add("hidden");
+            document.getElementById("masterLoginForm").classList.remove("hidden");
+            document.getElementById("masterFeedbackSection").classList.add("hidden");
+            document.getElementById("newsListContainer").classList.remove("hidden");
+            document.getElementById("paginationContainer").classList.remove("hidden");
+            document.getElementById("categoryCaption").classList.remove("hidden");
+            const activeTab = document.querySelector(".tab-btn[data-category='" + currentCategory + "']");
+            if (activeTab) activeTab.classList.add("active");
+            applyFilters();
+        });
+    }
 
     // 피드백 폼 제출
     document.getElementById("feedbackForm").addEventListener("submit", (e) => {
@@ -412,22 +476,55 @@ function goToPage(page) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function showMasterFeedbackView() {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById("newsListContainer").classList.add("hidden");
+    document.getElementById("paginationContainer").classList.add("hidden");
+    document.getElementById("categoryCaption").classList.add("hidden");
+    document.getElementById("feedbackSection").classList.add("hidden");
+    document.getElementById("masterFeedbackSection").classList.remove("hidden");
+    renderMasterFeedbacks();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (window.innerWidth <= 768) {
+        const sidebar = document.getElementById("sidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        if (sidebar) sidebar.classList.add("collapsed");
+        if (sidebarOverlay) sidebarOverlay.classList.remove("active");
+    }
+}
+
 function renderMasterFeedbacks() {
     const listEl = document.getElementById("feedbackList");
     const feedbacks = JSON.parse(localStorage.getItem("user_feedbacks") || "[]");
 
     if (feedbacks.length === 0) {
-        listEl.innerHTML = "<p>접수된 피드백이 없습니다.</p>";
+        listEl.innerHTML = `
+            <div style="padding: 24px; text-align: center; background: #ffffff; border-radius: 6px; border: 1px solid #e2e8f0; color: #64748b;">
+                현재 접수된 피드백이 없습니다.
+            </div>
+        `;
         return;
     }
 
-    let html = "";
+    let html = `<p style="margin-bottom: 12px; font-weight: 600; color: #334155;">총 <strong>${feedbacks.length}</strong> 건의 접수된 피드백이 있습니다.</p>`;
     feedbacks.forEach(fb => {
+        const typeBg = fb.type === "버그 신고" ? "#fef2f2" : "#f0fdf4";
+        const typeColor = fb.type === "버그 신고" ? "#991b1b" : "#166534";
         html += `
-            <div style="padding: 12px; border-bottom: 1px solid #e2e8f0;">
-                <strong>[${fb.type}]</strong> <small>${fb.date}</small> - <em>${escapeHtml(fb.user)}</em>
-                <p style="margin-top: 4px; color: #475569;">${escapeHtml(fb.content)}</p>
-                <button onclick="deleteFeedback(${fb.id})" style="color: #dc2626; background: none; border: none; cursor: pointer; font-size: 0.8rem;">🗑️ 피드백 삭제</button>
+            <div style="padding: 14px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+                    <div>
+                        <span style="background: ${typeBg}; color: ${typeColor}; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.8rem;">${escapeHtml(fb.type)}</span>
+                        <span style="font-size: 0.85rem; color: #64748b; margin-left: 8px;">작성자: <strong>${escapeHtml(fb.user)}</strong></span>
+                    </div>
+                    <span style="font-size: 0.78rem; color: #94a3b8;">${fb.date}</span>
+                </div>
+                <p style="margin: 8px 0; color: #1e293b; line-height: 1.5; white-space: pre-wrap; font-size: 0.92rem;">${escapeHtml(fb.content)}</p>
+                <div style="text-align: right; margin-top: 6px;">
+                    <button onclick="deleteFeedback(${fb.id})" style="color: #dc2626; background: #fff1f2; border: 1px solid #fecdd3; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600;">🗑️ 삭제</button>
+                </div>
             </div>
         `;
     });

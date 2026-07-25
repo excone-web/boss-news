@@ -124,9 +124,16 @@
 
             <div id="masterSection">
                 <h4>🔑 마스터 로그인</h4>
-                <input type="password" id="masterPassword" placeholder="비밀번호 입력">
-                <button id="masterLoginBtn" class="btn-primary">로그인</button>
-                <p id="masterAuthMsg" class="auth-msg"></p>
+                <div id="masterLoginForm">
+                    <input type="password" id="masterPassword" placeholder="비밀번호 입력">
+                    <button id="masterLoginBtn" class="btn-primary">로그인</button>
+                    <p id="masterAuthErrorMsg" class="auth-msg"></p>
+                </div>
+                <div id="masterLoggedMenu" class="hidden">
+                    <p class="auth-msg" style="color: #166534; font-weight: 600; margin-bottom: 8px;">🔓 마스터 인증 성공!</p>
+                    <button id="openMasterFeedbackBtn" class="btn-feedback" style="background: #059669; width: 100%; margin-bottom: 6px;">📋 접수된 피드백 관리</button>
+                    <button id="masterLogoutBtn" class="btn-secondary" style="width: 100%; padding: 6px; font-size: 0.82rem; cursor: pointer; border: 1px solid #cbd5e1; background: #fff; border-radius: 6px;">🔒 로그아웃</button>
+                </div>
             </div>
         </div>
     </aside>
@@ -197,9 +204,11 @@
         </section>
 
         <!-- 마스터 피드백 관리 영역 -->
-        <section id="masterFeedbackSection" class="master-feedback-section hidden">
-            <hr>
-            <h3>📋 접수된 피드백 관리 (마스터 전용)</h3>
+        <section id="masterFeedbackSection" class="master-feedback-section hidden" style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="margin: 0; color: #1e293b; font-size: 1.15rem;">📋 접수된 피드백 관리 <span style="font-size: 0.85em; font-weight: normal; color: #059669;">(마스터 전용)</span></h3>
+                <button id="closeMasterFeedbackBtn" class="btn-secondary" style="padding: 6px 14px; font-weight: 600; cursor: pointer; border: 1px solid #94a3b8; background: #fff; border-radius: 6px; font-size: 0.85rem;">← 뉴스 목록으로 돌아가기</button>
+            </div>
             <div id="feedbackList"></div>
         </section>
 
