@@ -281,7 +281,7 @@ function renderArticles() {
     renderPagination(totalPages);
 }
 
-// 100% 순수 인라인 텍스트 기반 미니멀 페이지네이션
+// 100% 순수 인라인 텍스트 기반 미니멀 단일 행 페이지네이션
 function renderPagination(totalPages) {
     const pagContainer = document.getElementById("paginationContainer");
     if (totalPages <= 1) {
@@ -289,7 +289,8 @@ function renderPagination(totalPages) {
         return;
     }
 
-    const windowSize = 15;
+    const isMobile = window.innerWidth <= 768;
+    const windowSize = isMobile ? 7 : 15;
     let startP = Math.max(1, currentPage - Math.floor(windowSize / 2));
     let endP = Math.min(totalPages, startP + windowSize - 1);
     if (endP - startP + 1 < windowSize) {
@@ -297,18 +298,20 @@ function renderPagination(totalPages) {
     }
 
     let html = "";
-    
+
+    if (currentPage > 1) {
+        html += `<button class="page-link" onclick="goToPage(1)">|◀</button>`;
+        html += `<button class="page-link" onclick="goToPage(${currentPage - 1})">◀</button>`;
+    }
+
     for (let p = startP; p <= endP; p++) {
         const isActive = (p === currentPage) ? "active" : "";
-        html += `<button class="page-link ${isActive}" onclick="goToPage(${p})">${p}</button> `;
+        html += `<button class="page-link ${isActive}" onclick="goToPage(${p})">${p}</button>`;
     }
 
     if (currentPage < totalPages) {
-        html += `<button class="page-link" onclick="goToPage(${currentPage + 1})">▶</button> `;
+        html += `<button class="page-link" onclick="goToPage(${currentPage + 1})">▶</button>`;
         html += `<button class="page-link" onclick="goToPage(${totalPages})">▶|</button>`;
-    } else {
-        html += `<button class="page-link disabled">▶</button> `;
-        html += `<button class="page-link disabled">▶|</button>`;
     }
 
     pagContainer.innerHTML = html;

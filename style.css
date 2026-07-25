@@ -277,7 +277,7 @@ body {
 }
 
 .article-row-meta {
-    display: contents; /* PC에서는 메타 컨테이너를 그리드 열에 그대로 바인딩 */
+    display: contents;
 }
 
 .mobile-only-date {
@@ -326,7 +326,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     margin-top: 14px;
     padding-top: 12px;
     border-top: 1px solid var(--border-color);
@@ -343,6 +343,7 @@ body {
     cursor: pointer;
     padding: 2px 6px;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .page-link.active {
@@ -401,7 +402,7 @@ body {
 }
 
 /* ==========================================================================
-   📱 모바일 전용 제목 정보성 극대화 2행 멀티라인 레이아웃 (Mobile Exclusive)
+   📱 모바일 전용 단일 행 페이지네이션 및 반응형 UI
    ========================================================================== */
 @media screen and (max-width: 768px) {
     body {
@@ -487,7 +488,6 @@ body {
         margin-bottom: 16px;
     }
 
-    /* 모바일 기사 행: 1행(언론사+축약시각) ➔ 2행(100% 폭 최대 2줄 기사 제목) */
     .article-row {
         display: flex;
         flex-direction: column;
@@ -523,7 +523,6 @@ body {
         display: none !important;
     }
 
-    /* 모바일 제목: 100% 가로 너비로 2줄까지 넉넉하게 표시하여 뉴스 내용 완벽 파악 가능 */
     .title-link {
         font-size: 0.93rem;
         font-weight: 600;
@@ -539,15 +538,29 @@ body {
         width: 100%;
     }
 
+    /* 모바일 100% 단일 행 페이지네이션 최적화 (절대 줄바꿈 방지) */
     .pagination-container {
-        gap: 4px;
-        flex-wrap: wrap;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
         margin-top: 12px;
         padding-top: 10px;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .pagination-container::-webkit-scrollbar {
+        display: none;
     }
 
     .page-link {
-        font-size: 0.82rem;
-        padding: 3px 5px;
+        font-size: 0.8rem;
+        padding: 2px 4px;
+        flex-shrink: 0;
+        white-space: nowrap;
     }
 }
