@@ -1,0 +1,46 @@
+name: 2시간 주기 뉴스 자동 수집 및 배포 (GitHub Actions)
+
+on:
+  schedule:
+    # 00:00시 기준으로 매 2시간마다 자동 실행 (00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00 UTC/KST)
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # GitHub 웹 UI에서 수동 실행 지원
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python 환경 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: 의존성 패키지 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 뉴스 크롤링 및 articles.json / sitemap.xml 빌드
+        run: |
+          python build_data.py
+
+      - name: 변경된 articles.json 및 sitemap.xml 자동 커밋 & 푸시
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add articles.json sitemap.xml news.db
+          if git diff --staged --quiet; then
+            echo "변경사항이 없습니다."
+          else
+            git commit -m "auto: 2시간 주기 정기 뉴스 데이터 자동 수집 및 갱신 [skip ci]"
+            git push origin main
+          fi

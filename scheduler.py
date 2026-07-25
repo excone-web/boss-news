@@ -6,15 +6,14 @@ Streamlit 실행 시 중복 실행되지 않도록 싱글톤 패턴 및 백그�
 """
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.interval import IntervalTrigger
-from config import CRAWL_INTERVAL_HOURS
+from apscheduler.triggers.cron import CronTrigger
 from database import init_db
 from scraper import run_news_crawler
 
 _scheduler = None
 
 def init_scheduler() -> BackgroundScheduler:
-    """스케줄러 싱글톤 초기화 및 작업 등록"""
+    """스케줄러 싱글톤 초기화 및 작업 등록 (00:00 기준 매 2시간 주기)"""
     global _scheduler
     if _scheduler is not None and _scheduler.running:
         return _scheduler
@@ -24,17 +23,17 @@ def init_scheduler() -> BackgroundScheduler:
 
     _scheduler = BackgroundScheduler(daemon=True)
     
-    # 2시간(기본값) 간격으로 뉴스 자동 수집 등록
+    # 00:00시 기준으로 매 2시간마다 정각 실행
     _scheduler.add_job(
         func=run_news_crawler,
-        trigger=IntervalTrigger(hours=CRAWL_INTERVAL_HOURS),
+        trigger=CronTrigger(hour='0,2,4,6,8,10,12,14,16,18,20,22', minute=0),
         id="news_crawler_job",
-        name="주기적 뉴스 RSS 자동 수집",
+        name="00:00 기준 매 2시간 정기 뉴스 RSS 자동 수집",
         replace_existing=True
     )
     
     _scheduler.start()
-    print(f"[Scheduler] 백그라운드 뉴스 수집 스케줄러 시작됨 ({CRAWL_INTERVAL_HOURS}시간 간격)")
+    print("[Scheduler] 백그라운드 뉴스 수집 스케줄러 시작됨 (00:00 기준 매 2시간 주기)")
     return _scheduler
 
 def trigger_manual_crawl() -> int:

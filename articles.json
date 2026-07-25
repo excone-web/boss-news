@@ -1,8 +1,3298 @@
 {
-  "updated_at": "2026-07-24 00:11:55",
+  "updated_at": "2026-07-25 14:03:54",
   "interval_hours": 2,
-  "total_count": 985,
+  "total_count": 1033,
   "articles": [
+    {
+      "id": 22523,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "'신천지 개입' 의혹 던진 친명계에 거센 반발...정청래도 공세 나섰다",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124395",
+      "published_at": "2026-07-25 13:21:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21764,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "靑 \"국내 기업-글로벌 빅테크 기업, 9천500억불 규모 반도체 협력\"",
+      "url": "https://www.imaeil.com/page/view/2026072513070292706",
+      "published_at": "2026-07-25 13:07:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22524,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "폭발한 민심, 천만 개미들의 분노...이재명과 김용범 누가 책임질건가 [출연:목격자K, 감동란┃선우윤호의 MZ레지스탕스]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124113",
+      "published_at": "2026-07-25 13:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22344,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "[사설] 중앙선관위는 선거소청 생중계하라",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11333",
+      "published_at": "2026-07-25 12:58:27",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22525,
+      "media_name": "펜앤드마이크",
+      "category": "문화/연예/스포츠",
+      "title": "[박준규의 이슈 언박싱] 뉴발란스 건곤감리 티셔츠, 출시부터 판매 중단까지...무슨 일이 있었길래",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124397",
+      "published_at": "2026-07-25 12:46:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21765,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "\"AI 대세론 편승 안 돼\"…전국언론노조, 숙의 없는 도입 우려",
+      "url": "https://www.imaeil.com/page/view/2026072512415187123",
+      "published_at": "2026-07-25 12:45:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22573,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "“재생에너지만으론 요금 못 막는다”… 김성환 장관의 현실론인가, 정책 전환인가",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34408",
+      "published_at": "2026-07-25 12:45:07",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22526,
+      "media_name": "펜앤드마이크",
+      "category": "일반/종합",
+      "title": "\"집 안 샀더니 몇 배 뛰었더라\" 인터뷰 사라졌다가...EBS에서 해당 영상 완전히 내려갔다, 왜?",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124396",
+      "published_at": "2026-07-25 12:32:03",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21766,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "홍준표 \"국힘, 신천지 먼저 끌여들여놓고 민주당 비판…가관\"",
+      "url": "https://www.imaeil.com/page/view/2026072511465512951",
+      "published_at": "2026-07-25 12:15:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22527,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "인천시 전 간부 유족, 박찬대 근조기 설치 거부...野 \"정치보복이 부른 비극\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124393",
+      "published_at": "2026-07-25 12:12:59",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21767,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "울진, 영덕에서 어선 침수 잇따라",
+      "url": "https://www.imaeil.com/page/view/2026072511522559658",
+      "published_at": "2026-07-25 11:59:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22528,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "이재명 만류에도 정성호 사퇴 의지...野 \"도망치고 싶을 것\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124392",
+      "published_at": "2026-07-25 11:46:51",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22423,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "나경원 \"정성호 사의 표명은 '범죄자대통령 사법파괴'의 말로\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28233",
+      "published_at": "2026-07-25 11:45:24",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22574,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "[오늘날씨] 중복에 찾아온 ‘찜통더위’…포항·경주 체감 38도, 수도권·강원 비",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34405",
+      "published_at": "2026-07-25 11:23:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21768,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "\"내 손길 뿌리쳐\" 8살 여아 때려 실신시키고 경찰까지 폭행한 50대…'집행유예'",
+      "url": "https://www.imaeil.com/page/view/2026072511043558720",
+      "published_at": "2026-07-25 11:19:46",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22341,
+      "media_name": "한미일보",
+      "category": "경제/부동산",
+      "title": "WSJ: 임금 상승률이 이란발 물가 상승률보다 높아",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11330",
+      "published_at": "2026-07-25 11:07:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21769,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "대백 최대주주 지분 매수인, 1차 중도금 14억원 납부",
+      "url": "https://www.imaeil.com/page/view/2026072510342722191",
+      "published_at": "2026-07-25 11:01:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22529,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "업보 맞은 민주당 청년정치인? \"조롱과 혐오 컨텐츠로 삼지 말아야\" [출연:목격자K, 감동란┃선우윤호의 MZ레지스탕스]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124111",
+      "published_at": "2026-07-25 11:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22530,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "펜앤마이크 차세대 리더 발굴 프로젝트 ‘나는 보수다’ 본선 40인전 개막",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124384",
+      "published_at": "2026-07-25 10:56:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22531,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "나경원 \"공익 위한 탐사보도 하지 말란 것···거대기업만 좋은 일\" 우리금융 직격",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124385",
+      "published_at": "2026-07-25 10:56:45",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22532,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "《반일종족주의》 공저자 이우연 박사, '위안부 명예훼손' 혐의로 벌금 300만 원 약식명령",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124391",
+      "published_at": "2026-07-25 10:56:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22424,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "트럼프, EU의 미국 빅테크 과징금 부과에 \"즉각적인 301조 조사 착수\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28232",
+      "published_at": "2026-07-25 10:44:59",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21770,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "李대통령, '샌프란 AI 선언'…\"혁신과 투자 무대로 韓 선택 해달라\"[전문]",
+      "url": "https://www.imaeil.com/page/view/2026072510071748819",
+      "published_at": "2026-07-25 10:41:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22425,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "\"참정권 회복의 그날까지 우리는 포기하지 않는다\"...강남역에서 울린 \"재선거, 국민주도특검\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28231",
+      "published_at": "2026-07-25 10:39:14",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22426,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "정성호 법무, 사의 표명...여당 '검찰 보완수사 폐지' 독주에 '소신 배수진'",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28230",
+      "published_at": "2026-07-25 10:34:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22427,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "[포토] 참정권 수호를 위해 용인도 뭉쳤다",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28204",
+      "published_at": "2026-07-25 10:32:21",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22338,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "네타냐후 영장 청구한 ICC 검사장, 성비위로 결국 해임",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11332",
+      "published_at": "2026-07-25 10:13:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21771,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "\"휴대전화 안 보여줘서\" 여친 눕혀 목조르고 돈 뜯은 20대男…'집행유예'",
+      "url": "https://www.imaeil.com/page/view/2026072506512530664",
+      "published_at": "2026-07-25 10:07:58",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22473,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "안보파괴 안규백 탄핵촉구 국민대회 \"병역 의혹 해명하고 즉각 사퇴하라\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5853",
+      "published_at": "2026-07-25 09:41:45",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21772,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "\"李대통령 '더불어근저당'이 통상적 거래?\"…지지율 '폭락'이 대신 답했다[금주의 정치舌전]",
+      "url": "https://www.imaeil.com/page/view/2026072315203877847",
+      "published_at": "2026-07-25 09:32:23",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22474,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "황교안 \"4.15 총선부터 모든 선거 전수조사·재개표 실시하라\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5856",
+      "published_at": "2026-07-25 09:31:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22575,
+      "media_name": "독립신문",
+      "category": "문화/연예/스포츠",
+      "title": "대한민국 디스플레이, 세계의 눈을 지배하다!",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34401",
+      "published_at": "2026-07-25 09:25:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22576,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "美 원전·반도체 공급망 전쟁 본격화… NRC·인텔, 중소기업 조달 생태계 구축 나섰다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34402",
+      "published_at": "2026-07-25 09:25:23",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22577,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "경찰, 강선우 의원 ‘쪼개기 후원’ 의혹 무혐의 처분",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34375",
+      "published_at": "2026-07-25 09:25:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22578,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "중국을 떠나는 공장, 미래를 향하는 LG전자",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34325",
+      "published_at": "2026-07-25 09:25:06",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22475,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "쿠바·베네수엘라·구소련 생존자가 말하는 ‘미국이 사회주의로 변할 때 벌어지는 일’",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5857",
+      "published_at": "2026-07-25 09:22:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22356,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "\"이란 새 최고지도자, 전임자보다 핵무기에 더 관심\"< NYT >",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11331",
+      "published_at": "2026-07-25 09:17:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22476,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "“평화유지군인가, 스파이인가?” 美의회, 중국의 ‘유엔 간첩 활동’ 전격 비판",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5858",
+      "published_at": "2026-07-25 09:12:13",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22477,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "트럼프, 美데이터센터 '자체 원전' 의무화 발표... AI 전력난 정면 돌파",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5859",
+      "published_at": "2026-07-25 09:06:24",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22533,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "이미 이재명 몰락은 시작됐다, 국민 목소리 듣지 않은 '죗값' [출연:문성호, 황승환┃선우윤호의 'MZ레지스탕스']",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124020",
+      "published_at": "2026-07-25 09:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22428,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "이현종 논설위원 \"李 대통령, 유시민에 두 차례 만남 제안했으나 거절당해\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28228",
+      "published_at": "2026-07-25 08:56:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22429,
+      "media_name": "프리진뉴스",
+      "category": "문화/연예/스포츠",
+      "title": "\"태극기 아래 땀 흘린 48일의 기록\"…참정권 수호 운동 라이브 사진전 '묵직한 울림'",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28227",
+      "published_at": "2026-07-25 08:22:15",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22430,
+      "media_name": "프리진뉴스",
+      "category": "일반/종합",
+      "title": "바레인·쿠웨이트, 사상 첫 이란 본토 타격… 장기전 치닫는 중동",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28225",
+      "published_at": "2026-07-25 08:21:53",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21773,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "경찰, 아이돌그룹 '코르티스' 숙소 무단 침입한 中 여성 2명 체포",
+      "url": "https://www.imaeil.com/page/view/2026072508131355845",
+      "published_at": "2026-07-25 08:13:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22350,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 “이란과의 대화 진행중…공습 준비도 완료”",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11329",
+      "published_at": "2026-07-25 08:09:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22357,
+      "media_name": "한미일보",
+      "category": "IT/과학",
+      "title": "FT \"'AI붐' 현금 확보한 한국 기업들, 미국 기업 M&A\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11322",
+      "published_at": "2026-07-25 08:02:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22339,
+      "media_name": "한미일보",
+      "category": "지역/사설",
+      "title": "장동혁 오늘 김해·대구行…참정권 침해 규탄집회 참석",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11325",
+      "published_at": "2026-07-25 08:01:02",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22351,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "이란, 미군 주둔 이라크 북부 도시에 드론 공격",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11328",
+      "published_at": "2026-07-25 08:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22536,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "이재명 집 매매 꼼수에 민심 격노!...'더불어근저당' 멸칭에 극좌들 발칵 [주말 몰아보기]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124368",
+      "published_at": "2026-07-25 08:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22535,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "\"80 평생 너 같은 놈은 처음\" 트럼프, 李 씨 말릴 준비 마쳤다 [주말 몰아보기]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124370",
+      "published_at": "2026-07-25 08:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22534,
+      "media_name": "펜앤드마이크",
+      "category": "일반/종합",
+      "title": "'나 죽으면 너도 끝' 선관위 늪에 목까지 빠진 李정권...탈출구가 없다 [주말 몰아보기]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124371",
+      "published_at": "2026-07-25 08:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21774,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[금주의 이슈] 대권은 덧셈으로 이어지고 뺄셈으로 끊긴다…'3당 합당'부터 '명청대전'까지",
+      "url": "https://www.imaeil.com/page/view/2026070422071933279",
+      "published_at": "2026-07-25 08:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22431,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "미·영, 호르무즈 해협 선박 보호 위한 국제 연합체 결성 추진",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28226",
+      "published_at": "2026-07-25 07:40:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22579,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "美 301조 12.5% 관세 확정… “선방 아닌 통상 압박의 유예”",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34400",
+      "published_at": "2026-07-25 07:28:28",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22432,
+      "media_name": "프리진뉴스",
+      "category": "지역/사설",
+      "title": "오늘 중복(中伏) 무더위 '기승'...대구 최고 37℃",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28224",
+      "published_at": "2026-07-25 07:19:27",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22368,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "\"트럼프, 내주 미국 방문하는 젤렌스키와 회담\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11321",
+      "published_at": "2026-07-25 07:07:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22352,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 \"우리에겐 다양한 형태 관세 있어…관세덕에 투자 유치\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11327",
+      "published_at": "2026-07-25 07:01:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22433,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "대구시·지역 정치권, 28일 국회서 ‘2차 공공기관 이전 유치전략’ 토론회",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28223",
+      "published_at": "2026-07-25 06:36:57",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22434,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "\"교육은 국가의 것이 아니다\"… 국회 앞 '다음세대 교육권 정상화' 국민대회 개최",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28221",
+      "published_at": "2026-07-25 06:35:54",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21776,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[김건표의 연극리뷰] '웃다가 울게 되는 치매 노인들의 생존법'경남 사천,극단 장자번덕 이훈호 연출의〈운수대통〉",
+      "url": "https://www.imaeil.com/page/view/2026072417140505218",
+      "published_at": "2026-07-25 06:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21775,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "[시사뒷담] 다음 피해자 막아온 '국민 법 감정'…檢 보완수사권 폐지 논쟁에도 작동?",
+      "url": "https://www.imaeil.com/page/view/2026071913293809792",
+      "published_at": "2026-07-25 06:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22369,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 \"이란과 진지하게 대화중…즉시 행동할 준비도 돼있어\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11326",
+      "published_at": "2026-07-25 06:07:20",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22337,
+      "media_name": "한미일보",
+      "category": "지역/사설",
+      "title": "[松山칼럼ㅣ종북 좌파 80년사] ㉛1991년 소련 해체",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11318",
+      "published_at": "2026-07-25 06:01:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22395,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "데일리콜러 “농업 인력 확보법은 사실상 불체자 사면”",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11319",
+      "published_at": "2026-07-25 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22394,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "'총격 파행' 백악관기자단 만찬 오늘 재개…트럼프, 보안강화 속 참석",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11323",
+      "published_at": "2026-07-25 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22370,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "EU, 틱톡 또 겨냥…\"온라인 위험에 아동 노출시켜\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11320",
+      "published_at": "2026-07-25 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22353,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 \"EU '美기업 약탈'에 301조 관세…큰 대가 치르게 될 것\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11324",
+      "published_at": "2026-07-25 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22347,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "[변종필 칼럼] 보완수사권, 누구를 위한 폐지인가?",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11317",
+      "published_at": "2026-07-25 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22580,
+      "media_name": "독립신문",
+      "category": "경제/부동산",
+      "title": "미국 오클로, 텍사스 시험용 원자로 '그로브스' 가동 승인… 차세대 원전 상용화 속도",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34399",
+      "published_at": "2026-07-25 04:30:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22581,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "[에너지 인사이트] 미국 원전이 던지는 4색 메시지… 80년 장기운전부터 민간 금융까지",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34398",
+      "published_at": "2026-07-25 04:30:32",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22582,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[기획] AI 데이터센터 전력난의 해법으로 떠오른 '차세대 원자로'",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34397",
+      "published_at": "2026-07-25 04:30:23",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21777,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[더사주 오늘의 띠별 운세] <7월 25일  토요일(음력 6월12일)>",
+      "url": "https://www.imaeil.com/page/view/2026072310363781275",
+      "published_at": "2026-07-25 04:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22478,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "부투연 \"국힘·민주당 특검 합의는 밀실야합\"… '부정선거' 본질 왜곡 규탄 성명",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5855",
+      "published_at": "2026-07-25 03:47:28",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22479,
+      "media_name": "트루스데일리",
+      "category": "지역/사설",
+      "title": "[진커밍스칼럼] 미국의 글로벌 도미노 전략",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5854",
+      "published_at": "2026-07-25 02:59:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22480,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "외교부 이어 군까지… 사이버 공격에 잇단 노출",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5850",
+      "published_at": "2026-07-25 01:45:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22481,
+      "media_name": "트루스데일리",
+      "category": "문화/연예/스포츠",
+      "title": "백선엽 장군 영화 ‘승리의 시작’ 주한미군 부대 상영... 한미동맹의 가치 되새겨",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5851",
+      "published_at": "2026-07-25 01:45:35",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22482,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "이인호 교수 \"올림픽공원은 제2의 6·25\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5852",
+      "published_at": "2026-07-25 01:45:22",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22583,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "비핵화 최종폐기 사안 ...北 \"한미일 지역 불안전 근원\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34396",
+      "published_at": "2026-07-25 01:13:37",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22584,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "'30억원대  동탄 전세사기'검찰 수사관 구속심사 출석",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34391",
+      "published_at": "2026-07-25 01:11:28",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22585,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "정성호 사의에 전직 법무장관 직격…\"도망간다고 책임 없어지지 않는다\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34393",
+      "published_at": "2026-07-25 01:11:16",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22586,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "[시론] 15년 만의 동경전력(TEPCO) 원전 재가동…동북아 LNG 시장과 에너지 안보의 판이 바뀐다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34389",
+      "published_at": "2026-07-25 01:11:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22537,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "추경호 대구시장, 기획예산처 장관 면담…‘TK신공항·AI·로봇’ 국비 반영 총력전",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124383",
+      "published_at": "2026-07-25 01:02:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22396,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "이란, 쿠웨이트 등 美기지 공격…\"미군 반경 500ｍ 밖 대피하라\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11316",
+      "published_at": "2026-07-25 00:03:07",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22340,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "법원 \"최태원, 노소영에 9천440억원 지급\"…이자 하루 1.3억원",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11315",
+      "published_at": "2026-07-25 00:01:45",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22538,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "김승수 의원, ‘대한민국 헌정대상’ 수상…21·22대 ‘6년 연속’ 대기록",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124382",
+      "published_at": "2026-07-24 23:26:54",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21778,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "\"고깃집 깡통의자, 손가락 깔리면 절단…본 환자만 5명\"…대학병원 교수의 경고",
+      "url": "https://www.imaeil.com/page/view/2026072418584558957",
+      "published_at": "2026-07-24 23:08:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21779,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "정성호 법무부 장관, 이재명 대통령에 사의 표명…李는 만류",
+      "url": "https://www.imaeil.com/page/view/2026072422305398939",
+      "published_at": "2026-07-24 22:31:32",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21780,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "유시민 \"李, 계파 수장처럼 행동…당대표는 대통령 부하 아니다\"",
+      "url": "https://www.imaeil.com/page/view/2026072419475678069",
+      "published_at": "2026-07-24 21:50:40",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22342,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "[신간] 광주의 진실에 다가가다… ‘두 총성의 기억, 두 광주의 눈물’",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11314",
+      "published_at": "2026-07-24 21:42:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22435,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "'이종섭 호주도피 혐의' 윤석열 전 대통령에 징역 5년 구형… \"사법 무력화\" vs \"적법한 인사\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28219",
+      "published_at": "2026-07-24 21:31:08",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22587,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "일본은 원전 옆으로 AI 데이터센터를 옮겼다…송전망 한계 넘는 '전력 지산지소' 전략",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34386",
+      "published_at": "2026-07-24 21:00:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21781,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "성매매 여중생에 \"다른 성관계 영상 보여줄게\"…최영중 추가 범행 정황 포착",
+      "url": "https://www.imaeil.com/page/view/2026072419000531088",
+      "published_at": "2026-07-24 20:43:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22539,
+      "media_name": "펜앤드마이크",
+      "category": "일반/종합",
+      "title": "선관위 전산조작…서울·경기만이 아니었다 / 싸우는 장동혁…멱살 잡는 反장동혁 세력들 - 박상규의 뉴스 인사이트 [이것이 뉴스다]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124367",
+      "published_at": "2026-07-24 20:22:09",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22540,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "유시민 악담에 이재명 지지율 또 떨어졌다 / 정청래 역전승?...떨고있는 이재명-김민석 - 황성욱 변호사의 법대로 좀 합시다 [이것이 뉴스다]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124366",
+      "published_at": "2026-07-24 20:17:51",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22588,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "예외가 원칙이 된 포괄임금제…이제는 바로잡을 때",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34349",
+      "published_at": "2026-07-24 20:10:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22436,
+      "media_name": "프리진뉴스",
+      "category": "일반/종합",
+      "title": "[포토] 습기 품은 저녁 오렌지빛 노을",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28217",
+      "published_at": "2026-07-24 20:03:20",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22541,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "선관위 민낯 다 드러난 것 같죠? 아뇨, 이제부터 시작입니다 / 주진우 국민의힘 의원 [굿모닝 대한민국]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124360",
+      "published_at": "2026-07-24 20:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22589,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "[시론] 장마 속에서도 100GW 돌파… 진짜 위기는 '저녁 7시'에 시작된다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34382",
+      "published_at": "2026-07-24 19:44:34",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22590,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "AI 전력난 해법은 '바다 위 원전'… 美 해상 SMR 속도전에 삼성중공업도 출격",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34380",
+      "published_at": "2026-07-24 19:44:30",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22591,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[단독] 메타, RE100 떠나 AI 전력 확보 '현실 선택'… 가스발전소 대거 투자",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34379",
+      "published_at": "2026-07-24 19:44:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22592,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[독립신문 칼럼] 2035년은 너무 늦다… SMR, 이제는 '개발'이 아니라 '국가 총력전'이다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34378",
+      "published_at": "2026-07-24 19:44:20",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22593,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "[독립신문 칼럼] MMR 시대, 정부는 노를 젓지 말고 바닷길을 열어라",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34377",
+      "published_at": "2026-07-24 19:44:17",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21782,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "잠든 中 여성 추행하고 '소변테러'도 한 日 남성…검찰, 징역 6개월 구형",
+      "url": "https://www.imaeil.com/page/view/2026072417041579856",
+      "published_at": "2026-07-24 19:35:13",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22542,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "폭염도 무색케 한 박완수 지사의 경남대도약 발판 마련 '종횡무진' 하루 일정",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124365",
+      "published_at": "2026-07-24 19:31:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22543,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "박완수, 박홍근 기획처장관 만나 \"경남대도약 위해 정부 지원 절실하다\" '설득",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124363",
+      "published_at": "2026-07-24 19:11:28",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21783,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "'채상병 사건' 3년…軍, 현장지휘관 4명 해임·강등 징계",
+      "url": "https://www.imaeil.com/page/view/2026072418494307173",
+      "published_at": "2026-07-24 19:04:20",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21784,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "정부, 8차 석유 최고가격 동결…휘발유 1,784원·경유 1,773원 유지",
+      "url": "https://www.imaeil.com/page/view/2026072416043005169",
+      "published_at": "2026-07-24 19:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22437,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "이종욱 의원 \"보유세 강화 무대였던 토론회…대통령은 신났지만 국민은 힘들었다\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28215",
+      "published_at": "2026-07-24 18:59:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22438,
+      "media_name": "프리진뉴스",
+      "category": "지역/사설",
+      "title": "[칼럼] 도대체 그 비용은 누가 내는가 (하)",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28212",
+      "published_at": "2026-07-24 18:41:41",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22439,
+      "media_name": "프리진뉴스",
+      "category": "지역/사설",
+      "title": "[칼럼] 도대체 그 비용은 누가 내는가 (상)",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28211",
+      "published_at": "2026-07-24 18:40:54",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22440,
+      "media_name": "프리진뉴스",
+      "category": "문화/연예/스포츠",
+      "title": "백선엽 장군 영화 ‘승리의 시작’ 주한미군 부대 상영",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28208",
+      "published_at": "2026-07-24 18:40:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22441,
+      "media_name": "프리진뉴스",
+      "category": "일반/종합",
+      "title": "뉴발란스, 태극 문양 티셔츠 논란 공식 사과…판매 중단·전액 환불 조치",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28205",
+      "published_at": "2026-07-24 18:38:20",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22354,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "국힘, “민주당, 보완수사권 폐지 당론 추인… 강성 지지층만 좇는 입법 폭주” 강력 비판",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11313",
+      "published_at": "2026-07-24 18:36:07",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22544,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "권영진이 어떤 인간인지 제가 제일 잘 압니다 /송국건 정치평론가 [굿모닝 대한민국]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124362",
+      "published_at": "2026-07-24 18:28:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21785,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북고 검도부, 대구대 총장기 전국고교 검도대회 단체전 우승",
+      "url": "https://www.imaeil.com/page/view/2026072418234947168",
+      "published_at": "2026-07-24 18:24:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21786,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "대구 출신 이창동 신작 '가능한 사랑', 베네치아영화제 경쟁 부문 진출",
+      "url": "https://www.imaeil.com/page/view/2026072418235083077",
+      "published_at": "2026-07-24 18:24:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22545,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "충격, 선관위 전산조작 또 있었다 | 장동혁은 싸우는데, 뒤에서 멱살 잡는 자들은? | 유시민 악담에 이재명 지지율 또 떨어졌다 [이것이 뉴스다]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124359",
+      "published_at": "2026-07-24 18:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21787,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "한동훈, '2호 법안'도 선관위 정조준…'선거철 휴가·휴직 조정법' 발의",
+      "url": "https://www.imaeil.com/page/view/2026072417431782271",
+      "published_at": "2026-07-24 17:59:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21788,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "중학교 추천 도서에 '李 자서전'·'1020 극우가 온다'…논란에 \"재선정\"",
+      "url": "https://www.imaeil.com/page/view/2026072417553953491",
+      "published_at": "2026-07-24 17:56:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22546,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "황교안 \"역대 선거 전반으로 수사 확대해야\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124361",
+      "published_at": "2026-07-24 17:50:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22548,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "신천지 신도 민주당 집단가입 정황...김민석이 말한 게 이거였나?",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124357",
+      "published_at": "2026-07-24 17:46:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22547,
+      "media_name": "펜앤드마이크",
+      "category": "일반/종합",
+      "title": "軍, 국군방첩사 전문요원 중 23% 오늘 원대복귀···차주 해체 수순",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124358",
+      "published_at": "2026-07-24 17:46:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22366,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "\"최종 투표율이 중요\" 변명한 선관위 직원…충청서도 조작 정황",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11311",
+      "published_at": "2026-07-24 17:30:33",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22397,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "中 자금 받아 대만 의원 선거 출마 前야당 직원 2년8개월형 확정",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11310",
+      "published_at": "2026-07-24 17:28:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22442,
+      "media_name": "프리진뉴스",
+      "category": "경제/부동산",
+      "title": "오락가락 변동성 무너지는 증시…코스피·코스닥 동반 급락",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28213",
+      "published_at": "2026-07-24 17:24:41",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21789,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "달이 녹아내린 여름밤…백희나 원작 뮤지컬 '달 샤베트', 8월 대구 공연",
+      "url": "https://www.imaeil.com/page/view/2026072417225612518",
+      "published_at": "2026-07-24 17:23:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21790,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "흉기 소지하고 금은방서 골드바 절도한 고교생, 망본 중학생…구속은 중학생만",
+      "url": "https://www.imaeil.com/page/view/2026072417082539905",
+      "published_at": "2026-07-24 17:11:16",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22443,
+      "media_name": "프리진뉴스",
+      "category": "일반/종합",
+      "title": "[포토] 행진하는 젊음은 즐겁다",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28203",
+      "published_at": "2026-07-24 17:06:08",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22550,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "민주당, '檢 보완수사권 폐지' 당론 추인...오는 30일 본회의 처리할듯",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124353",
+      "published_at": "2026-07-24 17:02:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22549,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "[양준서의 정조준] 친청계 최고위원 후보 3명은 전원 생존…‘공소취소·보완수사권 거래설’ 다시 소환",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124356",
+      "published_at": "2026-07-24 17:02:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21791,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "\"계룡산 천연수 수영장\"…거제 첫 하이엔드 1,307가구 아파트 등장",
+      "url": "https://www.imaeil.com/page/view/2026072417020541937",
+      "published_at": "2026-07-24 17:02:18",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21792,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "증시 요동에 성난 민심…\"단일 레버리지 도입 잘못\" 63%·\"보완책 불충분\" 59%",
+      "url": "https://www.imaeil.com/page/view/2026072413460600451",
+      "published_at": "2026-07-24 17:02:09",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21793,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "조재구 대구 남구청장, 사회복지 미래 논의 위한 토크콘서트 진행",
+      "url": "https://www.imaeil.com/page/view/2026072417000665508",
+      "published_at": "2026-07-24 17:00:49",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22346,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "“전산조작, 음모론 아닌 팩트였다”… 황교안 대표, 4·15총선 등 전 선거 수사 촉구",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11309",
+      "published_at": "2026-07-24 16:57:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21794,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "\"숨 쉬는 집 프로젝트\"…'사람과사람', 장애인가정 주거환경 개선 앞장",
+      "url": "https://www.imaeil.com/page/view/2026072416160228042",
+      "published_at": "2026-07-24 16:46:57",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22594,
+      "media_name": "독립신문",
+      "category": "경제/부동산",
+      "title": "장동혁 “부동산 정상화는 규제 아닌 시장…공급 확대·재건축 활성화가 해법”",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34376",
+      "published_at": "2026-07-24 16:41:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22595,
+      "media_name": "독립신문",
+      "category": "경제/부동산",
+      "title": "[단독] 오세훈, 李 대통령 부동산 인식 정면 비판…\"정비사업 공급 효과 부정이 시장 불안 키운다\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34374",
+      "published_at": "2026-07-24 16:41:45",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22596,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "경기 김포서 홀로 지내던 60대 남성 숨진 채 발견…경찰 수사",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34373",
+      "published_at": "2026-07-24 16:41:37",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22597,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "[단독] 원전 9기 계속운전 '비상'… 인력난에 막힌 심사, 전력공백 우려 커진다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34372",
+      "published_at": "2026-07-24 16:41:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22598,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "경북 경산 아파트 방화 폭발 피해자 1명 숨져…CCTV 확인 중 참변",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34371",
+      "published_at": "2026-07-24 16:41:24",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21795,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북경찰, 안동시청 이어 임시주택 공급업체도 압수수색",
+      "url": "https://www.imaeil.com/page/view/2026072416360947177",
+      "published_at": "2026-07-24 16:38:06",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22551,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "오만한 이재명과 민주당 쌍으로 나락에 떨어진다 / 송국건 정치평론가 [굿모닝 대한민국]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124354",
+      "published_at": "2026-07-24 16:37:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22483,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "최광 전 장관, 자유우파 지도자들에게 호소… \"부정선거 국민특검 쟁취로 대동단결해야\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5849",
+      "published_at": "2026-07-24 16:35:59",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21799,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[여야 내전(內戰)]'계파'(系派)는 사라지지 않는다. 다만…",
+      "url": "https://www.imaeil.com/page/view/2026071417041647250",
+      "published_at": "2026-07-24 16:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21798,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[여야 내전(內戰)]\"밀리면 수렁\" 진보는 계파 VS 보수는 인물",
+      "url": "https://www.imaeil.com/page/view/2026071716343393630",
+      "published_at": "2026-07-24 16:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21797,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[여야 내전(內戰)]바람직한 계파정치 \"정책, 신념, 이슈따라\"",
+      "url": "https://www.imaeil.com/page/view/2026071512361448022",
+      "published_at": "2026-07-24 16:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21796,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[여야 내전(內戰)]한국계파사 \"정권은 바뀌어도, 계파는 계속된다\"",
+      "url": "https://www.imaeil.com/page/view/2026071417042572528",
+      "published_at": "2026-07-24 16:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21800,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "\"주민 일상 회복이 최우선\"… 쿠팡CFS, 인천 화재 지역에 전면적·선제적 의료 및 피해 지원 나섰다",
+      "url": "https://www.imaeil.com/page/view/2026072416275319702",
+      "published_at": "2026-07-24 16:28:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22358,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "[박찬영 당뇨특집] ②한국인이 서양인보다 당뇨에 취약한 이유",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11308",
+      "published_at": "2026-07-24 16:20:35",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21801,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[기고-최완식] 대구·경북의 지속적 발전을 위한 자치정책 제언",
+      "url": "https://www.imaeil.com/page/view/2026072316083851417",
+      "published_at": "2026-07-24 16:18:46",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21802,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "도도무브댄스시어터, 신작 'HELIUM' 공연…욕망과 공허를 몸으로 말하다",
+      "url": "https://www.imaeil.com/page/view/2026072314345519536",
+      "published_at": "2026-07-24 16:11:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21803,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "iM유페이, 한국도로교통공단 TBN대구교통방송과 대중교통이 좋은 대구, ESG 가치 실현을 위해 맞손",
+      "url": "https://www.imaeil.com/page/view/2026072416112525501",
+      "published_at": "2026-07-24 16:11:34",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22552,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "‘상임위 전체회의 100% 출석’ 박대출 의원, 대한민국 헌정대상 수상",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124351",
+      "published_at": "2026-07-24 16:09:35",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21804,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "청송군, 폭염 대응 총력전…무더위쉼터 점검·취약계층 보호 강화",
+      "url": "https://www.imaeil.com/page/view/2026072414504014344",
+      "published_at": "2026-07-24 16:09:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21805,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "이혼소송 중 별거 가족 살해 시도한 50대父…아들은 용서했다",
+      "url": "https://www.imaeil.com/page/view/2026072415102450140",
+      "published_at": "2026-07-24 16:01:40",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21806,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "대구 북구 산격3동 브랜딩 '산격 삶', 세계 3대 디자인상 獨 레드닷 본상",
+      "url": "https://www.imaeil.com/page/view/2026072415571150030",
+      "published_at": "2026-07-24 15:57:47",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21807,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북 시·군의회 의장들 청송 집결…의장협의회 정기총회 개최",
+      "url": "https://www.imaeil.com/page/view/2026072415015226440",
+      "published_at": "2026-07-24 15:53:23",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22553,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "야심차게 연 부동산 토론회...되레 이재명 죄 자백 무대가 됐다 / 김기흥 국민의힘 미디어대변인 [굿모닝 대한민국]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124350",
+      "published_at": "2026-07-24 15:46:51",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22554,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "\"대기업이 중소 언론사 입틀막 시작\"...주진우, 우리금융지주 작심 비판",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124347",
+      "published_at": "2026-07-24 15:45:24",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21808,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "원내지도부와 충돌한 권영진 의원 두고 TK 정가 들끓어",
+      "url": "https://www.imaeil.com/page/view/2026072413593500902",
+      "published_at": "2026-07-24 15:35:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21809,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "박권현 청도군수와 기관단체장, 외국인 근로자 생활환경 점검나서",
+      "url": "https://www.imaeil.com/page/view/2026072415311550932",
+      "published_at": "2026-07-24 15:33:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22556,
+      "media_name": "펜앤드마이크",
+      "category": "문화/연예/스포츠",
+      "title": "[부산 야구, 기로에 서다] ④“‘부산형 대장동’ 우려”...부산시의회, ‘북항 돔구장’ 추진 겨냥 시정질문",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124348",
+      "published_at": "2026-07-24 15:31:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22555,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "[재계핫이슈] 최태원·노소영 9440억 재산분할은 ‘1대1 무승부’…법리는 노소영, 금액은 최태원",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124349",
+      "published_at": "2026-07-24 15:31:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21810,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "민주당, 보완수사권 포함 검찰 직접수사 금지 당론 추인",
+      "url": "https://www.imaeil.com/page/view/2026072415303146257",
+      "published_at": "2026-07-24 15:30:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21812,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "[털보기자의 '그사람']'소리와 공학' 이도류, 기술과 예술 잇는 박수관 명창",
+      "url": "https://www.imaeil.com/page/view/2026071722193350328",
+      "published_at": "2026-07-24 15:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21811,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[털보기자의 '그사람']전 세계와 소통하는 박수관 명창",
+      "url": "https://www.imaeil.com/page/view/2026072111195586062",
+      "published_at": "2026-07-24 15:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22363,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "[반론보도] <[신숙희 칼럼: 부정선거 특집] ①“짐승만도 못한 짓”을 한 선거 카르텔의 실체> 관련",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11305",
+      "published_at": "2026-07-24 15:26:34",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21813,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "\"탁구대가 생겼어요!\"…청송 청소년 제안이 정책으로, 첫 대회까지 열렸다",
+      "url": "https://www.imaeil.com/page/view/2026072414573337804",
+      "published_at": "2026-07-24 15:24:33",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21814,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "유시민 신간 '유럽 도시 기행 3' 2주 연속 베스트셀러 1위",
+      "url": "https://www.imaeil.com/page/view/2026072415121301322",
+      "published_at": "2026-07-24 15:21:14",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22557,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "[막전막후] ‘명픽’ 정민철 탈락은 5천만원대 테슬라 후유증?...유시민의 ‘촉법 평론가’ 한마디 통했나",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124346",
+      "published_at": "2026-07-24 15:18:07",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22558,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "최시원, '올공' 영상 공유하며 \"민주주의와 소중한 한 표의 가치 지키기 위해 노력\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124345",
+      "published_at": "2026-07-24 15:10:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22559,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "금전 문제로 지인과 다투다 살해 후 시신 유기한 40대 남성, 검찰은 '무기징역' 구형",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124341",
+      "published_at": "2026-07-24 15:05:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21815,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북도의회 의장단·상임위원장 워크숍 개최…환동해 발전전략·철강산업 경쟁력 논의",
+      "url": "https://www.imaeil.com/page/view/2026072414485087377",
+      "published_at": "2026-07-24 15:03:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21816,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "팔공산 천제단, 700년 만의 부활 꿈꾼다",
+      "url": "https://www.imaeil.com/page/view/2026072415002701948",
+      "published_at": "2026-07-24 15:01:54",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22560,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "[7/24 Live] \"선거 조작이 이렇게 쉬웠다고?\" 서버 싹 까자! 침묵은 공범! 최시원 '올공' 영상 공유, 폭망 이재명 부동산 토론회 [출연:이효원┃MZ레지스탕스]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124342",
+      "published_at": "2026-07-24 15:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21817,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "한국장학재단-한국교육과정평가원, 청년 학업 지원 업무협약 체결",
+      "url": "https://www.imaeil.com/page/view/2026072414541668679",
+      "published_at": "2026-07-24 14:55:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22345,
+      "media_name": "한미일보",
+      "category": "지역/사설",
+      "title": "[한미시론] 이제는 군인의 생존 과제인 경계마저 망치려 하는가?",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11304",
+      "published_at": "2026-07-24 14:54:49",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21818,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "산단 입주 중소기업 수출실적 증명 쉬워진다…관세청, 산업단지부호 327개 신설",
+      "url": "https://www.imaeil.com/page/view/2026072414531836849",
+      "published_at": "2026-07-24 14:53:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21819,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "현대차, 7%대 약세…2분기 실적 부진 여파",
+      "url": "https://www.imaeil.com/page/view/2026072414411012698",
+      "published_at": "2026-07-24 14:52:28",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21820,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[오동욱의 대구문화 오디세이] 한국대표 산업형 문화축제 '대구치맥페스티벌'",
+      "url": "https://www.imaeil.com/page/view/2026072317494693731",
+      "published_at": "2026-07-24 14:49:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21821,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[교육칼럼]첫 단추 어긋나면 자퇴서…내신 개편에 벼랑 끝 몰린 대구 고1 공교육의 그늘",
+      "url": "https://www.imaeil.com/page/view/2026071010041679813",
+      "published_at": "2026-07-24 14:43:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21822,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북 영천시, 제2탄약창 이전 기본계획·타당성 조사 용역 착수",
+      "url": "https://www.imaeil.com/page/view/2026072414394663604",
+      "published_at": "2026-07-24 14:41:33",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21823,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "민주당 포항 남·울릉 지역위 \"지진 관련자 무죄 충격…사법부 유감\"",
+      "url": "https://www.imaeil.com/page/view/2026072414313145444",
+      "published_at": "2026-07-24 14:40:04",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22561,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "오세훈, 기획예산처 장관 만나 \"노후 기반시설 국비 지원 확대해달라\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124344",
+      "published_at": "2026-07-24 14:37:09",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21824,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "대구 청년 작가 40명의 포트폴리오 한자리에",
+      "url": "https://www.imaeil.com/page/view/2026072414331015304",
+      "published_at": "2026-07-24 14:33:35",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21825,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "경찰, 경북 경산 아파트 관리실 방화 강제수사 착수…피의자 주거지·차량 압수수색",
+      "url": "https://www.imaeil.com/page/view/2026072414301595788",
+      "published_at": "2026-07-24 14:31:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21826,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[문학을 품은 영화] 오만과 편견…인간적 결함 속에 피어나는 로맨스",
+      "url": "https://www.imaeil.com/page/view/2026072010065205258",
+      "published_at": "2026-07-24 14:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22563,
+      "media_name": "펜앤드마이크",
+      "category": "문화/연예/스포츠",
+      "title": "강남구, 민선 9기 첫 홍보대사로 걸그룹 '키키' 위촉",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124340",
+      "published_at": "2026-07-24 14:29:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22562,
+      "media_name": "펜앤드마이크",
+      "category": "경제/부동산",
+      "title": "신혼부부 문턱 낮추자 신청 1000가구 몰렸다···진주시, 예산은 수요 못 따라가",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124343",
+      "published_at": "2026-07-24 14:29:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21827,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[임무상의 1957 그림일기]7월 22일 월요일/",
+      "url": "https://www.imaeil.com/page/view/2026071611051666735",
+      "published_at": "2026-07-24 14:28:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21828,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "에이치엘지노믹스, 코스닥 상장 첫날 34% 급락",
+      "url": "https://www.imaeil.com/page/view/2026072414262594219",
+      "published_at": "2026-07-24 14:27:30",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21829,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[쉽고 재미있는 사투리]<2>소나기는 왜 '소나기'가 되었을까?",
+      "url": "https://www.imaeil.com/page/view/2026072010274571686",
+      "published_at": "2026-07-24 14:22:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21830,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "몸의 소진과 지속을 춤으로…창작발레 '바나나 타임 : 0.1mg의 성녀들'",
+      "url": "https://www.imaeil.com/page/view/2026072314270198830",
+      "published_at": "2026-07-24 14:21:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21831,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "미술품 거래, 이제 지자체에 신고해야…미술서비스업 신고제 26일 시행",
+      "url": "https://www.imaeil.com/page/view/2026072414202888396",
+      "published_at": "2026-07-24 14:21:08",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22348,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "[이슈 진단] 선관위 ‘전산조작’ 의혹…특검법 수사 범위가 성패 가른다",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11303",
+      "published_at": "2026-07-24 14:20:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21832,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "\"파크골프 인기 비결은 '몰입'… 스트레스 해소·성취감이 핵심\"",
+      "url": "https://www.imaeil.com/page/view/2026072413553508952",
+      "published_at": "2026-07-24 14:19:37",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21833,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "법원 \"최태원, 노소영에 재산분할로 9천440억원 지급해야\"",
+      "url": "https://www.imaeil.com/page/view/2026072414171837487",
+      "published_at": "2026-07-24 14:19:13",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22484,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "트럼프, 이란 향해 '전면전급' 초강력 경고 \"준비 끝났다\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5848",
+      "published_at": "2026-07-24 14:18:32",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21834,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "정부, 계란·고등어 공급 확대 총력…수입선 다변화로 밥상물가 잡는다(종합)",
+      "url": "https://www.imaeil.com/page/view/2026072414123601098",
+      "published_at": "2026-07-24 14:13:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22444,
+      "media_name": "프리진뉴스",
+      "category": "경제/부동산",
+      "title": "\"집 한 채 있는 것도 죄인가요?\"…부동산 대토론회 직후, 전문가·시장 '우려와 반발'",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28202",
+      "published_at": "2026-07-24 14:10:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22564,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "\"참정권 위해 '올공'에 모인 청년들 외침 들어야\"...국힘 '2030 보수화' 토론회서 나온 작심 발언",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124339",
+      "published_at": "2026-07-24 14:06:13",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22372,
+      "media_name": "한미일보",
+      "category": "문화/연예/스포츠",
+      "title": "[시원한 여름 여행지] ④빌딩 숲속 푸른 오아시스 ‘광화문광장 비치’",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11302",
+      "published_at": "2026-07-24 14:03:02",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21835,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "'이언주 모욕' 합성 음란물 게시한 60대 前민주당원…불구속 송치",
+      "url": "https://www.imaeil.com/page/view/2026072412552973221",
+      "published_at": "2026-07-24 13:59:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21836,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "계란 생산 다음 달부터 증가세…정부, 수입은 탄력 조정",
+      "url": "https://www.imaeil.com/page/view/2026072413553928849",
+      "published_at": "2026-07-24 13:55:58",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21837,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "野 김승수, '공공기관 이전 호남 확정설'에…\"객관적이고 합리적인 기준에 결정돼야\"",
+      "url": "https://www.imaeil.com/page/view/2026072413543132590",
+      "published_at": "2026-07-24 13:54:45",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22565,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "'선관위 전산조작' 특검 수사대상 되나···나경원 \"민주당, 특검추천에 관여마라\"",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124336",
+      "published_at": "2026-07-24 13:47:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22566,
+      "media_name": "펜앤드마이크",
+      "category": "문화/연예/스포츠",
+      "title": "제41회 나라꽃 무궁화전시회, 24일 송상현광장서 개최",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124337",
+      "published_at": "2026-07-24 13:35:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22567,
+      "media_name": "펜앤드마이크",
+      "category": "경제/부동산",
+      "title": "2026년 주식투기,1930년대엔 금광투기...투기 천국 코리아 [김용삼의 역사추적]",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124326",
+      "published_at": "2026-07-24 13:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21839,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[이야기로 만나는 약선(藥膳)] 한여름 열기를 다스려주는 '오리'",
+      "url": "https://www.imaeil.com/page/view/2026071516205609484",
+      "published_at": "2026-07-24 13:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21838,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[임무출의 낱말 맞히기]<제30회>",
+      "url": "https://www.imaeil.com/page/view/2026071415463827462",
+      "published_at": "2026-07-24 13:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21840,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[MZ 연구소] MZ 놀이터 된 냉동실… '얼먹' 열풍",
+      "url": "https://www.imaeil.com/page/view/2026070616332513034",
+      "published_at": "2026-07-24 13:27:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21841,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[데이터로 보는 세상] 대구 청년정책 10년… 조례 뜯어보니",
+      "url": "https://www.imaeil.com/page/view/2026071622220515737",
+      "published_at": "2026-07-24 13:26:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22445,
+      "media_name": "프리진뉴스",
+      "category": "경제/부동산",
+      "title": "코스피, 장중 5% 넘는 급락세… 6,600선 '위태'",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28201",
+      "published_at": "2026-07-24 13:24:18",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21842,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[두나의 두발 산책] 도망쳐라, 뒤에 견훤이 온다… 왕건과 지명 산책",
+      "url": "https://www.imaeil.com/page/view/2026070116385659239",
+      "published_at": "2026-07-24 13:22:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21843,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[창간 80년, 격동 80년] 말 한마디가 죄, 긴급조치의 시대",
+      "url": "https://www.imaeil.com/page/view/2026070611522538783",
+      "published_at": "2026-07-24 13:21:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21844,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "檢, '일타강사' 현우진에 징역 1년 구형…현직교사와 문항 거래 혐의",
+      "url": "https://www.imaeil.com/page/view/2026072413104734441",
+      "published_at": "2026-07-24 13:20:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21845,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[산업유산 '문화로 꽃피다']누에의 희생을 기리다…상주 '잠령탑'",
+      "url": "https://www.imaeil.com/page/view/2026070610113389419",
+      "published_at": "2026-07-24 13:17:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22446,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "“모스 탄 전 대사를 귀국시켜라”... 美 단체, ‘THE HILL'에 전면광고",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28194",
+      "published_at": "2026-07-24 13:12:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22355,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "[박필규 안보칼럼] 선(先) 평화는 외교적 착시, 비핵화 없는 안보의 위험성",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11301",
+      "published_at": "2026-07-24 13:06:39",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21846,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "[김종섭의 광고 이야기] 노출의 시대가 가고, 철학의 시대가 왔다.",
+      "url": "https://www.imaeil.com/page/view/2026072413014352410",
+      "published_at": "2026-07-24 13:01:53",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22447,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "부동산 대토론회 두고 여야 격돌… 국민의힘 \"증세 위한 명분 쌓기\" vs 민주당 \"실행으로 답할 때\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28200",
+      "published_at": "2026-07-24 12:57:41",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22568,
+      "media_name": "펜앤드마이크",
+      "category": "일반/종합",
+      "title": "[펜앤포토] 송상현광장에 핀 무궁화",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124333",
+      "published_at": "2026-07-24 12:47:31",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22448,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "국힘 \"한미 통상갈등에 12.5% '관세 폭탄'…이재명 정부 외교·통상 무능 탓\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28199",
+      "published_at": "2026-07-24 12:43:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22599,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "\"가족 4명 축의금 10만원\" 논란…결혼식 예의 어디까지가 상식인가",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34370",
+      "published_at": "2026-07-24 12:42:17",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22600,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "트럼프 \"이란 대규모 공격 결단 임박…이스라엘은 요청 즉시 참전 가능\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34369",
+      "published_at": "2026-07-24 12:42:08",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22601,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "軍, 불침번 없애고 CCTV로 대체…불시점검도 사전예고로 변경",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34368",
+      "published_at": "2026-07-24 12:42:04",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22569,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "\"이런 얼빠진 사자명예훼손\" 이재명 대통령 분노케 한 그 사건, 경찰은 '불송치' 결정",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124332",
+      "published_at": "2026-07-24 12:29:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21847,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[조한규 칼럼] 영남, '행동하는 유림' 재건에 앞장서자",
+      "url": "https://www.imaeil.com/page/view/2026071714432561197",
+      "published_at": "2026-07-24 12:24:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22449,
+      "media_name": "프리진뉴스",
+      "category": "사회/사법",
+      "title": "국힘 \"이재명 재판은 멈춰 세우고 오세훈 재판만 밀어붙이는 선택적 법치\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28198",
+      "published_at": "2026-07-24 12:19:57",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22364,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "국힘 \"李 대통령, 본인 집 팔자마자 '보유세 3배' 들먹여\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11300",
+      "published_at": "2026-07-24 12:17:22",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21848,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "장동혁 \"결국 국민이 李 정권 끌어내릴 것…'차라리 文이 나았다'는 말도\"",
+      "url": "https://www.imaeil.com/page/view/2026072412060497288",
+      "published_at": "2026-07-24 12:12:48",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21849,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "美, 강제노동 관세 60개국 확정…한국 12.5% 적용",
+      "url": "https://www.imaeil.com/page/view/2026072412104483061",
+      "published_at": "2026-07-24 12:10:53",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22602,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "특검, 계엄 군 수뇌부에 중형 구형…보수진영 \"법치보다 정치보복 우려 커져\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34367",
+      "published_at": "2026-07-24 12:09:59",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22367,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "채해병 특검, “적법한 외교 인사” 尹 대통령에 징역 5년 구형",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11299",
+      "published_at": "2026-07-24 12:08:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21850,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "'청소년무대예술페스티벌' 결선 무대, 8월 1일 야외음악당서 펼쳐진다",
+      "url": "https://www.imaeil.com/page/view/2026072412074946338",
+      "published_at": "2026-07-24 12:08:14",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21851,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "스마트폰 하나로 내 투구 분석한다… AI 볼링 분석 앱 'Bowlin' 정식 출시",
+      "url": "https://www.imaeil.com/page/view/2026072412062803962",
+      "published_at": "2026-07-24 12:06:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22450,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "MBC노조 \"선관위에 선거관리 맡길 수 있을까?..MBC 언론 역할 다해야\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28197",
+      "published_at": "2026-07-24 12:04:49",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21852,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[음읽남] 우리 가락은 어떻게 그루브를 얻었나 ③알고리즘, 우리 가락을 세계로 보내다",
+      "url": "https://www.imaeil.com/page/view/2026060923332868640",
+      "published_at": "2026-07-24 12:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22603,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "'미성년자 성매매 의혹' 최영중 전 청주시의원…'학폭 의혹'까지 추적",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34366",
+      "published_at": "2026-07-24 11:56:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22604,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "국민의힘 \"투표율 조작 의혹, 선관위 신뢰 붕괴…전국 전수조사·특검 확대해야\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34365",
+      "published_at": "2026-07-24 11:56:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22605,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "[단독] 계룡대 해병 병사 가혹행위 의혹…'알몸 기합·식고문' 주장에 군 전수조사 착수",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34364",
+      "published_at": "2026-07-24 11:56:38",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22606,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "스틸 주한미대사 첫 공식행보…韓美 조선협력센터 개소 \"동맹 강화 최우선\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34363",
+      "published_at": "2026-07-24 11:56:17",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22607,
+      "media_name": "독립신문",
+      "category": "경제/부동산",
+      "title": "美, 한국산에 12.5% 관세 확정…정부 \"추가 301조 조사 총력 대응\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34362",
+      "published_at": "2026-07-24 11:56:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21853,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[매일신문 전국 어린이  사진공모전 70년]<1982년 28회>노력상 윤혜숙 작 \"동심\"",
+      "url": "https://www.imaeil.com/page/view/2026071715484105666",
+      "published_at": "2026-07-24 11:55:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22570,
+      "media_name": "펜앤드마이크",
+      "category": "정치/외교",
+      "title": "국민의힘, 국회 상임위 배정 불만 후폭풍···원내서도 골머리 지끈지끈",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124316",
+      "published_at": "2026-07-24 11:54:40",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22451,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "국민의힘 권영진, 상임위 배정 불만에 정점식 원내대표 '멱살잡이' 행패...파장 '일파만파'",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28196",
+      "published_at": "2026-07-24 11:53:54",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22485,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "[속보] 민경욱 전 의원 직접 생존 신고 “죽은 줄 알았다”",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5847",
+      "published_at": "2026-07-24 11:51:07",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21854,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "여름방학, 박캉스(박물관 바캉스) 떠나요",
+      "url": "https://www.imaeil.com/page/view/2026072411482641387",
+      "published_at": "2026-07-24 11:49:27",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22571,
+      "media_name": "펜앤드마이크",
+      "category": "경제/부동산",
+      "title": "장바구니 또 오른다… 새우깡·육개장사발면 등 43개 품목 인상",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124327",
+      "published_at": "2026-07-24 11:35:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22486,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "[속보] 美, 한국에 강제노동 관세 최고 12.5% 부과",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5846",
+      "published_at": "2026-07-24 11:34:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21855,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "유류세 인하 조치 9월 말까지 연장…구윤철 \"중동 리스크 철저 대비\"",
+      "url": "https://www.imaeil.com/page/view/2026072411243198590",
+      "published_at": "2026-07-24 11:31:42",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21856,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "美, 한국 환율관찰대상국 4회 연속 지정…환율조작국은 피했다",
+      "url": "https://www.imaeil.com/page/view/2026072411310527856",
+      "published_at": "2026-07-24 11:31:33",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22452,
+      "media_name": "프리진뉴스",
+      "category": "경제/부동산",
+      "title": "산업통상부 \"美 강제노동 301조 관세 최종 발표… 한미 관세합의 준수 지속 촉구 방침\"",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28195",
+      "published_at": "2026-07-24 11:31:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21857,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[뉴스로 보는 고사성어]<30회>발본색원(拔本塞源), \"뿌리를 뽑고 원천을 막는다\"",
+      "url": "https://www.imaeil.com/page/view/2026071514243489347",
+      "published_at": "2026-07-24 11:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21858,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "7000선 하루 만에 붕괴…코스피·코스닥 급락에 사이드카까지",
+      "url": "https://www.imaeil.com/page/view/2026072411285260694",
+      "published_at": "2026-07-24 11:29:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21859,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "대구한의대, 영덕서 '찾아가는 한의나눔사랑방' 운영… 주민 150명 진료",
+      "url": "https://www.imaeil.com/page/view/2026072411165429433",
+      "published_at": "2026-07-24 11:23:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22572,
+      "media_name": "펜앤드마이크",
+      "category": "사회/사법",
+      "title": "구미참여연대, ‘대규모 전세사기 피고인 5명 전원 실형선고’",
+      "url": "https://www.pennmike.com/news/articleView.html?idxno=124328",
+      "published_at": "2026-07-24 11:19:25",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21860,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "요소수 매점매석 금지 한 달 더 연장한다",
+      "url": "https://www.imaeil.com/page/view/2026072411173396003",
+      "published_at": "2026-07-24 11:17:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22371,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "인텔, 2분기 매출 25% 올라 어닝서프라이즈…15년만에 최대 성장",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11281",
+      "published_at": "2026-07-24 11:17:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21861,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "유류세 인하 조치 9월 30일까지 연장",
+      "url": "https://www.imaeil.com/page/view/2026072310500888704",
+      "published_at": "2026-07-24 11:13:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21862,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "\"이러다 진짜 티슈되겠네\"…임상 실패에 곡소리 나는 코오롱티슈진[개미와글와글]",
+      "url": "https://www.imaeil.com/page/view/2026072410531333495",
+      "published_at": "2026-07-24 11:06:32",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21863,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "채상병 특검, 尹 전 대통령에 징역 5년 구형…'이종섭 도피' 혐의 정조준",
+      "url": "https://www.imaeil.com/page/view/2026072411030246374",
+      "published_at": "2026-07-24 11:03:21",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21864,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "농협 의성군지부, 안계농협 NH농촌현장봉사단 주거환경 개선사업",
+      "url": "https://www.imaeil.com/page/view/2026072410513727663",
+      "published_at": "2026-07-24 10:58:55",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22487,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "“모스 탄 대사를 미국 집으로 보내라”... 트럼프·루비오 향한 공개 청원",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5845",
+      "published_at": "2026-07-24 10:58:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21865,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "청도군, 공무원 '생일 특별휴가제' 도입…하반기 조례개정 내년 시행",
+      "url": "https://www.imaeil.com/page/view/2026072410505634595",
+      "published_at": "2026-07-24 10:55:27",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22608,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "[단독] 美, '강제노동 관세' 전격 시행… 한국 12.5% 적용, EU·대만보다 불리",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34361",
+      "published_at": "2026-07-24 10:43:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22609,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[단독] 美 백악관, '전기소비자 보호 서약' 발표… AI 시대 전력원 판도 바꾼다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34360",
+      "published_at": "2026-07-24 10:43:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22610,
+      "media_name": "독립신문",
+      "category": "지역/사설",
+      "title": "[독립신문 시론] '전기 선택권'이라는 달콤한 환상… 전기는 구호가 아니라 물리학이다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34359",
+      "published_at": "2026-07-24 10:42:51",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22611,
+      "media_name": "독립신문",
+      "category": "사회/사법",
+      "title": "서울 ​종로 지나다 '날벼락'…건물 외벽 파편 맞은 60대 병원 이송",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34358",
+      "published_at": "2026-07-24 10:42:47",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22612,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "[오늘날씨] 수도권·강원 비 오락가락…남부 낮 최고 38도, 전국 '폭염·열대야' 기염",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34356",
+      "published_at": "2026-07-24 10:42:43",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22409,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "스페이스X 주가 반토막…\"공매도 22조원 평가익\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11282",
+      "published_at": "2026-07-24 10:35:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21866,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "\"최종 투표율만 맞으면 된다\"…선관위 직원들 '투표 통계 조작' 해명 논란",
+      "url": "https://www.imaeil.com/page/view/2026072410221166322",
+      "published_at": "2026-07-24 10:31:17",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21867,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "[금주의 공연,전시]",
+      "url": "https://www.imaeil.com/page/view/2026071410310349996",
+      "published_at": "2026-07-24 10:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21868,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "[여의도단신] 신한투자증권·토스증권·마스턴투자운용",
+      "url": "https://www.imaeil.com/page/view/2026072410132807911",
+      "published_at": "2026-07-24 10:20:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21869,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "하태균 국민의힘 대구시당 대변인 \"경청이 가장 큰 배움…당원의 열정이 곧 정당의 힘\"",
+      "url": "https://www.imaeil.com/page/view/2026072410134787749",
+      "published_at": "2026-07-24 10:14:04",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21870,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "유한양행, 4253억원 규모 자사주 소각에 7%대 강세",
+      "url": "https://www.imaeil.com/page/view/2026072410022325317",
+      "published_at": "2026-07-24 10:13:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22398,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "美법무부 '새 에어포스원 보안우려' 보도 NYT기자 소환장 철회",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11279",
+      "published_at": "2026-07-24 10:11:02",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21871,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "청년 음악가들의 뜨거운 여름…솔라시안 유스 오케스트라 공연",
+      "url": "https://www.imaeil.com/page/view/2026072410053750902",
+      "published_at": "2026-07-24 10:05:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21872,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "코스닥 새내기株 에이치엘지노믹스, 상장 첫날 3%대 강세",
+      "url": "https://www.imaeil.com/page/view/2026072410032944452",
+      "published_at": "2026-07-24 10:05:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21873,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "영주소방서, 의용소방대 소방기술 경연대회 개최…14개 대원 화합·기량 겨뤄",
+      "url": "https://www.imaeil.com/page/view/2026072409542784017",
+      "published_at": "2026-07-24 09:56:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21874,
+      "media_name": "매일신문",
+      "category": "문화/연예/스포츠",
+      "title": "경북전문대학교 파크골프학과,  영주시 첫 파크골프 스포츠지도사 4명 배출",
+      "url": "https://www.imaeil.com/page/view/2026072409410101772",
+      "published_at": "2026-07-24 09:56:19",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21875,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "중동 리스크에 몰린 투심…유틸리티株, '유가 급등' 타고 질주",
+      "url": "https://www.imaeil.com/page/view/2026072409524541412",
+      "published_at": "2026-07-24 09:55:11",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21876,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "SK하이닉스 ADR 전환 한도 '2.5%'…30% 프리미엄 이어지나",
+      "url": "https://www.imaeil.com/page/view/2026072409412004798",
+      "published_at": "2026-07-24 09:46:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22373,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "신지은, LPGA 여자 스코틀랜드 오픈 첫날 공동 선두",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11280",
+      "published_at": "2026-07-24 09:43:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21877,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "삼전닉스 레버리지 예탁금 3000만원, 이달 31일부터 조기 시행",
+      "url": "https://www.imaeil.com/page/view/2026072408464658094",
+      "published_at": "2026-07-24 09:33:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21878,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "파업·오너리스크·AI 불확실성까지…카카오, 끝 모를 추락에 개미 '피눈물'[왜울株]",
+      "url": "https://www.imaeil.com/page/view/2026072408331037574",
+      "published_at": "2026-07-24 09:33:12",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21879,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "李대통령, 7박 11일 '지구 반 바퀴 외교전'…美 빅테크·남미 정상 만난다",
+      "url": "https://www.imaeil.com/page/view/2026072408331227580",
+      "published_at": "2026-07-24 09:31:53",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22399,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "미군, 13일째 이란 공습…\"상업용 선박에 가하는 위협 약화\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11284",
+      "published_at": "2026-07-24 09:24:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21880,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "산림당국, 규모 2.6 지진 발생한 예천의 진앙지 인근 긴급점검",
+      "url": "https://www.imaeil.com/page/view/2026072409231620590",
+      "published_at": "2026-07-24 09:23:24",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22410,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "코카콜라, '랜섬웨어' 해킹으로 미국내 유제품 생산 중단",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11286",
+      "published_at": "2026-07-24 09:19:22",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22400,
+      "media_name": "한미일보",
+      "category": "경제/부동산",
+      "title": "미국 모기지·재산세·보험료 상승에 주택 압류 급증",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11278",
+      "published_at": "2026-07-24 09:14:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22411,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "2026년 상반기 전국 지가 1.22% 상승…토지 거래량도 2.2% 증가",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11294",
+      "published_at": "2026-07-24 09:12:52",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21881,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "부산동부보호관찰소, 폭염 속 취약청년 위한 주거환경 개선 나서",
+      "url": "https://www.imaeil.com/page/view/2026072400360659556",
+      "published_at": "2026-07-24 09:09:40",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22453,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "용인 수지서 ’6·3 참정권 회복’ 가두 행진 집회 열려…”재선거·선관위 개혁” 촉구",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28190",
+      "published_at": "2026-07-24 09:08:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21882,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "경북도, 영일만항 '북극항로 거점항만' 육성 속도",
+      "url": "https://www.imaeil.com/page/view/2026072409063726859",
+      "published_at": "2026-07-24 09:06:44",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22401,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "이스라엘 정보당국 \"이란, 외국인 포섭해 고위층 암살 노렸다\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11283",
+      "published_at": "2026-07-24 08:47:40",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21883,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "李대통령 \"신속 대응\" 지시에…'레버리지 규제' 이달 시행",
+      "url": "https://www.imaeil.com/page/view/2026072408365420814",
+      "published_at": "2026-07-24 08:37:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22402,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "美하원, 트럼프의 이란 전쟁 권한 제한 법안 통과",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11277",
+      "published_at": "2026-07-24 08:02:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22454,
+      "media_name": "프리진뉴스",
+      "category": "정치/외교",
+      "title": "​美, 한국 포함 60개국에 '301조 강제노동 관세' …한국 12.5%",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28192",
+      "published_at": "2026-07-24 07:47:05",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21884,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "이동화 피유테크㈜ ,아너 소사이어티 회원 가입",
+      "url": "https://www.imaeil.com/page/view/2026072407393840371",
+      "published_at": "2026-07-24 07:40:21",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22455,
+      "media_name": "프리진뉴스",
+      "category": "사회/사법",
+      "title": "밴스 경호팀 비밀경호국 요원 정보 유출 의혹…직무 배제 후 조사",
+      "url": "https://www.freezinenews.com/news/articleView.html?idxno=28191",
+      "published_at": "2026-07-24 07:36:39",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21885,
+      "media_name": "매일신문",
+      "category": "IT/과학",
+      "title": "반려동물도 버스·기차 함께 탄다?…국민 10명 중 8명 \"찬성\"",
+      "url": "https://www.imaeil.com/page/view/2026072407305786909",
+      "published_at": "2026-07-24 07:32:02",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22613,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[독립신문 칼럼] 중국의 산업 굴기 앞에 선 대한민국… '대체불가 국가'만이 살길이다",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34355",
+      "published_at": "2026-07-24 07:28:56",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22614,
+      "media_name": "독립신문",
+      "category": "일반/종합",
+      "title": "출산율은 올랐지만 희망은 아직 오르지 않았다.",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34224",
+      "published_at": "2026-07-24 07:28:50",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22403,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프, 이란에 대한 ‘대규모’ 추가 공습 검토 중",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11276",
+      "published_at": "2026-07-24 07:14:13",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21886,
+      "media_name": "매일신문",
+      "category": "사회/사법",
+      "title": "트럼프, 한국에도 '강제노동 관세' 12.5%…상호관세 막히자 우회",
+      "url": "https://www.imaeil.com/page/view/2026072406320064502",
+      "published_at": "2026-07-24 06:32:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22412,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "美, 한국에 12.5% 301조 강제노동 관세 부과…中원자재 사용국가 퇴치 목적",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11275",
+      "published_at": "2026-07-24 06:32:23",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22413,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "美상무, 한미조선협력에 \"미국내 선박생산량으로 평가할 것\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11273",
+      "published_at": "2026-07-24 06:16:36",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22404,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "'마스가' 띄운 한미 조선협력센터…성과 의지 다지며 첫발 뗐다",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11274",
+      "published_at": "2026-07-24 06:16:29",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22405,
+      "media_name": "한미일보",
+      "category": "IT/과학",
+      "title": "트럼프 \"시진핑과 AI 얘기할 것\"…'중국의 기술탈취' 정조준하나",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11272",
+      "published_at": "2026-07-24 06:13:10",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22359,
+      "media_name": "한미일보",
+      "category": "지역/사설",
+      "title": "[박주현 작가칼럼] 돈은 오갔지만 나쁜 의도는 아니었을 거라고?",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11262",
+      "published_at": "2026-07-24 06:01:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22408,
+      "media_name": "한미일보",
+      "category": "사회/사법",
+      "title": "美, 中스캠조직 겨냥 \"사이버범죄·성착취 연루자 비자제한\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11268",
+      "published_at": "2026-07-24 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22407,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 \"이란에 대규모 공격 결정 임박…모든 준비 마쳤다\"",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11269",
+      "published_at": "2026-07-24 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22406,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "트럼프 “후티의 선박 공격에 대해 이란에 책임을 물을 것”",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11270",
+      "published_at": "2026-07-24 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22365,
+      "media_name": "한미일보",
+      "category": "정치/외교",
+      "title": "국힘 일부 의원 상임위 배정에 반발…원내지도부에 고성 항의",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11267",
+      "published_at": "2026-07-24 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22360,
+      "media_name": "한미일보",
+      "category": "지역/사설",
+      "title": "[특별기고: 松山] 이승만은 정말 반일주의자였을까",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11259",
+      "published_at": "2026-07-24 06:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22349,
+      "media_name": "한미일보",
+      "category": "일반/종합",
+      "title": "美 의회전문지 ‘더힐’에 “모스 탄 구명” 공개서한 게재됐다",
+      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11263",
+      "published_at": "2026-07-24 05:00:01",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21890,
+      "media_name": "매일신문",
+      "category": "경제/부동산",
+      "title": "[사설] 규제에 집중된 대통령의 부동산 정책 인식, 현실 외면 아닌가",
+      "url": "https://www.imaeil.com/page/view/2026072317280360486",
+      "published_at": "2026-07-24 05:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21889,
+      "media_name": "매일신문",
+      "category": "지역/사설",
+      "title": "[사설] 미·사우디 원전 협정, 우리가 잘 활용해야 할 전략적 기회",
+      "url": "https://www.imaeil.com/page/view/2026072317285235577",
+      "published_at": "2026-07-24 05:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21888,
+      "media_name": "매일신문",
+      "category": "정치/외교",
+      "title": "[사설] 선관위 전산 조작, 이제 수사는 '부실' 아닌 '부정' 선거에 초점 맞춰야",
+      "url": "https://www.imaeil.com/page/view/2026072317270179241",
+      "published_at": "2026-07-24 05:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21887,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[야고부-이호준] 이색 교도소",
+      "url": "https://www.imaeil.com/page/view/2026072316494694747",
+      "published_at": "2026-07-24 05:00:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 21891,
+      "media_name": "매일신문",
+      "category": "일반/종합",
+      "title": "[더사주 오늘의 띠별 운세] <7월 24일  금요일(음력 6월11일)>",
+      "url": "https://www.imaeil.com/page/view/2026072209231754422",
+      "published_at": "2026-07-24 04:30:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22615,
+      "media_name": "독립신문",
+      "category": "정치/외교",
+      "title": "[정치] 우원식 전 국회의장 '배우자 동반 해외출장' 공방…주진우 \"혈세 낭비·수사 대상\" vs 우원식 측 \"법적 근거 갖춘 공무\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34354",
+      "published_at": "2026-07-24 04:24:00",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22488,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "美 301조 관세 발표 초읽기… 韓 '12.5%+α' 촉각",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5844",
+      "published_at": "2026-07-24 01:59:32",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22489,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "최시원, 또 소신 발언 \"선거 신뢰는 민주주의 위한 일\"",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5841",
+      "published_at": "2026-07-24 00:54:26",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22490,
+      "media_name": "트루스데일리",
+      "category": "정치/외교",
+      "title": "[조정진칼럼] 총체적 부정선거 확인… 선관위·李정부 배제 전면 재선거 하라",
+      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5839",
+      "published_at": "2026-07-24 00:23:34",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22616,
+      "media_name": "독립신문",
+      "category": "경제/부동산",
+      "title": "[종합] 李 대통령 \"보유세 차등화로 시장 정상화\"… \"수도권 신규 택지 직접 찾겠다\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34353",
+      "published_at": "2026-07-24 00:08:41",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22617,
+      "media_name": "독립신문",
+      "category": "IT/과학",
+      "title": "[단독/기획] 전력 거버넌스 개편 논란… 민주연구원 \"전력감독원 신설\" vs 현장·학계 \"본질은 원전·송전망\"",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34352",
+      "published_at": "2026-07-24 00:08:37",
+      "click_count": 0,
+      "like_count": 0
+    },
+    {
+      "id": 22618,
+      "media_name": "독립신문",
+      "category": "문화/연예/스포츠",
+      "title": "나홍진 감독, '호프' 뉴욕 아시아 영화제 '우수 액션시네마상' 수상",
+      "url": "https://www.ainews1.co.kr/news/articleView.html?idxno=34351",
+      "published_at": "2026-07-24 00:08:28",
+      "click_count": 0,
+      "like_count": 0
+    },
     {
       "id": 18809,
       "media_name": "매일신문",
@@ -7040,2816 +10330,6 @@
       "title": "'+페덱, +보스' 삼성 라이온즈, 선발투수진 재정비 완료",
       "url": "https://www.imaeil.com/page/view/2026072109590526623",
       "published_at": "2026-07-21 14:04:34",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19254,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[사진으로 보는 세계: 사보세] 뉴욕 한복판의 방화, 미 육군 참전용사가 왜?",
-      "url": "https://www.imaeil.com/page/view/2026072111555178631",
-      "published_at": "2026-07-21 13:59:06",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19255,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "천하람 \"안규백 탈영 의혹 자료제공 안한 방첩사, 즉각 공개해야\"",
-      "url": "https://www.imaeil.com/page/view/2026072112165627150",
-      "published_at": "2026-07-21 13:52:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19256,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "초복맞이 '소양념불고기 나눔행사'개최",
-      "url": "https://www.imaeil.com/page/view/2026072113493233132",
-      "published_at": "2026-07-21 13:49:44",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19257,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "박지원, 유시민 향해 \"도와주지 못할망정 쪽박 깨뜨리지는 말라\"",
-      "url": "https://www.imaeil.com/page/view/2026072113423504560",
-      "published_at": "2026-07-21 13:44:55",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19258,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "집중호우에 산불 이재민 임시주택 침수…정부, 긴급 주거 지원·안전관리 강화",
-      "url": "https://www.imaeil.com/page/view/2026072113432696611",
-      "published_at": "2026-07-21 13:43:38",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19259,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "APEC·한일정상회담 성과 문화산업으로 잇는다…경북, '문화산업 대전환' 본격화",
-      "url": "https://www.imaeil.com/page/view/2026072009031154901",
-      "published_at": "2026-07-21 13:42:35",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19260,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북도의회, 대변인·예결특위·윤리특위 구성 완료…전반기 의정체계 본격 가동",
-      "url": "https://www.imaeil.com/page/view/2026072010101496502",
-      "published_at": "2026-07-21 13:39:30",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19261,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "금리 상승에 '줄도산 공포' 중소건설업 벼랑끝 위기",
-      "url": "https://www.imaeil.com/page/view/2026072111212241109",
-      "published_at": "2026-07-21 13:38:53",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19262,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"돈줄게 시험 대신 쳐줘\" 중국인들, '인서울 대학'가고 장학금까지…무더기 적발",
-      "url": "https://www.imaeil.com/page/view/2026072112344447109",
-      "published_at": "2026-07-21 13:38:23",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19263,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "스마트홈·관리비 납부·공구…앱 하나로 끝낸다",
-      "url": "https://www.imaeil.com/page/view/2026072110592911123",
-      "published_at": "2026-07-21 13:37:44",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19264,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[관심공매]대구시 달서구 유천동 아파트 등 2건",
-      "url": "https://www.imaeil.com/page/view/2026072109190861074",
-      "published_at": "2026-07-21 13:36:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19265,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "청도군=무소속 군수, 여·야 군의회…복잡해진 정치지형, 협치필요",
-      "url": "https://www.imaeil.com/page/view/2026072015522431786",
-      "published_at": "2026-07-21 13:35:47",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19266,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "너도나도 제로백 2.5초…슈퍼카 공식이 바뀐다",
-      "url": "https://www.imaeil.com/page/view/2026072014460007833",
-      "published_at": "2026-07-21 13:35:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19267,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "청도군, 정책비서 임명두고 설왕설래…우군택 전 기획예산담당관",
-      "url": "https://www.imaeil.com/page/view/2026072110263088469",
-      "published_at": "2026-07-21 13:34:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19268,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "신차는 하이브리드, 중고차는 '반값 전기차'…상반기 車시장 실속 소비 뚜렷",
-      "url": "https://www.imaeil.com/page/view/2026072015065606809",
-      "published_at": "2026-07-21 13:34:55",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19269,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"장윤기 '단순 살인죄' 적용, 국수본 뜻\" 경찰 내부 폭로에 '발칵'",
-      "url": "https://www.imaeil.com/page/view/2026072113085983788",
-      "published_at": "2026-07-21 13:34:38",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19270,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "밀양시, 2026 밀양 수퍼 페스티벌 안전관리위원회 심의회 개최",
-      "url": "https://www.imaeil.com/page/view/2026072112322688204",
-      "published_at": "2026-07-21 13:34:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19271,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "창녕군, 축산악취 NO! 쾌적함 OK!",
-      "url": "https://www.imaeil.com/page/view/2026072112364893230",
-      "published_at": "2026-07-21 13:33:51",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19272,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "창녕군의회, 제329회 임시회 개회",
-      "url": "https://www.imaeil.com/page/view/2026072112440304340",
-      "published_at": "2026-07-21 13:33:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19273,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "제10대 진주시의회, 호국영령 참배로 호국·애국정신 및 시민 중심 의정 구현 다짐",
-      "url": "https://www.imaeil.com/page/view/2026072112465832832",
-      "published_at": "2026-07-21 13:33:09",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19274,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "제13대 경남도의회, 권순기 교육감 체제 출범 후 경남교육청-교육위원회 첫 회의 개최",
-      "url": "https://www.imaeil.com/page/view/2026072112500089316",
-      "published_at": "2026-07-21 13:32:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19275,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "인간이 이겼다…신진서 9단, AI 카타고 꺾고 '2승 1패'",
-      "url": "https://www.imaeil.com/page/view/2026072113303747478",
-      "published_at": "2026-07-21 13:31:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19276,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "노태악 '배우자 동행' 해외출장 논란 확산하자…4700만원 선관위 반납",
-      "url": "https://www.imaeil.com/page/view/2026072112295872826",
-      "published_at": "2026-07-21 13:31:14",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19565,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "외교부 본부 서버 뚫렸다… “외교관 등 6000여 명 정보 유출, 북한 배후 공격에 무게”",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11149",
-      "published_at": "2026-07-21 13:22:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19566,
-      "media_name": "한미일보",
-      "category": "사회/사법",
-      "title": "[초점] 장윤기 ‘축소수사’ 광산서만의 결정이었나…국수본과 ‘짬짜미’ 의혹",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11150",
-      "published_at": "2026-07-21 13:09:18",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19277,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "카카오뱅크 노조, 결국 파업 돌입…31일 '전면 파업' 예고",
-      "url": "https://www.imaeil.com/page/view/2026072112531695440",
-      "published_at": "2026-07-21 12:53:26",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19278,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "렌트·리스 차량도 통행료 감면 받는다",
-      "url": "https://www.imaeil.com/page/view/2026072110273237141",
-      "published_at": "2026-07-21 12:50:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19567,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "임진강 필승교 수위 7m 넘어 위기관심단계…北황강댐 방류 영향",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11148",
-      "published_at": "2026-07-21 12:38:24",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19279,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"폭로 않겠다, 3천만원 달라\" 박나래 前매니저 '구속송치'",
-      "url": "https://www.imaeil.com/page/view/2026072112090074367",
-      "published_at": "2026-07-21 12:29:07",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19568,
-      "media_name": "한미일보",
-      "category": "문화/연예/스포츠",
-      "title": "노태악, 배우자 출장비 4743만원 국고 반납…합수본은 전날 압수수색",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11147",
-      "published_at": "2026-07-21 12:27:36",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19280,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "정청래, 전당대회 마치고 차량 습격 피해…경찰 수사",
-      "url": "https://www.imaeil.com/page/view/2026072111161143014",
-      "published_at": "2026-07-21 12:26:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19281,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"내가 중국 국적?\" 루머에 분노한 아이유, 악플러 잡으러 美법원까지",
-      "url": "https://www.imaeil.com/page/view/2026072019525819126",
-      "published_at": "2026-07-21 12:10:02",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19282,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "\"약발 다됐나\"…급등했던 애국株 줄급락",
-      "url": "https://www.imaeil.com/page/view/2026072110473916817",
-      "published_at": "2026-07-21 11:51:25",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19283,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "[수요일 아침-홍형식] '병상 정치'하는 국민의힘",
-      "url": "https://www.imaeil.com/page/view/2026071306185111571",
-      "published_at": "2026-07-21 11:44:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19284,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[의정외전] 이재갑 안동시의장 \"국립의대·국가산단·광역교통망… 안동 미래 바꿀 핵심 과제 풀어야",
-      "url": "https://www.imaeil.com/page/view/2026072108094152363",
-      "published_at": "2026-07-21 11:26:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19285,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[의정외전] 강승수 구미시의회 의장 \"현장서 답 찾는 강한 의회 만들겠다\"",
-      "url": "https://www.imaeil.com/page/view/2026072017443338474",
-      "published_at": "2026-07-21 11:26:41",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19286,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "동률이면 지역 기업 먼저…국가사업 낙찰 기준 바뀐다",
-      "url": "https://www.imaeil.com/page/view/2026072111252434099",
-      "published_at": "2026-07-21 11:25:32",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19287,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "예천군, 학생 승마체험 하반기 참가자 83명 모집",
-      "url": "https://www.imaeil.com/page/view/2026072111221361825",
-      "published_at": "2026-07-21 11:22:21",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19288,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "대한체육회 공정위, 6개월서 1개월로 배재고 징계 감경",
-      "url": "https://www.imaeil.com/page/view/2026072109205415541",
-      "published_at": "2026-07-21 11:17:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19289,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "예천군종합자원봉사센터와 여성자원봉사회, 어르신에 닭백숙 500마리 전달",
-      "url": "https://www.imaeil.com/page/view/2026072111105708096",
-      "published_at": "2026-07-21 11:11:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19290,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북 예천 구제역 방역 안정세…긴급 백신·예찰 완료, 추가 발생 없어",
-      "url": "https://www.imaeil.com/page/view/2026072110184325601",
-      "published_at": "2026-07-21 11:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19291,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동 이품봉사단, '취약가구 주거환경 개선' 봉사",
-      "url": "https://www.imaeil.com/page/view/2026072109073679461",
-      "published_at": "2026-07-21 10:59:34",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19292,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동시시설관리공단 오광렬 매니저 '고용노동부 장관상'",
-      "url": "https://www.imaeil.com/page/view/2026072109070218886",
-      "published_at": "2026-07-21 10:59:23",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19293,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "국토연, 3개 특별연구단 출범…균형성장·주거안정 연구 강화",
-      "url": "https://www.imaeil.com/page/view/2026072110414417915",
-      "published_at": "2026-07-21 10:42:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19294,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[여의도 단신]신한투자증권·삼성증권·대신증권",
-      "url": "https://www.imaeil.com/page/view/2026072110130658409",
-      "published_at": "2026-07-21 10:41:44",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19295,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[여의도단신] 한국투자증권·토스증권·한화자산운용",
-      "url": "https://www.imaeil.com/page/view/2026072110230083664",
-      "published_at": "2026-07-21 10:27:29",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19296,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "도니체티 명작 오페라 네편 한 무대에…달서아트센터, 23일 베스트 컬렉션",
-      "url": "https://www.imaeil.com/page/view/2026072110243967846",
-      "published_at": "2026-07-21 10:25:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19297,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "코오롱티슈진, 골관절염 치료제 임상실험 난항에 장중 하한가",
-      "url": "https://www.imaeil.com/page/view/2026072110212597301",
-      "published_at": "2026-07-21 10:22:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19298,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "李대통령 \"부동산 불로소득, 공정·상식 파괴…망국적 부동산공화국 벗어나야\"",
-      "url": "https://www.imaeil.com/page/view/2026072110220100586",
-      "published_at": "2026-07-21 10:22:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19299,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "서학개미 유턴 노린 단일종목 ETF…변동성만 키우고 미국행은 가속",
-      "url": "https://www.imaeil.com/page/view/2026072110130430397",
-      "published_at": "2026-07-21 10:22:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19300,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "배출권거래제 개편 대응 모색…한국거래소, 정책포럼 개최",
-      "url": "https://www.imaeil.com/page/view/2026072110155267780",
-      "published_at": "2026-07-21 10:21:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19301,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[우리 아기가 태어났어요]\"건강하기만 하고, 세상 제일 행복한 아이로 자라자\"",
-      "url": "https://www.imaeil.com/page/view/2026071919400628945",
-      "published_at": "2026-07-21 10:18:38",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19302,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[우리 아기가 태어났어요]여성아이병원 덕담",
-      "url": "https://www.imaeil.com/page/view/2026071919374727285",
-      "published_at": "2026-07-21 10:18:24",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19303,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[우리 아기가 태어났어요]신세계병원 덕담",
-      "url": "https://www.imaeil.com/page/view/2026071919330504441",
-      "published_at": "2026-07-21 10:18:12",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19304,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[우리 결혼합니다]이강석·김소정 결혼",
-      "url": "https://www.imaeil.com/page/view/2026072014142027934",
-      "published_at": "2026-07-21 10:17:59",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19569,
-      "media_name": "한미일보",
-      "category": "사회/사법",
-      "title": "'장윤기' 수사 경찰관들 \"단순살인죄 적용, 국수본이 지시\"",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11140",
-      "published_at": "2026-07-21 10:17:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19305,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "달서구, 공원에서 만드는 특별한 결혼식…예식물품 무료 대여",
-      "url": "https://www.imaeil.com/page/view/2026072014302092837",
-      "published_at": "2026-07-21 10:16:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19306,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "'어질어질' 코스피에 투자자예탁금 감소…\"증시 이탈 아닌 실탄 배치\"",
-      "url": "https://www.imaeil.com/page/view/2026072110110311922",
-      "published_at": "2026-07-21 10:15:44",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19307,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "널뛰는 증시에 양극화 완화?…대형주 주춤한 사이 소형주 달렸다",
-      "url": "https://www.imaeil.com/page/view/2026072110111027294",
-      "published_at": "2026-07-21 10:15:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19308,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "오세훈, 국힘 중진들과 연쇄 회동…당내 존재감 키우기 본격화",
-      "url": "https://www.imaeil.com/page/view/2026072109474684116",
-      "published_at": "2026-07-21 10:14:41",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19309,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "대구 중부경찰서, 마약 근절 위해 과자 업체 '호두가'와 손잡아",
-      "url": "https://www.imaeil.com/page/view/2026072110112953943",
-      "published_at": "2026-07-21 10:11:48",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19310,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "이달 수출 52% 급증, 7월 역대 최대치 찍었다",
-      "url": "https://www.imaeil.com/page/view/2026072110081877584",
-      "published_at": "2026-07-21 10:08:32",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19311,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "韓 골프 대표 주자 김주형·김효주, 다시 정상 도전",
-      "url": "https://www.imaeil.com/page/view/2026072110075226096",
-      "published_at": "2026-07-21 10:07:59",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19312,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "대덕전자, 4970억 신규 시설투자에 5%대 강세",
-      "url": "https://www.imaeil.com/page/view/2026072109574935108",
-      "published_at": "2026-07-21 10:07:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19313,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "한국 FIFA랭킹 7계단 떨어진 32위…월드컵 후폭풍 직격",
-      "url": "https://www.imaeil.com/page/view/2026072109544638847",
-      "published_at": "2026-07-21 09:54:55",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19314,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "스타벅스, 시니어 바리스타 교육 8월 재개…연간 1000명 양성 기반 확대",
-      "url": "https://www.imaeil.com/page/view/2026072109523901283",
-      "published_at": "2026-07-21 09:52:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19315,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "급락장에도 편안한 정유주…역시 기댈 곳은 실적인가",
-      "url": "https://www.imaeil.com/page/view/2026072109333931724",
-      "published_at": "2026-07-21 09:44:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19316,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "축구협회장 선거인단 확대 본격화…박지성 \"최소 수천 명 이상\"",
-      "url": "https://www.imaeil.com/page/view/2026072109434842846",
-      "published_at": "2026-07-21 09:43:56",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19317,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "'평정표 조작' 채용 하자 있었지만…법원 \"선관위 임용취소는 위법\"",
-      "url": "https://www.imaeil.com/page/view/2026072109341893538",
-      "published_at": "2026-07-21 09:41:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19570,
-      "media_name": "한미일보",
-      "category": "사회/사법",
-      "title": "인천 한 선관위 사무실서 직원 숨진 채 발견…경위 수사",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11138",
-      "published_at": "2026-07-21 09:33:53",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19571,
-      "media_name": "한미일보",
-      "category": "사회/사법",
-      "title": "검경, '장윤기 증거인멸 규명' 경찰청 국수본 동시 압수수색",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11137",
-      "published_at": "2026-07-21 09:32:29",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19318,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "안철수 \"李대통령, 국민 대출 막더니 사채로 이자 장사\"",
-      "url": "https://www.imaeil.com/page/view/2026072109004852740",
-      "published_at": "2026-07-21 09:01:37",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19319,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "트럼프, 캐나다에 50% 관세 폭탄…'한 세기 묵은 법' 첫 꺼냈다",
-      "url": "https://www.imaeil.com/page/view/2026072108403348202",
-      "published_at": "2026-07-21 08:58:59",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19320,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "준우승에 '축구의 신'도 결국 울었다…메시 \"치유까지 오랜 시간 걸릴 것\"",
-      "url": "https://www.imaeil.com/page/view/2026072108211504476",
-      "published_at": "2026-07-21 08:24:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19321,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북도의회, 집중호우 피해 의성·안동 현장 긴급 점검…주민 위로·신속 복구 당부",
-      "url": "https://www.imaeil.com/page/view/2026072107584796723",
-      "published_at": "2026-07-21 08:04:09",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19322,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "검찰·경찰 동시에 칼 빼들었다…장윤기 사건 국수본 압수수색",
-      "url": "https://www.imaeil.com/page/view/2026072107583229857",
-      "published_at": "2026-07-21 07:58:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19588,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "스페이스X, 메타에도 밀려 미 시총 8위로 내려앉아",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11135",
-      "published_at": "2026-07-21 07:54:31",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19589,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "트럼프, '美에 공장 건설' 조건부로 알루미늄 관세 절반 인하",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11131",
-      "published_at": "2026-07-21 07:41:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19323,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "'성과급 협상 결렬' 카카오 노조, 오늘 판교 본사 앞 집회",
-      "url": "https://www.imaeil.com/page/view/2026072107355826841",
-      "published_at": "2026-07-21 07:36:12",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19324,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "\"레이디?\" 질문에 빵 터진 김혜경 여사…\"결혼해서 안 될 것 같다\"",
-      "url": "https://www.imaeil.com/page/view/2026072106315288851",
-      "published_at": "2026-07-21 06:32:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19335,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "'반도체' 들어가도 모두 계약학과 아니다…\"계약학과 지원 전 꼼꼼히 따져봐야\"",
-      "url": "https://www.imaeil.com/page/view/2026072011252244801",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19334,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[4인4쌤의 리얼스쿨] 올해의 가운데, 여름방학",
-      "url": "https://www.imaeil.com/page/view/2026071923590788909",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19333,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[건강플러스] \"노안이겠지\" 방심했다가 실명까지…중장년층, 눈 검진이 시력 지킨다",
-      "url": "https://www.imaeil.com/page/view/2026072012265318266",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19332,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[관절클리닉] 신경이 눌려 생기는 팔저림, 목·팔꿈치·손목 원인부터 확인해야",
-      "url": "https://www.imaeil.com/page/view/2026072012403291065",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19331,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[의학산책] 치밀유방 여성이라면 알아야 할 자동유방초음파(ABUS)",
-      "url": "https://www.imaeil.com/page/view/2026072012431953549",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19330,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[이웃사랑]주 3회 투석으로 버티는 삶…9인 가족 생계 짊어진 영천 60대女의 사투",
-      "url": "https://www.imaeil.com/page/view/2026071823024376806",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19329,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "[주목! '이 학과'] K-뷰티 배우고 세계로… 대구보건대 뷰티코디네이션학과, 스마트 뷰티 인재 양성",
-      "url": "https://www.imaeil.com/page/view/2026072007501361898",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19328,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북 5개 보건단체, 캄보디아 해외 의료봉사 출정…109명 봉사단 파견",
-      "url": "https://www.imaeil.com/page/view/2026072012374192132",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19327,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "계명대 동산도서관 소장 고문헌 4종, 대구시 유형문화유산 지정",
-      "url": "https://www.imaeil.com/page/view/2026072009145128740",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19326,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "리암요양병원, 요양병원 적정성평가 2회 연속 1등급",
-      "url": "https://www.imaeil.com/page/view/2026072012313232044",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19325,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "전국 AI 인재 한자리에…영진전문대, AI 여름방학 캠프 성료",
-      "url": "https://www.imaeil.com/page/view/2026072008341885096",
-      "published_at": "2026-07-21 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19340,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[매일칼럼-이호준] 리더의 중요성",
-      "url": "https://www.imaeil.com/page/view/2026072016560559138",
-      "published_at": "2026-07-21 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19339,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[사설] \"호남 반도체는 기업의 선택\"이란 정부 발표는 거짓말이었나",
-      "url": "https://www.imaeil.com/page/view/2026072017545917760",
-      "published_at": "2026-07-21 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19338,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "[사설] TK신공항 사업 재정 지원 않겠다면 그렇게 선언하라",
-      "url": "https://www.imaeil.com/page/view/2026072017522733971",
-      "published_at": "2026-07-21 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19337,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "[사설] 보완수사권 폐지에다 경찰에 '48시간 구금권'까지, 뭐 하자는 건가",
-      "url": "https://www.imaeil.com/page/view/2026072017540265216",
-      "published_at": "2026-07-21 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19336,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[야고부-김수용] 호네부토 쇼크",
-      "url": "https://www.imaeil.com/page/view/2026072016482025366",
-      "published_at": "2026-07-21 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19341,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[더사주 오늘의 띠별 운세] <7월 21일  화요일(음력 6월8일)>",
-      "url": "https://www.imaeil.com/page/view/2026071610155038416",
-      "published_at": "2026-07-21 04:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19591,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "내가 직접 기록하는 2026년 제주의 여름… 기린빌라리조트, 8월 썸머 이벤트",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11118",
-      "published_at": "2026-07-21 00:47:22",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19551,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "장동혁의 올림픽공원 행보에 국힘 의원 40여 명 ‘응답’",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11116",
-      "published_at": "2026-07-20 23:55:49",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19552,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "진 커밍스 “이재명이 원하는 것은 국민 파산인가”… 사이비 교주에 세뇌된 국민들의 결말",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11114",
-      "published_at": "2026-07-20 23:20:56",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19342,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "전북회장 \"박지성이 뭘 안다고\" 발언에 박지성, 직접 받아쳐",
-      "url": "https://www.imaeil.com/page/view/2026072019593850261",
-      "published_at": "2026-07-20 23:03:44",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19343,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "김재원 \"삼전으로 번 2억, 레버리지 도입후 홀랑 까먹어\"",
-      "url": "https://www.imaeil.com/page/view/2026072019423747278",
-      "published_at": "2026-07-20 22:08:30",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19344,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "포항해경, 불법 포획 밍크고래 5마리 해상 운반 일당 검거…1명 구속 송치",
-      "url": "https://www.imaeil.com/page/view/2026072021591117526",
-      "published_at": "2026-07-20 22:03:14",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19345,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"너무 맛있어요\" 다 가짜였다…리뷰 3만개로 19억 벌어들인 일당 적발",
-      "url": "https://www.imaeil.com/page/view/2026072019322159460",
-      "published_at": "2026-07-20 20:12:57",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19346,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "삼성 라이온즈, 후라도 대체 외인 투수 오스틴 보스 영입",
-      "url": "https://www.imaeil.com/page/view/2026072019421137060",
-      "published_at": "2026-07-20 19:43:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19347,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "정점식 \"레버리지 ETF 참사…정부가 '주식 리딩방' 운영한 꼴\"",
-      "url": "https://www.imaeil.com/page/view/2026072016014693403",
-      "published_at": "2026-07-20 19:39:03",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19348,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "유통·부동산 시장의 몰락…'TK 디스카운트' 참담한 현실",
-      "url": "https://www.imaeil.com/page/view/2026072015220759606",
-      "published_at": "2026-07-20 19:22:48",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19349,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "부채 2800억 떠안고 유통업 존속? 대백 인수 '우려 섞인 시선'",
-      "url": "https://www.imaeil.com/page/view/2026072017315649313",
-      "published_at": "2026-07-20 19:17:47",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19350,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "박진영도 1천억원 '증발'…\"무조건 사라\" 믿고 9만원대 샀다가",
-      "url": "https://www.imaeil.com/page/view/2026072019152218316",
-      "published_at": "2026-07-20 19:16:03",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19351,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "포항 글로벌 AI 데이터센터 첫 삽 '경북 첫 민간 상업용'",
-      "url": "https://www.imaeil.com/page/view/2026072015251448566",
-      "published_at": "2026-07-20 18:34:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19352,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "美-이란, 상호 타격 강화… 유가 급등·해협 통행도 난항",
-      "url": "https://www.imaeil.com/page/view/2026072018061338219",
-      "published_at": "2026-07-20 18:31:04",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19353,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "국힘 \"이 대통령 분당 아파트 거래 '꼼수' 의혹…근저당 17억 설명하라\"",
-      "url": "https://www.imaeil.com/page/view/2026072018232412026",
-      "published_at": "2026-07-20 18:26:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19354,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "2차 公기관 이전도 '대구 패싱' 위기…'반전' 못 찾으면 9월 현실화",
-      "url": "https://www.imaeil.com/page/view/2026072015180029375",
-      "published_at": "2026-07-20 18:21:42",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19355,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "홈플러스 기사회생?…대구경북 8개 매장 다시 문 열까",
-      "url": "https://www.imaeil.com/page/view/2026072018040936467",
-      "published_at": "2026-07-20 18:16:23",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19553,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "이재명, 분당 집 29억에 매도…매수자 사정고려 17억 근저당",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11111",
-      "published_at": "2026-07-20 18:05:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19592,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "\"48ｍ 오름이 최소 360ｍ\"…제주서 산방산급 용암돔 흔적 발견",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11110",
-      "published_at": "2026-07-20 18:00:40",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19356,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "野 '입틀막법' 폐지 촉구 토론회 개최…\"표현의 자유 보장해야\"",
-      "url": "https://www.imaeil.com/page/view/2026072017301599168",
-      "published_at": "2026-07-20 18:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19357,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "장동혁 \"지지층 결집용 장외정치? 동의 못 해\"",
-      "url": "https://www.imaeil.com/page/view/2026072017544224685",
-      "published_at": "2026-07-20 17:58:43",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19593,
-      "media_name": "한미일보",
-      "category": "IT/과학",
-      "title": "장르 부수고 '몸'으로 벌이는 난장…\"AI 시대 인간 본질은 신체\"",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11109",
-      "published_at": "2026-07-20 17:56:03",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19572,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "\"정신없이 빠져나왔죠\" 호르무즈 해협 탈출한 한국 선원들",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11108",
-      "published_at": "2026-07-20 17:50:02",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19358,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "'100억 장충금'은 드라마만이 아니었다…대구 아파트 곳곳서 장충금 분쟁",
-      "url": "https://www.imaeil.com/page/view/2026072017271674595",
-      "published_at": "2026-07-20 17:48:03",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19359,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "예탁결제원, 차세대시스템 1단계 개통…2단계는 2029년 목표",
-      "url": "https://www.imaeil.com/page/view/2026072017295501785",
-      "published_at": "2026-07-20 17:40:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19360,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[차 한 잔] 대학로 10년째 이어진 '보도지침' 대구 무대…정철 연출 \"소극장의 거리감 필요한 시대\"",
-      "url": "https://www.imaeil.com/page/view/2026072016241052142",
-      "published_at": "2026-07-20 17:40:07",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19361,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "AI와 제조업 기술 손잡는다… 美日 기술 밀착 속도",
-      "url": "https://www.imaeil.com/page/view/2026072015210156610",
-      "published_at": "2026-07-20 17:37:53",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19362,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "'野 혹은 제2당 몫' 법사위원장 어쩌다 거대여당으로…법사위원장 두고 다투는 이유는?",
-      "url": "https://www.imaeil.com/page/view/2026072017244283560",
-      "published_at": "2026-07-20 17:37:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19363,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"결투 각서\" 쓰고 싸운 아파트 동대표들, 결국 1명 숨져…폭행치사 '무죄'",
-      "url": "https://www.imaeil.com/page/view/2026072017321750196",
-      "published_at": "2026-07-20 17:36:19",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19364,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "56명에게 1인당 최대 1,000만 원 지원…대구 아이리더 발대식",
-      "url": "https://www.imaeil.com/page/view/2026072017334037842",
-      "published_at": "2026-07-20 17:33:52",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19365,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "'경영권 매각' 수순 대구백화점… 매각 방식 두고 설왕설래",
-      "url": "https://www.imaeil.com/page/view/2026072016475772190",
-      "published_at": "2026-07-20 17:31:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19366,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[리더 열전] 손태룡 한국음악문헌학회 대표 \"대구경북 음악사 정립 위해 학회 만들었죠\"",
-      "url": "https://www.imaeil.com/page/view/2026042816410915810",
-      "published_at": "2026-07-20 17:31:42",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19367,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "코스피, 반도체·중동 '이중고'에 4.5% 급락…6,500선 턱걸이",
-      "url": "https://www.imaeil.com/page/view/2026072017304516212",
-      "published_at": "2026-07-20 17:31:02",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19368,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "수성아트피아, 獨 카를스루에 국립극장 진출 지역 성악가 2인 선발",
-      "url": "https://www.imaeil.com/page/view/2026072017253894917",
-      "published_at": "2026-07-20 17:26:07",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19369,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[안녕하지 않은 아파트] '아파트 장충금' 갈등…끊이지 않는 감사·소송전",
-      "url": "https://www.imaeil.com/page/view/2026072017110621122",
-      "published_at": "2026-07-20 17:21:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19370,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "李 분당 집 29억에 매각…잔금 담보로 17.7억 근저당, 왜?",
-      "url": "https://www.imaeil.com/page/view/2026072017111665151",
-      "published_at": "2026-07-20 17:18:57",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19371,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "'장외 투쟁' 장동혁, 이주 주말 대구서 대미 장식",
-      "url": "https://www.imaeil.com/page/view/2026072017084420301",
-      "published_at": "2026-07-20 17:17:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19372,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "2차 공공기관 이전 사면초가 대구…'완전 패싱' 현실화하나",
-      "url": "https://www.imaeil.com/page/view/2026071514062225818",
-      "published_at": "2026-07-20 17:16:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19373,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "與, 종합특검 연장법 본회의 상정…野 필버로 '맞불'",
-      "url": "https://www.imaeil.com/page/view/2026072016511468324",
-      "published_at": "2026-07-20 17:15:33",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19374,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "포스코청암재단, 올해 첫 도입된 해외유학장학생 선발…노이준·서동웅 학생",
-      "url": "https://www.imaeil.com/page/view/2026072017000682240",
-      "published_at": "2026-07-20 17:00:56",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19375,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "2년 연속 본선 오른 '부션'…부산교육 대표 캐릭터 도약 나선다",
-      "url": "https://www.imaeil.com/page/view/2026072016542776950",
-      "published_at": "2026-07-20 16:57:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19376,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[취재현장-이희대] 의성군민이 민선 9기를 기대하는 이유",
-      "url": "https://www.imaeil.com/page/view/2026071517554743079",
-      "published_at": "2026-07-20 16:56:49",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19377,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "대구 상위 1% 아파트 '15억8천만원부터'...서울과 3배 격차",
-      "url": "https://www.imaeil.com/page/view/2026072015544605822",
-      "published_at": "2026-07-20 16:53:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19378,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "세계유산 협력 넓힌 부산…유네스코와 국제교류 본격화",
-      "url": "https://www.imaeil.com/page/view/2026072016364221372",
-      "published_at": "2026-07-20 16:49:17",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19379,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "부산항 안전문화 확산 나선다…재해예방 활동 5일간 집중 운영",
-      "url": "https://www.imaeil.com/page/view/2026072016442364732",
-      "published_at": "2026-07-20 16:48:59",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19380,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "정청래, 하룻밤 만에 후원금 3억8만원…\"정청래를 지키자는 뜻\"",
-      "url": "https://www.imaeil.com/page/view/2026072016161588106",
-      "published_at": "2026-07-20 16:38:15",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19381,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "'장동혁 사퇴론' 숙지나…국힘 지지율도 40%대로 상승",
-      "url": "https://www.imaeil.com/page/view/2026072016322268209",
-      "published_at": "2026-07-20 16:38:13",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19382,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구보건대, 대구시 RISE 자체평가 'S등급'…지역 헬스케어 인재양성 성과 인정",
-      "url": "https://www.imaeil.com/page/view/2026072016351758624",
-      "published_at": "2026-07-20 16:35:34",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19383,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구시의회, 내일부터 대구시 업무보고 등 의정활동 본격화",
-      "url": "https://www.imaeil.com/page/view/2026072016281695669",
-      "published_at": "2026-07-20 16:34:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19384,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "울진 여름 반값으로 즐긴다...10만원 기부하면 15만원 혜택",
-      "url": "https://www.imaeil.com/page/view/2026072013332770142",
-      "published_at": "2026-07-20 16:33:52",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19385,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "포항시의회 제332회 임시회 개회…9일간 의사일정 돌입",
-      "url": "https://www.imaeil.com/page/view/2026072015085040092",
-      "published_at": "2026-07-20 16:33:43",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19386,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "영주 명품 황도 복숭아, 올해 첫 태국, 인도네시아 수출길 올라",
-      "url": "https://www.imaeil.com/page/view/2026072010045225374",
-      "published_at": "2026-07-20 16:33:29",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19387,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "[속보] 年 예산 17억 면사무소서 25억 유용…김병삼 영천시장 \"끝까지 추적 환수\"",
-      "url": "https://www.imaeil.com/page/view/2026072014572206238",
-      "published_at": "2026-07-20 16:33:07",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19388,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "기억 속 양산, 기록으로 남다…민간기록물 공모전 수상작 선정",
-      "url": "https://www.imaeil.com/page/view/2026072016124903778",
-      "published_at": "2026-07-20 16:32:41",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19389,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "죽음 문턱 넘은 '안목이'…강릉항 돌고래 긴급 구조",
-      "url": "https://www.imaeil.com/page/view/2026072016243577623",
-      "published_at": "2026-07-20 16:32:30",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19390,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "'포항 글로벌AI데이터센터' 첫 삽 떴다",
-      "url": "https://www.imaeil.com/page/view/2026072010333907027",
-      "published_at": "2026-07-20 16:32:17",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19391,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "이재명표 '기본소득' 농어촌 정조준…지자체 재원 부담 우려도",
-      "url": "https://www.imaeil.com/page/view/2026072015553250844",
-      "published_at": "2026-07-20 16:25:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19392,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "통일부, 北내고향여자축구단 공동응원에 2억3529만원 집행",
-      "url": "https://www.imaeil.com/page/view/2026072016014561209",
-      "published_at": "2026-07-20 16:16:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19393,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "\"청소년 금융 역량 키운다\"…거래소, 청소년금융교육협의회에 후원금 전달",
-      "url": "https://www.imaeil.com/page/view/2026072016062740343",
-      "published_at": "2026-07-20 16:15:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19394,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "김용판 달서구청장 \"소모성 축제 통폐합…대표축제 '무릉도원 페스타' 만들어 구민 행복 실현\"",
-      "url": "https://www.imaeil.com/page/view/2026072014533960248",
-      "published_at": "2026-07-20 16:13:29",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19395,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "\"50년 묶였다 풀린 땅 또 3년 묶나\"…수성못 개발제한 두고 법정공방",
-      "url": "https://www.imaeil.com/page/view/2026072015442138870",
-      "published_at": "2026-07-20 16:02:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19396,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "구미전자공고 '반도체 경진대회' 대상·금상 석권",
-      "url": "https://www.imaeil.com/page/view/2026072015215031518",
-      "published_at": "2026-07-20 15:59:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19398,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "올여름 피서는 청송으로…계곡·국립공원·백자체험·약수백숙까지 '오감 만족'",
-      "url": "https://www.imaeil.com/page/view/2026072015303657969",
-      "published_at": "2026-07-20 15:59:27",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19397,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "주왕산국립공원사무소, 장애인 거주시설 찾아 생필품 전달",
-      "url": "https://www.imaeil.com/page/view/2026072015225422346",
-      "published_at": "2026-07-20 15:59:27",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19399,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "청송군, 농어촌 기본소득 시범사업 신청 접수…1인당 월 20만원 지급",
-      "url": "https://www.imaeil.com/page/view/2026072015550530797",
-      "published_at": "2026-07-20 15:59:06",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19400,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "\"코넥스 기업 코스닥 이전상장 지원 강화\"…거래소, 1대1 맞춤형 컨설팅 실시",
-      "url": "https://www.imaeil.com/page/view/2026072015013852786",
-      "published_at": "2026-07-20 15:58:40",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19401,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "美 ICE 대규모 단속 가린 '스포츠 워싱'",
-      "url": "https://www.imaeil.com/page/view/2026072014084895415",
-      "published_at": "2026-07-20 15:56:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19402,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "'감당할 수 있는 뉴욕' 구호, 민주사회주의자 시장의 6개월 실험",
-      "url": "https://www.imaeil.com/page/view/2026072011082360072",
-      "published_at": "2026-07-20 15:56:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19403,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "이 대통령 '전대 기탁금' 발언 놓고 여야 충돌…'당무 개입' 공방",
-      "url": "https://www.imaeil.com/page/view/2026072013450179781",
-      "published_at": "2026-07-20 15:49:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19404,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[동해안 기후변화] \"한반도서 이제 더 이상 참치 못 잡는다\"…쿼터 한도 초과",
-      "url": "https://www.imaeil.com/page/view/2026071316084940857",
-      "published_at": "2026-07-20 15:49:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19405,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "[동해안 기후변화] \"상어가 나타났다!!\" 동해바다 상어 주의보",
-      "url": "https://www.imaeil.com/page/view/2026071317172087369",
-      "published_at": "2026-07-20 15:48:57",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19406,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구여성경제인회·초록우산, 지속가능한 아동 지원체계 구축",
-      "url": "https://www.imaeil.com/page/view/2026072015471721065",
-      "published_at": "2026-07-20 15:47:29",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19554,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "국힘 \"與 종합특검 일방연장 입법폭주…필리버스터로 실체 고발\"",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11104",
-      "published_at": "2026-07-20 15:39:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19555,
-      "media_name": "한미일보",
-      "category": "정치/외교",
-      "title": "이재명, 기획예산처 차관에 조용범 예산실장 임명",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11103",
-      "published_at": "2026-07-20 15:37:36",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19407,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북TP·대구조달청 맞손…지역 중소기업 공공조달 진입 지원",
-      "url": "https://www.imaeil.com/page/view/2026072015290929282",
-      "published_at": "2026-07-20 15:29:31",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19408,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[프로야구 전망대] '투타 핵심 전력 복귀' 삼성 라이온즈, 1위 수성할까",
-      "url": "https://www.imaeil.com/page/view/2026072009413099679",
-      "published_at": "2026-07-20 15:26:37",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19409,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구YMCA, 2026 대구시 의정참여단 사업 추진",
-      "url": "https://www.imaeil.com/page/view/2026072015203200977",
-      "published_at": "2026-07-20 15:26:33",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19410,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "'꿈의 배터리' 상용화 성큼…지역 소재·장비기업 개발 속도",
-      "url": "https://www.imaeil.com/page/view/2026072015224735116",
-      "published_at": "2026-07-20 15:23:35",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19411,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "'미성년자 성매매 혐의' 최영중 전 청주시의원, 국민의힘서 제명",
-      "url": "https://www.imaeil.com/page/view/2026072014431494102",
-      "published_at": "2026-07-20 15:19:55",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19412,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "김용진 전 해양경찰청장 영주제일고서 '진로·진학 및 인성 특강'",
-      "url": "https://www.imaeil.com/page/view/2026072015104217209",
-      "published_at": "2026-07-20 15:15:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19413,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "여성농업인 200명 한자리에…청송 한여농 명랑운동회 '웃음꽃'",
-      "url": "https://www.imaeil.com/page/view/2026072015115292337",
-      "published_at": "2026-07-20 15:14:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19556,
-      "media_name": "한미일보",
-      "category": "사회/사법",
-      "title": "장동혁 “독재자 차베스, 사관학교 통합했다”",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11102",
-      "published_at": "2026-07-20 15:13:07",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19414,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[안녕하지 않은 아파트] 줄줄 새는 아파트 관리비…최근 5년간 반환 소송 10여건",
-      "url": "https://www.imaeil.com/page/view/2026072014344626099",
-      "published_at": "2026-07-20 15:11:31",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19415,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "영양군 청소년들, 모바일 게임 '브롤스타즈' 최강자 가려… e스포츠대회 성황",
-      "url": "https://www.imaeil.com/page/view/2026072014585631707",
-      "published_at": "2026-07-20 15:01:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19416,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "장밋빛 '햇빛소득마을' 곳곳서 삐걱…주민 갈등·계통 부족·규정 모호 '삼중고'",
-      "url": "https://www.imaeil.com/page/view/2026072014371927786",
-      "published_at": "2026-07-20 14:58:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19417,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "구룡포서 성관계 불법촬영·유포 40대男 구속영장 신청",
-      "url": "https://www.imaeil.com/page/view/2026072014380392467",
-      "published_at": "2026-07-20 14:57:13",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19418,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[기자노트-마경대 기자]수해 현장은 정치인의 포토존이 아니다",
-      "url": "https://www.imaeil.com/page/view/2026072008252940244",
-      "published_at": "2026-07-20 14:57:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19419,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "'청하누'부터 영양직판장까지…청송영양축협, 지역 한우 소비 선순환 이끈다",
-      "url": "https://www.imaeil.com/page/view/2026072011060537314",
-      "published_at": "2026-07-20 14:56:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19420,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "여름의 절정, 경북 영덕에서 시원하게 즐기자…영덕 황금은어축제 7월30일~8월2일 개최",
-      "url": "https://www.imaeil.com/page/view/2026072009160194866",
-      "published_at": "2026-07-20 14:53:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19421,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북여성정책개발원·경북가족센터, 성평등·돌봄 체계 구축 맞손",
-      "url": "https://www.imaeil.com/page/view/2026072014533447112",
-      "published_at": "2026-07-20 14:53:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19422,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "사흘째 이어진 인천 쿠팡물류센터 화재…\"배터리 탑재 로봇 다수\" 확산방지 총력",
-      "url": "https://www.imaeil.com/page/view/2026072014502402381",
-      "published_at": "2026-07-20 14:50:35",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19423,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "빛으로 물든 환상의 숲…대구 엑스코 '와우와우 포레스트' 인기",
-      "url": "https://www.imaeil.com/page/view/2026071921011965117",
-      "published_at": "2026-07-20 14:48:24",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19424,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "창녕교육지원청, 관내 학교 대상 '찾아가는 청렴 공감협의회' 끝내",
-      "url": "https://www.imaeil.com/page/view/2026072013355300457",
-      "published_at": "2026-07-20 14:44:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19425,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "홍준표 \"윤석열·한동훈이 검찰 위기 자초…보완수사권 폐지는 안 돼\"",
-      "url": "https://www.imaeil.com/page/view/2026072014292091614",
-      "published_at": "2026-07-20 14:44:04",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19426,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "한국영상대 학생 장편영화 넷플릭스 무대 도약",
-      "url": "https://www.imaeil.com/page/view/2026071617062395139",
-      "published_at": "2026-07-20 14:42:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19427,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북적십자사, 집중호우 피해지역 긴급구호 총력…대피소 지원·복구·심리상담 전개",
-      "url": "https://www.imaeil.com/page/view/2026072014413825366",
-      "published_at": "2026-07-20 14:42:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19428,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[윤명철의 다시 보는 한국역사와 문화] 동아시아 패권질서를 둘러싼 국제대전―고당 전쟁",
-      "url": "https://www.imaeil.com/page/view/2026072009591545107",
-      "published_at": "2026-07-20 14:37:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19429,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "미래형 드라마 창작 'AI 트레일러 공모전'",
-      "url": "https://www.imaeil.com/page/view/2026070615265235973",
-      "published_at": "2026-07-20 14:35:01",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19430,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"여경이 절반 된다?\"…통합선발 첫 시행에 경찰 안팎 '설왕설래'",
-      "url": "https://www.imaeil.com/page/view/2026071212550002499",
-      "published_at": "2026-07-20 14:34:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19431,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "국립대구박물관, 특별 강연 '조선시대 관복, 초상화로 보다' 개최",
-      "url": "https://www.imaeil.com/page/view/2026072014322117867",
-      "published_at": "2026-07-20 14:32:51",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19432,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "\"고향사랑기부로 여름휴가도 즐긴다…워터파크·케이블카 등 체험형 답례품 확대\"",
-      "url": "https://www.imaeil.com/page/view/2026072014270216810",
-      "published_at": "2026-07-20 14:31:26",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19433,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "\"범죄 앞 물러서지 않는 모습 증명해야\"…편견과 싸우는 여경들",
-      "url": "https://www.imaeil.com/page/view/2026071213442574210",
-      "published_at": "2026-07-20 14:31:15",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19434,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구신세계갤러리 여름 테마전 '서머 해시태그 #태양의 멜로디'",
-      "url": "https://www.imaeil.com/page/view/2026072014233768838",
-      "published_at": "2026-07-20 14:25:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19435,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구 '발달장애 지원 거점도시로 발돋움'…통합 지원에 조기 발견·진단비 지원도",
-      "url": "https://www.imaeil.com/page/view/2026071513313074409",
-      "published_at": "2026-07-20 14:24:27",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19436,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "밀양시, 본격적인 폭염 대비 밀양아리랑시장 폭염저감시설 가동",
-      "url": "https://www.imaeil.com/page/view/2026072013333799169",
-      "published_at": "2026-07-20 14:24:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19437,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "청송농협, 외국인 계절근로자 대상 한국어 교육 운영",
-      "url": "https://www.imaeil.com/page/view/2026072013222999821",
-      "published_at": "2026-07-20 14:23:45",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19438,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "창녕군, 여름 휴가철 바가지요금 근절 캠페인 실시",
-      "url": "https://www.imaeil.com/page/view/2026072013375796549",
-      "published_at": "2026-07-20 14:23:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19439,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "[속보] 국회, 2차 종합특검법 개정안 상정…국민의힘 필리버스터 돌입",
-      "url": "https://www.imaeil.com/page/view/2026072014220927806",
-      "published_at": "2026-07-20 14:23:23",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19440,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "국립창원대-서울대 연구진, 2차원 자성 양자물질 '양자 얽힘' 상태 세계 최초 규명",
-      "url": "https://www.imaeil.com/page/view/2026072013401006974",
-      "published_at": "2026-07-20 14:22:17",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19441,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동시 가로등팀, \"집중호우·낙뢰로 어두워진 도로조명 신속 복구 총력\"",
-      "url": "https://www.imaeil.com/page/view/2026071911115549255",
-      "published_at": "2026-07-20 14:20:34",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19442,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[성금내역] 전신마비 위기 박상철 씨에 2,296만원 전달",
-      "url": "https://www.imaeil.com/page/view/2026072011200398735",
-      "published_at": "2026-07-20 14:14:48",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19443,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "국립경국대, 베트남 농업 현장서 글로벌 인재 키운다",
-      "url": "https://www.imaeil.com/page/view/2026072009433615972",
-      "published_at": "2026-07-20 14:14:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19444,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "경북교육청, '원클릭 교권상담'부터 변호사 동행까지… 교육활동 보호 전면 강화",
-      "url": "https://www.imaeil.com/page/view/2026071918282115049",
-      "published_at": "2026-07-20 14:13:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19445,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "낙동강 따라 쓰레기 줍고 생태 배우고… 경북교육청 '쓰담쓰담 생태잇기' 큰 호응",
-      "url": "https://www.imaeil.com/page/view/2026072011364055050",
-      "published_at": "2026-07-20 14:12:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19446,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "'예술인 창작대관료 지원사업' 참여자 모집",
-      "url": "https://www.imaeil.com/page/view/2026072014112821711",
-      "published_at": "2026-07-20 14:11:51",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19447,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "회식 뒤 직원 성추행한 산림청 공무원 재판행…징계 미뤄진 사이 피해자는 퇴사",
-      "url": "https://www.imaeil.com/page/view/2026072014081790592",
-      "published_at": "2026-07-20 14:08:36",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19448,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구동부도서관, 새 단장 마치고 시민 곁으로…23일 재개관식 개최",
-      "url": "https://www.imaeil.com/page/view/2026072013595091591",
-      "published_at": "2026-07-20 14:00:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19449,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "농식품부, 2030년까지 시·군별 농촌특화지구 1곳 이상 육성한다",
-      "url": "https://www.imaeil.com/page/view/2026072009343941142",
-      "published_at": "2026-07-20 14:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19450,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "박권현 청도군수 \"청도, 민생·미래 두 축으로 도약 시동\"",
-      "url": "https://www.imaeil.com/page/view/2026071611413705615",
-      "published_at": "2026-07-20 13:57:40",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19451,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "여름 휴가철 숙박 예약 주의보…소비자 상담 3년 새 39% 증가",
-      "url": "https://www.imaeil.com/page/view/2026072008420341733",
-      "published_at": "2026-07-20 13:57:32",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19452,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "경찰, '김건희 명품백 수수 무혐의' 권익위 압수수색",
-      "url": "https://www.imaeil.com/page/view/2026072013554297644",
-      "published_at": "2026-07-20 13:55:48",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19453,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "슬로크, 프랑스 프낙과 K-콘텐츠·소비재 유통 파트너십",
-      "url": "https://www.imaeil.com/page/view/2026072013471704038",
-      "published_at": "2026-07-20 13:54:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19454,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "[여의도단신] 한국투자신탁운용·DB증권",
-      "url": "https://www.imaeil.com/page/view/2026072013503709562",
-      "published_at": "2026-07-20 13:53:16",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19455,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "코스피, 시총 상위주 줄급락에 6500선 다시 깨져…양대 지수 나란히 매도 사이드카",
-      "url": "https://www.imaeil.com/page/view/2026072013285526294",
-      "published_at": "2026-07-20 13:53:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19456,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[인사] IBK투자증권",
-      "url": "https://www.imaeil.com/page/view/2026072013373993169",
-      "published_at": "2026-07-20 13:51:10",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19457,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[매일춘추-임현락] 삶은, '선 하나'",
-      "url": "https://www.imaeil.com/page/view/2026072013445620440",
-      "published_at": "2026-07-20 13:45:59",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19458,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구 '갤러리 바제' 개관…윤위동 개인전 '존재의 초상(Portraits of Being)'",
-      "url": "https://www.imaeil.com/page/view/2026072013394048852",
-      "published_at": "2026-07-20 13:39:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19459,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "'식용 불가' 개미 올린 미슐랭 2스타 레스토랑…검찰, 대표 징역 1년 구형",
-      "url": "https://www.imaeil.com/page/view/2026072013262558711",
-      "published_at": "2026-07-20 13:32:30",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19460,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "경찰청장 대행 \"장윤기 사건, 보완수사권과 연결 안 돼…폐지돼도 달라질 것 없어\"",
-      "url": "https://www.imaeil.com/page/view/2026072013244549027",
-      "published_at": "2026-07-20 13:27:25",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19461,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "올해 미술시장을 움직일 핵심 변화 요소는",
-      "url": "https://www.imaeil.com/page/view/2026072013235017913",
-      "published_at": "2026-07-20 13:25:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19462,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "LS, 일본 JCR서 'A0' 신용등급 획득…국내 신평 3사도 전망 상향",
-      "url": "https://www.imaeil.com/page/view/2026072010192183994",
-      "published_at": "2026-07-20 13:24:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19463,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "산불로 소실된 의성군 안평 운람사 낙성식 열어",
-      "url": "https://www.imaeil.com/page/view/2026072013133769842",
-      "published_at": "2026-07-20 13:23:17",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19557,
-      "media_name": "한미일보",
-      "category": "일반/종합",
-      "title": "국힘 주진우, 수의계약 제한 등 '선피아 방지 3법' 발의",
-      "url": "https://www.hanmiilbo.kr/news/view.php?idx=11096",
-      "published_at": "2026-07-20 13:13:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19464,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "장동혁 \"강경화 대사 급거 귀국, 한미동맹 위기 보여주는 신호\"",
-      "url": "https://www.imaeil.com/page/view/2026072012431825990",
-      "published_at": "2026-07-20 12:53:06",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19465,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[월드컵] 8골 4도움에도 눈물로 끝난 메시의 2연패 도전",
-      "url": "https://www.imaeil.com/page/view/2026072012475988625",
-      "published_at": "2026-07-20 12:48:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19466,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구 대표 농산물도매시장 유통기업 효성청과, 대구 32번째 '나눔명문기업' 간판 달아",
-      "url": "https://www.imaeil.com/page/view/2026072012373988542",
-      "published_at": "2026-07-20 12:37:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19467,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "10대 여성이 모텔로 유인…'조건만남' 남성 노린 일당 결국 실형",
-      "url": "https://www.imaeil.com/page/view/2026072012310140883",
-      "published_at": "2026-07-20 12:35:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19468,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동시 여성단체협의회,  '정성으로 빚은 사랑의 생면' 나눔행사 펼쳐",
-      "url": "https://www.imaeil.com/page/view/2026072009145324019",
-      "published_at": "2026-07-20 12:30:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19469,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동시 생활개선회 \"몸은 짱짱·마음은 뿜뿜·뇌는 톡톡!\"",
-      "url": "https://www.imaeil.com/page/view/2026072009142545125",
-      "published_at": "2026-07-20 12:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19470,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "김재현 작가 '개인전', 내달 23일까지 봉화 누정갤러리서 열려",
-      "url": "https://www.imaeil.com/page/view/2026072009590366056",
-      "published_at": "2026-07-20 12:28:58",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19471,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "봉화군, 여름방학 앞둔 청소년 유해환경 차단 '총력'",
-      "url": "https://www.imaeil.com/page/view/2026072010061101571",
-      "published_at": "2026-07-20 12:28:30",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19472,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "안동자원봉사센터, '무의탁노인 건강음료 지원' 사업 펴",
-      "url": "https://www.imaeil.com/page/view/2026072010360713948",
-      "published_at": "2026-07-20 12:27:47",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19473,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구보훈병원 '산업재해 예방 유공' 노동부 장관 표창",
-      "url": "https://www.imaeil.com/page/view/2026072009212165656",
-      "published_at": "2026-07-20 12:27:27",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19474,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "[월드컵] '늪 축구' 스페인, 아르헨티나를 집어삼켰다",
-      "url": "https://www.imaeil.com/page/view/2026072012180217558",
-      "published_at": "2026-07-20 12:18:12",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19475,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "300만 향하는 나홍진 '호프', 마블·놀런 출격…여름 극장가 달군다",
-      "url": "https://www.imaeil.com/page/view/2026072011574916110",
-      "published_at": "2026-07-20 12:06:06",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19476,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "김병연 NH투자증권 이사 \"코스피, 6000선이 락바텀…반도체 '피크아웃'은 과도한 우려\"",
-      "url": "https://www.imaeil.com/page/view/2026072011452018306",
-      "published_at": "2026-07-20 12:01:18",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19477,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "휴대폰 허위 렌탈부터 eSIM 매매까지…신종 민생금융범죄 기승",
-      "url": "https://www.imaeil.com/page/view/2026072010244314335",
-      "published_at": "2026-07-20 12:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19478,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "[월드컵 결산] 트럼프가 물을 흐린 월드컵",
-      "url": "https://www.imaeil.com/page/view/2026072009501300983",
-      "published_at": "2026-07-20 11:53:25",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19479,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "\"여의도가 강원랜드보다 더한 도박판\"…야권, 김용범 사퇴 압박",
-      "url": "https://www.imaeil.com/page/view/2026072011223722242",
-      "published_at": "2026-07-20 11:51:43",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19480,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "쿠팡, 물류센터 화재 수습 중에도…'수해피해' 경북 의성 주민 구호물품 지원",
-      "url": "https://www.imaeil.com/page/view/2026072011473232545",
-      "published_at": "2026-07-20 11:47:40",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19481,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "펜싱 세계선수권 22일 홍콩서 개막…대구 도경동도 출전",
-      "url": "https://www.imaeil.com/page/view/2026072011462952647",
-      "published_at": "2026-07-20 11:46:40",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19482,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[특별기고-김태한] 소방시설이라는 '작은 방패', 일상을 지키는 가장 큰 안전",
-      "url": "https://www.imaeil.com/page/view/2026072011153998105",
-      "published_at": "2026-07-20 11:15:51",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19483,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "'스타벅스 응원' 배재고, 오늘 운명 갈린다…봉황대기 출전할까",
-      "url": "https://www.imaeil.com/page/view/2026072011060174371",
-      "published_at": "2026-07-20 11:10:55",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19484,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "구윤철 \"국익 최우선으로 대미 통상 관리\"…K-AI 패키지로 신흥시장 공략",
-      "url": "https://www.imaeil.com/page/view/2026072011040372310",
-      "published_at": "2026-07-20 11:04:11",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19485,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "코스피·코스닥 '패닉'…양대 시장 매도 사이드카 동시 발동",
-      "url": "https://www.imaeil.com/page/view/2026072010564326762",
-      "published_at": "2026-07-20 10:56:50",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19486,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "삼성바이오로직스, 2.7조 규모 빅딜에도 주가 약세",
-      "url": "https://www.imaeil.com/page/view/2026072010312582810",
-      "published_at": "2026-07-20 10:37:43",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19487,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "[여의도 단신]LS증권·KB증권·iM증권·유안타증권",
-      "url": "https://www.imaeil.com/page/view/2026072010220345446",
-      "published_at": "2026-07-20 10:37:02",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19488,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "레버리지 ETF 규제 손봤다는데…'핵심 빠진 처방' 논란",
-      "url": "https://www.imaeil.com/page/view/2026072010220403989",
-      "published_at": "2026-07-20 10:36:48",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19489,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "\"중동 긴장감 다시 고조\"…유가 치솟자 신재생에너지株 부각",
-      "url": "https://www.imaeil.com/page/view/2026072010210300435",
-      "published_at": "2026-07-20 10:35:36",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19490,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "건반 위로 떠나는 러시아 음악 산책…수성아트피아, 장은 피아노 리사이틀",
-      "url": "https://www.imaeil.com/page/view/2026072010230034466",
-      "published_at": "2026-07-20 10:25:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19491,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "정차해 있던 청소차를 '쾅'…승용차 동승자 1명 사망",
-      "url": "https://www.imaeil.com/page/view/2026072010194066923",
-      "published_at": "2026-07-20 10:19:54",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19492,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "안철수 \"李, '부동산 28번 실패' 문재인 토론회 초청하라\"",
-      "url": "https://www.imaeil.com/page/view/2026072010044857068",
-      "published_at": "2026-07-20 10:19:25",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19493,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "이번엔 중국 AI '키미 K3' 쇼크…삼성전자·하이닉스 주가 향방은?",
-      "url": "https://www.imaeil.com/page/view/2026072009592783248",
-      "published_at": "2026-07-20 10:10:33",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19494,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "삼천당제약, 美 FDA 개발 절차 확인에 '상한가'",
-      "url": "https://www.imaeil.com/page/view/2026072009571912947",
-      "published_at": "2026-07-20 10:07:57",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19495,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "2·28을 기록한 민주시인 김윤식…생가는 후손 홀로 지켜",
-      "url": "https://www.imaeil.com/page/view/2026071019563261151",
-      "published_at": "2026-07-20 09:54:28",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19496,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "외국인 매도 받아온 개인…예탁금 감소하는데 버틸 수 있을까",
-      "url": "https://www.imaeil.com/page/view/2026072009312987733",
-      "published_at": "2026-07-20 09:51:05",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19497,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "정청래 \"보완수사권 폐지 안 되면 검찰개혁 '하나 마나'\"",
-      "url": "https://www.imaeil.com/page/view/2026072009392212585",
-      "published_at": "2026-07-20 09:47:08",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19498,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "'외유성 출장' 의혹 노태악 압수수색…선관위 강제수사",
-      "url": "https://www.imaeil.com/page/view/2026072009320831660",
-      "published_at": "2026-07-20 09:32:33",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19499,
-      "media_name": "매일신문",
-      "category": "경제/부동산",
-      "title": "매입임대 초기 사업비 부담, 토지비 30%에서 10%로 낮아진다",
-      "url": "https://www.imaeil.com/page/view/2026072009225016363",
-      "published_at": "2026-07-20 09:25:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19500,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "국립대구과학관 '타임슬립! 공룡시대 대탐험' 특별전 관람객 6만명 돌파",
-      "url": "https://www.imaeil.com/page/view/2026072009070213059",
-      "published_at": "2026-07-20 09:07:09",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19501,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "李대통령 지지율 48.4%로 하락…민주당은 국힘 추격에 '초박빙'",
-      "url": "https://www.imaeil.com/page/view/2026072008084303096",
-      "published_at": "2026-07-20 08:30:20",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19502,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "[화요초대석-이정훈] 이광성 위원장, 조주홍 군수, 이철우 지사께",
-      "url": "https://www.imaeil.com/page/view/2026071306184006185",
-      "published_at": "2026-07-20 08:25:22",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19503,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "대구 적신 '달성 워터스플래시', 1만5천명이 함께 즐기며 성료",
-      "url": "https://www.imaeil.com/page/view/2026072007544339040",
-      "published_at": "2026-07-20 07:57:43",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19504,
-      "media_name": "매일신문",
-      "category": "문화/연예/스포츠",
-      "title": "'무적함대' 스페인, 메시의 '라스트 탱고' 끝냈다…16년 만에 우승 [월드컵]",
-      "url": "https://www.imaeil.com/page/view/2026072007082873449",
-      "published_at": "2026-07-20 07:08:39",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19505,
-      "media_name": "매일신문",
-      "category": "정치/외교",
-      "title": "\"스타벅스도 결국 노조 생겼다\"…커피업계 최초 지회 출범",
-      "url": "https://www.imaeil.com/page/view/2026072006282539415",
-      "published_at": "2026-07-20 06:35:24",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19506,
-      "media_name": "매일신문",
-      "category": "IT/과학",
-      "title": "[취재현장-임소현] 유퀴즈? 노퀴즈!",
-      "url": "https://www.imaeil.com/page/view/2026071522363180015",
-      "published_at": "2026-07-20 06:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19510,
-      "media_name": "매일신문",
-      "category": "사회/사법",
-      "title": "[사설] 국민이 필요하다는 보완수사권, 누구를 위한 폐지인가",
-      "url": "https://www.imaeil.com/page/view/2026071917402876004",
-      "published_at": "2026-07-20 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19509,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[사설] 레버리지 ETF 졸속 도입 정책 실패, 김용범은 왜 책임지지 않나",
-      "url": "https://www.imaeil.com/page/view/2026071917415484762",
-      "published_at": "2026-07-20 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19508,
-      "media_name": "매일신문",
-      "category": "지역/사설",
-      "title": "[사설] 청년 취업절벽, 숫자만 내세운 일자리 창출 계획으론 해결 어렵다",
-      "url": "https://www.imaeil.com/page/view/2026071917424728219",
-      "published_at": "2026-07-20 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19507,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[야고부-조두진] '5·18'을 지키는 법",
-      "url": "https://www.imaeil.com/page/view/2026071917063410041",
-      "published_at": "2026-07-20 05:00:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19511,
-      "media_name": "매일신문",
-      "category": "일반/종합",
-      "title": "[더사주 오늘의 띠별 운세] <7월 20일  월요일(음력 6월7일)>",
-      "url": "https://www.imaeil.com/page/view/2026071610035250323",
-      "published_at": "2026-07-20 04:30:00",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19691,
-      "media_name": "트루스데일리",
-      "category": "정치/외교",
-      "title": "[하봉규칼럼] 한동훈을 평가하며",
-      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5768",
-      "published_at": "2026-07-20 03:59:13",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19692,
-      "media_name": "트루스데일리",
-      "category": "정치/외교",
-      "title": "트럼프, 대이란 전면 재공습 선언… 미군 사망에 \"대가 치르게 할 것\"",
-      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5767",
-      "published_at": "2026-07-20 03:47:37",
-      "click_count": 0,
-      "like_count": 0
-    },
-    {
-      "id": 19693,
-      "media_name": "트루스데일리",
-      "category": "지역/사설",
-      "title": "[하봉규칼럼] 6.3 잠실혁명 7공화국으로 가자",
-      "url": "https://www.truthdaily.co.kr/news/articleView.html?idxno=5766",
-      "published_at": "2026-07-20 02:57:25",
       "click_count": 0,
       "like_count": 0
     }
