@@ -47,20 +47,57 @@ async function loadArticlesData() {
 }
 
 function setupEventListeners() {
-    // 사이드바 토글
+    // 사이드바 토글 및 오버레이 관리
     const sidebar = document.getElementById("sidebar");
     const mainContainer = document.querySelector(".main-container");
     const toggleSidebarBtn = document.getElementById("toggleSidebarBtn");
     const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    function openSidebar() {
+        sidebar.classList.remove("collapsed");
+        if (window.innerWidth <= 768) {
+            sidebarOverlay.classList.add("active");
+        } else {
+            mainContainer.classList.remove("expanded");
+        }
+    }
+
+    function closeSidebar() {
+        sidebar.classList.add("collapsed");
+        sidebarOverlay.classList.remove("active");
+        if (window.innerWidth > 768) {
+            mainContainer.classList.add("expanded");
+        }
+    }
 
     toggleSidebarBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
-        mainContainer.classList.toggle("expanded");
+        if (sidebar.classList.contains("collapsed")) {
+            openSidebar();
+        } else {
+            closeSidebar();
+        }
     });
 
-    closeSidebarBtn.addEventListener("click", () => {
-        sidebar.classList.add("collapsed");
-        mainContainer.classList.add("expanded");
+    closeSidebarBtn.addEventListener("click", closeSidebar);
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener("click", closeSidebar);
+    }
+
+    // 모바일 접속 시 사이드바 기본 접힘 상태 적용
+    if (window.innerWidth <= 768) {
+        closeSidebar();
+    }
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            mainContainer.style.marginLeft = "0";
+            mainContainer.style.width = "100%";
+        } else {
+            mainContainer.style.marginLeft = "";
+            mainContainer.style.width = "";
+            sidebarOverlay.classList.remove("active");
+        }
     });
 
     // 필터 변경
