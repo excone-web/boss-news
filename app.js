@@ -219,6 +219,29 @@ function applyFilters() {
     renderArticles();
 }
 
+function formatDateSmart(pubDateStr) {
+    if (!pubDateStr) return "";
+    const clean = pubDateStr.substring(0, 16); // "2026-07-25 13:21"
+    const parts = clean.split(" ");
+    if (parts.length < 2) return clean;
+
+    const datePart = parts[0]; // "2026-07-25"
+    const timePart = parts[1]; // "13:21"
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const todayStr = `${year}-${month}-${day}`;
+
+    if (datePart === todayStr) {
+        return timePart; // 오늘 기사는 "13:21"
+    } else {
+        const monthDay = datePart.substring(5).replace("-", "."); // "07.24"
+        return `${monthDay} ${timePart}`; // 이전 기사는 "07.24 13:21"
+    }
+}
+
 function renderArticles() {
     const newsContainer = document.getElementById("newsListContainer");
     const captionEl = document.getElementById("categoryCaption");
@@ -238,14 +261,14 @@ function renderArticles() {
 
     let html = "";
     pageData.forEach(item => {
-        const pubDate = (item.published_at || "").substring(0, 16);
+        const dateSmart = formatDateSmart(item.published_at);
         const titleSafe = escapeHtml(item.title);
         const mediaSafe = escapeHtml(item.media_name || "언론사");
         html += `
             <div class="article-row">
                 <span class="media-badge">${mediaSafe}</span>
-                <a href="${item.url}" target="_blank" class="title-link" onclick="trackGAEvent('click_article', {'article_title': '${titleSafe.replace(/'/g, "\\'")}', 'media_name': '${mediaSafe}'})">${titleSafe}</a>
-                <span class="date-span">🕒 ${pubDate}</span>
+                <a href="${item.url}" target="_blank" class="title-link" title="${titleSafe}" onclick="trackGAEvent('click_article', {'article_title': '${titleSafe.replace(/'/g, "\\'")}', 'media_name': '${mediaSafe}'})">${titleSafe}</a>
+                <span class="date-span">${dateSmart}</span>
             </div>
         `;
     });
