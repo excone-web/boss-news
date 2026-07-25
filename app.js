@@ -261,14 +261,18 @@ function renderArticles() {
 
     let html = "";
     pageData.forEach(item => {
-        const dateSmart = formatDateSmart(item.published_at);
+        const fullDate = (item.published_at || "").substring(0, 16);
+        const smartDate = formatDateSmart(item.published_at);
         const titleSafe = escapeHtml(item.title);
         const mediaSafe = escapeHtml(item.media_name || "언론사");
         html += `
             <div class="article-row">
-                <span class="media-badge">${mediaSafe}</span>
+                <div class="article-row-meta">
+                    <span class="media-badge">${mediaSafe}</span>
+                    <span class="date-span mobile-only-date">${smartDate}</span>
+                </div>
                 <a href="${item.url}" target="_blank" class="title-link" title="${titleSafe}" onclick="trackGAEvent('click_article', {'article_title': '${titleSafe.replace(/'/g, "\\'")}', 'media_name': '${mediaSafe}'})">${titleSafe}</a>
-                <span class="date-span">${dateSmart}</span>
+                <span class="date-span desktop-only-date">🕒 ${fullDate}</span>
             </div>
         `;
     });
