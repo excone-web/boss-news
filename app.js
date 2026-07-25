@@ -54,7 +54,73 @@ async function loadArticlesData() {
     } catch (e) {
         console.error("데이터 통신 오류:", e);
     }
-    applyFilters();
+    applyFilters(false);
+    const restored = restoreAppState();
+    if (!restored) {
+        applyFilters(true);
+    }
+}
+
+function saveAppState() {
+    const state = {
+        category: currentCategory,
+        page: currentPage,
+        media: document.getElementById("mediaSelect") ? document.getElementById("mediaSelect").value : "전체",
+        search: document.getElementById("searchInput") ? document.getElementById("searchInput").value : "",
+        sort: document.querySelector("input[name='sortOrder']:checked") ? document.querySelector("input[name='sortOrder']:checked").value : "latest",
+        scrollTop: window.scrollY || document.documentElement.scrollTop || 0
+    };
+    sessionStorage.setItem("bossNews_appState", JSON.stringify(state));
+}
+
+function restoreAppState() {
+    const raw = sessionStorage.getItem("bossNews_appState");
+    if (!raw) return false;
+    try {
+        const state = JSON.parse(raw);
+        sessionStorage.removeItem("bossNews_appState");
+
+        if (state.category) {
+            currentCategory = state.category;
+            document.querySelectorAll(".tab-btn").forEach(b => {
+                b.classList.toggle("active", b.getAttribute("data-category") === currentCategory);
+            });
+        }
+        if (state.media && document.getElementById("mediaSelect")) {
+            document.getElementById("mediaSelect").value = state.media;
+        }
+        if (state.search && document.getElementById("searchInput")) {
+            document.getElementById("searchInput").value = state.search;
+        }
+        if (state.sort) {
+            const radio = document.querySelector(`input[name='sortOrder'][value='${state.sort}']`);
+            if (radio) radio.checked = true;
+        }
+
+        applyFilters(false);
+
+        if (state.page) {
+            currentPage = state.page;
+            renderArticles();
+        }
+
+        if (state.scrollTop) {
+            setTimeout(() => {
+                window.scrollTo({ top: state.scrollTop, behavior: 'instant' });
+            }, 80);
+        }
+        return true;
+    } catch (e) {
+        console.error("상태 복원 중 오류:", e);
+        return false;
+    }
+}
+
+function handleArticleClick(e, titleStr, mediaStr) {
+    trackGAEvent('click_article', {'article_title': titleStr, 'media_name': mediaStr});
+    if (window.innerWidth <= 768) {
+        saveAppState();
+    }
 }
 
 function setupEventListeners() {
@@ -210,7 +276,7 @@ function trackGAEvent(eventName, params) {
     }
 }
 
-function applyFilters() {
+function applyFilters(resetPage = true) {
     const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
     const selectedMedia = document.getElementById("mediaSelect").value;
     const sortOrder = document.querySelector("input[name='sortOrder']:checked").value;
@@ -232,7 +298,9 @@ function applyFilters() {
         filteredArticles.sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
     }
 
-    currentPage = 1;
+    if (resetPage) {
+        currentPage = 1;
+    }
     renderArticles();
 }
 
@@ -276,19 +344,23 @@ function renderArticles() {
     const startIdx = (currentPage - 1) * itemsPerPage;
     const pageData = filteredArticles.slice(startIdx, startIdx + itemsPerPage);
 
+    const isMobile = window.innerWidth <= 768;
+    const linkTarget = isMobile ? "_self" : "_blank";
+
     let html = "";
     pageData.forEach(item => {
         const fullDate = (item.published_at || "").substring(0, 16);
         const smartDate = formatDateSmart(item.published_at);
         const titleSafe = escapeHtml(item.title);
         const mediaSafe = escapeHtml(item.media_name || "언론사");
+        const titleEscapedForJs = titleSafe.replace(/'/g, "\\'").replace(/"/g, "&quot;");
         html += `
             <div class="article-row">
                 <div class="article-row-meta">
                     <span class="media-badge">${mediaSafe}</span>
                     <span class="date-span mobile-only-date">${smartDate}</span>
                 </div>
-                <a href="${item.url}" target="_blank" class="title-link" title="${titleSafe}" onclick="trackGAEvent('click_article', {'article_title': '${titleSafe.replace(/'/g, "\\'")}', 'media_name': '${mediaSafe}'})">${titleSafe}</a>
+                <a href="${item.url}" target="${linkTarget}" class="title-link" title="${titleSafe}" onclick="handleArticleClick(event, '${titleEscapedForJs}', '${mediaSafe}')">${titleSafe}</a>
                 <span class="date-span desktop-only-date">🕒 ${fullDate}</span>
             </div>
         `;
