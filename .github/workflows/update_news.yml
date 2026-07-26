@@ -70,7 +70,9 @@ jobs:
             exit 0
           fi
 
-          git commit -m "auto: 2시간 주기 정기 뉴스 데이터 자동 수집 및 갱신 [skip ci]"
+          # 주의: 커밋 메시지에 [skip ci] / [pages skip] 등을 넣으면
+          # Cloudflare Pages 배포가 건너뛰어져 웹이 갱신되지 않는다.
+          git commit -m "auto: news data refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
 
           # 원격이 앞서 있을 때 rebase 후 재시도 (동시 실행/수동 푸시 대비)
           n=0
