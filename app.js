@@ -7,6 +7,11 @@ let isMaster = false;
 
 // 탭을 연 채로도 서버 갱신을 반영 (데이터 수집 주기 2h보다 짧게 폴링)
 const CLIENT_REFRESH_MS = 5 * 60 * 1000;
+// Actions가 main에 푸시한 JSON을 직접 읽음 → Pages 배포 지연/스킵과 무관하게 데이터 갱신
+const ARTICLES_DATA_URLS = [
+    "https://raw.githubusercontent.com/excone-web/boss-news/main/articles.json",
+    "articles.json"
+];
 let refreshTimer = null;
 let isLoadingArticles = false;
 
@@ -54,58 +59,69 @@ async function loadArticlesData(isBackground = false) {
     isLoadingArticles = true;
 
     try {
-        // 캐시 버스팅 + HTTP revalidate (CDN/브라우저 스테일 데이터 방지)
         const cacheKey = Date.now();
-        const response = await fetch("articles.json?v=" + cacheKey, {
-            cache: "no-cache"
-        });
-        if (response.ok) {
-            const data = await response.json();
-            let nextArticles;
-            let nextUpdatedAt = lastUpdatedAt;
-            let nextInterval = crawlIntervalHours;
+        let data = null;
 
-            if (Array.isArray(data)) {
-                nextArticles = data;
-            } else {
-                nextArticles = data.articles || [];
-                nextUpdatedAt = data.updated_at || "";
-                nextInterval = data.interval_hours || 2;
+        for (const baseUrl of ARTICLES_DATA_URLS) {
+            try {
+                const sep = baseUrl.includes("?") ? "&" : "?";
+                const response = await fetch(baseUrl + sep + "v=" + cacheKey, {
+                    cache: "no-cache"
+                });
+                if (!response.ok) continue;
+                data = await response.json();
+                break;
+            } catch (fetchErr) {
+                console.warn("articles 소스 실패:", baseUrl, fetchErr);
             }
+        }
 
-            if (!nextUpdatedAt && nextArticles.length > 0) {
-                nextUpdatedAt = (nextArticles[0].published_at || "").substring(0, 16);
-            }
-
-            const dataChanged =
-                !isBackground ||
-                nextUpdatedAt !== lastUpdatedAt ||
-                nextArticles.length !== allArticles.length;
-
-            if (!dataChanged) {
-                return;
-            }
-
-            allArticles = nextArticles;
-            lastUpdatedAt = nextUpdatedAt;
-            crawlIntervalHours = nextInterval;
-            updateStatusBadge(allArticles.length);
-
-            if (isBackground) {
-                // 필터·페이지 유지한 채 목록만 다시 그림
-                applyFilters(false);
-            } else {
-                applyFilters(false);
-                const restored = restoreAppState();
-                if (!restored) {
-                    applyFilters(true);
-                }
-            }
-        } else {
-            console.error("articles.json 로드 실패");
+        if (!data) {
+            console.error("articles.json 로드 실패 (모든 소스)");
             if (!isBackground) {
                 document.getElementById("dbStatusBadge").innerHTML =
                     `<span class="badge-line1">⚠️ 기사 데이터 수집 중...</span>`;
+            }
+            return;
+        }
+
+        let nextArticles;
+        let nextUpdatedAt = lastUpdatedAt;
+        let nextInterval = crawlIntervalHours;
+
+        if (Array.isArray(data)) {
+            nextArticles = data;
+        } else {
+            nextArticles = data.articles || [];
+            nextUpdatedAt = data.updated_at || "";
+            nextInterval = data.interval_hours || 2;
+        }
+
+        if (!nextUpdatedAt && nextArticles.length > 0) {
+            nextUpdatedAt = (nextArticles[0].published_at || "").substring(0, 16);
+        }
+
+        const dataChanged =
+            !isBackground ||
+            nextUpdatedAt !== lastUpdatedAt ||
+            nextArticles.length !== allArticles.length;
+
+        if (!dataChanged) {
+            return;
+        }
+
+        allArticles = nextArticles;
+        lastUpdatedAt = nextUpdatedAt;
+        crawlIntervalHours = nextInterval;
+        updateStatusBadge(allArticles.length);
+
+        if (isBackground) {
+            applyFilters(false);
+        } else {
+            applyFilters(false);
+            const restored = restoreAppState();
+            if (!restored) {
+                applyFilters(true);
             }
         }
     } catch (e) {

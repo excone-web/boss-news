@@ -70,9 +70,10 @@ jobs:
             exit 0
           fi
 
-          # 주의: 커밋 메시지에 [skip ci] / [pages skip] 등을 넣으면
-          # Cloudflare Pages 배포가 건너뛰어져 웹이 갱신되지 않는다.
-          git commit -m "auto: news data refresh $(date -u +'%Y-%m-%dT%H:%MZ')"
+          # 주의:
+          # 1) [skip ci]/[pages skip] 는 Cloudflare Pages 배포를 스킵함
+          # 2) 긴 다국어 여러 줄 메시지는 Pages 빌드 실패 사례가 있어 ASCII 한 줄만 사용
+          git commit -m "auto: news data refresh $(date -u +'%Y-%m-%dT%H%MZ')"
 
           # 원격이 앞서 있을 때 rebase 후 재시도 (동시 실행/수동 푸시 대비)
           n=0
