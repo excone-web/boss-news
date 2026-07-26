@@ -49,6 +49,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28245</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026072607173383457</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11349</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11348</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.hanmiilbo.kr/news/view.php?idx=11347</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
@@ -103,6 +127,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11340</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.hanmiilbo.kr/news/view.php?idx=11345</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
@@ -110,12 +140,6 @@
   </url>
   <url>
     <loc>https://www.hanmiilbo.kr/news/view.php?idx=11346</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11340</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -620,30 +644,6 @@
   </url>
   <url>
     <loc>https://www.freezinenews.com/news/articleView.html?idxno=28231</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28230</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28204</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11332</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072506512530664</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
