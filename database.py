@@ -1,7 +1,14 @@
 import sqlite3
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from config import DB_PATH
+
+KST = timezone(timedelta(hours=9))
+
+
+def now_kst_naive() -> datetime:
+    return datetime.now(KST).replace(tzinfo=None)
+
 
 def get_connection():
     """SQLite 커넥션 생성 (WAL 모드 및 timeout 설정 포함)"""
@@ -77,7 +84,7 @@ def save_articles(articles: list[dict]) -> int:
     conn = get_connection()
     cursor = conn.cursor()
     inserted_count = 0
-    scraped_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    scraped_at = now_kst_naive().strftime("%Y-%m-%d %H:%M:%S")
 
     for item in articles:
         try:
@@ -112,7 +119,7 @@ def purge_old_articles(hours: int = 96) -> int:
     """96시간(4일)이 지난 오래된 기사 자동 삭제기능"""
     conn = get_connection()
     cursor = conn.cursor()
-    cutoff = (datetime.now() - timedelta(hours=hours)).strftime("%Y-%m-%d %H:%M:%S")
+    cutoff = (now_kst_naive() - timedelta(hours=hours)).strftime("%Y-%m-%d %H:%M:%S")
     cursor.execute("DELETE FROM articles WHERE published_at < ?", (cutoff,))
     deleted_count = cursor.rowcount
     conn.commit()
@@ -130,7 +137,7 @@ def get_articles(
     conn = get_connection()
     cursor = conn.cursor()
 
-    cutoff = (datetime.now() - timedelta(hours=96)).strftime("%Y-%m-%d %H:%M:%S")
+    cutoff = (now_kst_naive() - timedelta(hours=96)).strftime("%Y-%m-%d %H:%M:%S")
 
     query = "SELECT * FROM articles WHERE 1=1 AND (published_at >= ? OR published_at IS NULL OR published_at = '')"
     params = [cutoff]

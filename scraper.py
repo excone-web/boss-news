@@ -40,14 +40,21 @@ def parse_pub_date(raw_date: str) -> str:
 
     return ""
 
+def now_kst() -> datetime:
+    """GitHub Actions(UTC)에서도 발행시각(KST)과 동일 기준으로 비교하기 위함"""
+    return datetime.now(KST).replace(tzinfo=None)
+
+
 def is_within_hours(published_at_str: str, hours: int = 96) -> bool:
-    """기사 발행시간이 최근 N시간 이내 및 미래시각 방지 검증"""
+    """기사 발행시간(KST 문자열)이 최근 N시간 이내인지 검증. 미래 시각 과다 배제."""
     if not published_at_str:
         return True
     try:
+        # published_at 은 parse_pub_date 기준 KST naive 문자열
         dt = datetime.strptime(published_at_str[:19], "%Y-%m-%d %H:%M:%S")
-        now = datetime.now()
+        now = now_kst()
         cutoff = now - timedelta(hours=hours)
+        # CI가 UTC 이면 datetime.now() 사용 시 저녁 KST 기사가 '미래'로 전부 탈락함
         if dt > now + timedelta(minutes=15):
             return False
         return dt >= cutoff
@@ -107,7 +114,7 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             raw_date = entry.get("published", entry.get("updated", entry.get("pubDate", "")))
             published_at = parse_pub_date(raw_date)
             if not published_at:
-                published_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                published_at = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 
             if not is_within_hours(published_at, hours=96):
                 continue
@@ -236,7 +243,7 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                         pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
 
                 if not pub_date:
-                    pub_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 
                 if not is_within_hours(pub_date, hours=96):
                     continue
