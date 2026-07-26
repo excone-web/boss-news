@@ -5,6 +5,11 @@ let itemsPerPage = 50;
 let currentCategory = "전체";
 let isMaster = false;
 
+// 탭을 연 채로도 서버 갱신을 반영 (데이터 수집 주기 2h보다 짧게 폴링)
+const CLIENT_REFRESH_MS = 5 * 60 * 1000;
+let refreshTimer = null;
+let isLoadingArticles = false;
+
 document.addEventListener("DOMContentLoaded", () => {
     initApp();
 });
@@ -23,49 +28,106 @@ async function initApp() {
         if (loggedMenu) loggedMenu.classList.remove("hidden");
     }
     setupEventListeners();
-    await loadArticlesData();
+    await loadArticlesData(false);
+    startAutoRefresh();
 }
 
 let lastUpdatedAt = "";
 let crawlIntervalHours = 2;
 
-async function loadArticlesData() {
+function updateStatusBadge(articleCount) {
+    const line1 = `🟢 DB 정상가동 ( 최근 96시간 기사 ${articleCount.toLocaleString()}건 )`;
+    const line2 = lastUpdatedAt
+        ? `최근 갱신: ${lastUpdatedAt} · ${crawlIntervalHours}시간 주기 갱신`
+        : `${crawlIntervalHours}시간 주기 갱신`;
+    const badge = document.getElementById("dbStatusBadge");
+    if (badge) {
+        badge.innerHTML = `<span class="badge-line1">${line1}</span><span class="badge-line2">${line2}</span>`;
+    }
+}
+
+/**
+ * @param {boolean} isBackground  true면 백그라운드 재조회 (페이지/필터 유지, 변경 시에만 목록 갱신)
+ */
+async function loadArticlesData(isBackground = false) {
+    if (isLoadingArticles) return;
+    isLoadingArticles = true;
+
     try {
-        // LTE 네트워크 로딩 속도 최적화: 2분 단위 캐시 키 적용 (매 초 재다운로드 방지 및 HTTP 304 활용)
-        const cacheKey = Math.floor(Date.now() / 120000);
-        const response = await fetch("articles.json?v=" + cacheKey);
+        // 캐시 버스팅 + HTTP revalidate (CDN/브라우저 스테일 데이터 방지)
+        const cacheKey = Date.now();
+        const response = await fetch("articles.json?v=" + cacheKey, {
+            cache: "no-cache"
+        });
         if (response.ok) {
             const data = await response.json();
+            let nextArticles;
+            let nextUpdatedAt = lastUpdatedAt;
+            let nextInterval = crawlIntervalHours;
+
             if (Array.isArray(data)) {
-                allArticles = data;
+                nextArticles = data;
             } else {
-                allArticles = data.articles || [];
-                lastUpdatedAt = data.updated_at || "";
-                crawlIntervalHours = data.interval_hours || 2;
+                nextArticles = data.articles || [];
+                nextUpdatedAt = data.updated_at || "";
+                nextInterval = data.interval_hours || 2;
             }
 
-            if (!lastUpdatedAt && allArticles.length > 0) {
-                lastUpdatedAt = (allArticles[0].published_at || "").substring(0, 16);
+            if (!nextUpdatedAt && nextArticles.length > 0) {
+                nextUpdatedAt = (nextArticles[0].published_at || "").substring(0, 16);
             }
 
-            const line1 = `🟢 DB 정상가동 ( 최근 96시간 기사 ${allArticles.length.toLocaleString()}건 )`;
-            const line2 = lastUpdatedAt 
-                ? `최근 갱신: ${lastUpdatedAt} · ${crawlIntervalHours}시간 주기 갱신` 
-                : `${crawlIntervalHours}시간 주기 갱신`;
+            const dataChanged =
+                !isBackground ||
+                nextUpdatedAt !== lastUpdatedAt ||
+                nextArticles.length !== allArticles.length;
 
-            document.getElementById("dbStatusBadge").innerHTML = `<span class="badge-line1">${line1}</span><span class="badge-line2">${line2}</span>`;
+            if (!dataChanged) {
+                return;
+            }
+
+            allArticles = nextArticles;
+            lastUpdatedAt = nextUpdatedAt;
+            crawlIntervalHours = nextInterval;
+            updateStatusBadge(allArticles.length);
+
+            if (isBackground) {
+                // 필터·페이지 유지한 채 목록만 다시 그림
+                applyFilters(false);
+            } else {
+                applyFilters(false);
+                const restored = restoreAppState();
+                if (!restored) {
+                    applyFilters(true);
+                }
+            }
         } else {
             console.error("articles.json 로드 실패");
-            document.getElementById("dbStatusBadge").innerHTML = `<span class="badge-line1">⚠️ 기사 데이터 수집 중...</span>`;
+            if (!isBackground) {
+                document.getElementById("dbStatusBadge").innerHTML =
+                    `<span class="badge-line1">⚠️ 기사 데이터 수집 중...</span>`;
+            }
         }
     } catch (e) {
         console.error("데이터 통신 오류:", e);
+    } finally {
+        isLoadingArticles = false;
     }
-    applyFilters(false);
-    const restored = restoreAppState();
-    if (!restored) {
-        applyFilters(true);
-    }
+}
+
+function startAutoRefresh() {
+    if (refreshTimer) clearInterval(refreshTimer);
+    refreshTimer = setInterval(() => {
+        if (document.visibilityState === "visible") {
+            loadArticlesData(true);
+        }
+    }, CLIENT_REFRESH_MS);
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            loadArticlesData(true);
+        }
+    });
 }
 
 function saveAppState() {

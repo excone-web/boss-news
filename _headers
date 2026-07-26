@@ -1,0 +1,19 @@
+# Cloudflare Pages 캐시 정책
+# articles.json: 짧게 캐시 + 재검증 (주기 갱신 데이터가 오래 남지 않도록)
+/articles.json
+  Cache-Control: public, max-age=60, must-revalidate
+  CDN-Cache-Control: public, max-age=60, must-revalidate
+
+# HTML: 배포 직후 반영
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
+
+/
+  Cache-Control: public, max-age=60, must-revalidate
+
+# 앱 로직: 중간 캐시
+/app.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+/style.css
+  Cache-Control: public, max-age=300, must-revalidate
