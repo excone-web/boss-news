@@ -6,8 +6,9 @@
 
 ## 1. 주요 특징 및 기술 스택
 - **호스팅 & 프론트엔드:** Cloudflare Pages (HTML5, Vanilla CSS, JavaScript)
-- **데이터 파이프라인:** Python RSS & HTML Scraper (`scraper.py`), SQLite (`news.db`), `articles.json`
-- **자동 갱신:** `build_data.py` 실행 시 96시간 이내 최신 기사 수집 ➔ `articles.json` 및 `sitemap.xml` 자동 갱신
+- **데이터 파이프라인:** Python RSS & HTML Scraper (`scraper.py`), SQLite (`news.db` 로컬), `articles.json`
+- **자동 갱신 (서버):** GitHub Actions 스케줄(+ 선택 Cloudflare Worker 트리거) → `build_data.py` → `articles.json` / `sitemap.xml` 커밋 → Pages 재배포
+- **자동 갱신 (브라우저):** `app.js`가 탭 표시 중 주기적으로 `articles.json` 재조회
 - **검색엔진 최적화(SEO):** Schema.org JSON-LD, Open Graph, Twitter Cards, Sitemap.xml, Naver Search Advisor 인증
 - **저작권 준수:** 원문 헤드라인, 배포시간, 언론사명 및 원문 링크 전용 제공
 
@@ -17,22 +18,27 @@
 
 ```
 /news_curation
-├── index.html                 # Cloudflare Pages 메인 HTML 화면
-├── style.css                  # 모던 디자인 CSS
-├── app.js                     # 프론트엔드 필터링 및 articles.json 데이터 바인딩
-├── articles.json              # 최근 96시간 큐레이션 기사 데이터셋
-├── config.py                  # 언론사 카테고리 매핑 및 크롤러 설정
-├── database.py                # SQLite 연결, 테이블 생성, CRUD, 중복 검증
-├── scraper.py                 # RSS + HTML 정밀 스크래핑 로직
-├── scheduler.py               # 백그라운드 주기적 수집 스케줄러
-├── build_data.py              # 데이터 수집 및 articles.json/sitemap.xml 빌드
-├── generate_sitemap.py        # sitemap.xml 자동 생성 스크립트
-├── robots.txt                 # 검색엔진 크롤링 지침
-├── sitemap.xml                # SEO 사이트맵
-├── naverc008d57c...html       # 네이버 서치어드바이저 소유 확인
-├── requirements.txt           # Python 크롤링 의존성 라이브러리 목록
-└── README.md                  # 실행 및 운영 안내 문서
+├── index.html                 # Cloudflare Pages 메인 HTML
+├── style.css
+├── app.js                     # 필터/페이지네이션 + articles.json 주기 재조회
+├── articles.json              # 최근 96시간 기사 데이터 (배포 산출물)
+├── _headers                   # Cloudflare Pages 캐시 정책
+├── config.py                  # 언론사·크롤러 설정
+├── database.py                # SQLite CRUD
+├── scraper.py                 # RSS + HTML 스크래핑
+├── category_agent.py          # 기사 카테고리 분류
+├── build_data.py              # 수집 + articles.json/sitemap 빌드
+├── generate_sitemap.py
+├── cloudflare_worker.js       # (선택) Actions workflow_dispatch 정시 트리거
+├── .github/workflows/
+│   └── update_news.yml        # 2시간대 주기 자동 수집·푸시
+├── robots.txt
+├── sitemap.xml
+├── requirements.txt
+└── README.md
 ```
+
+> 주기 수집은 **GitHub Actions**가 담당합니다. 로컬 APScheduler 등은 사용하지 않습니다.
 
 ---
 
@@ -49,4 +55,9 @@ python build_data.py
 ```
 
 ### 3) 로컬 웹 테스트
-`index.html` 파일을 웹 브라우저로 직접 열거나 로컬 웹 서버(예: `python -m http.server 8000`)로 실행하여 확인할 수 있습니다.
+`index.html`을 브라우저로 열거나 `python -m http.server 8000` 등으로 확인합니다.
+
+### 4) 운영 자동 갱신
+- **필수:** 레포 Actions 활성화 + `update_news.yml` schedule / 수동 Run workflow
+- **권장:** Cloudflare Worker 배포 + Cron + Secret `GITHUB_PAT` (Actions schedule 지연 보완)
+- Pages가 `main` 푸시에 연결되어 있어야 웹에 반영됩니다.

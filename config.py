@@ -7,8 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "news.db")
 
 # 크롤링 설정
-CRAWL_INTERVAL_HOURS = 2  # 2시간 주기로 백그라운드 자동 수집
-CRAWL_DELAY_SECONDS = 0.2 # 미디어 간 수집 요청 간격 (서버 부하 방지)
+CRAWL_DELAY_SECONDS = 0.2  # 미디어 간 수집 요청 간격 (서버 부하 방지)
 
 # HTTP 요청 헤더 (User-Agent)
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
