@@ -2,51 +2,129 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://boss-news.pages.dev/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=정치/외교</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=경제/부동산</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=사회/사법</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=IT/과학</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=문화/연예/스포츠</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=지역/사설</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boss-news.pages.dev/?category=일반/종합</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34474</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34473</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026072709034409771</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11381</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124426</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026072708332501139</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124425</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34472</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34469</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34467</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34348</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124420</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11380</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.freezinenews.com/news/articleView.html?idxno=28294</loc>
@@ -103,19 +181,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11378</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11376</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11374</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11375</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -127,7 +193,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11375</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11374</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11376</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11378</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -151,19 +229,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.imaeil.com/page/view/2026072616544330126</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072616535092638</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072616553090963</loc>
+    <loc>https://www.imaeil.com/page/view/2026072616200020865</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -175,7 +241,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.imaeil.com/page/view/2026072616200020865</loc>
+    <loc>https://www.imaeil.com/page/view/2026072616553090963</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026072616535092638</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026072616544330126</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -295,6 +373,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124375</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.imaeil.com/page/view/2026072618564675612</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
@@ -302,6 +386,12 @@
   </url>
   <url>
     <loc>https://www.freezinenews.com/news/articleView.html?idxno=28286</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124372</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -379,6 +469,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124293</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.imaeil.com/page/view/2026072409310836096</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
@@ -404,6 +500,12 @@
   </url>
   <url>
     <loc>https://www.hanmiilbo.kr/news/view.php?idx=11360</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124291</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -452,6 +554,12 @@
   </url>
   <url>
     <loc>https://www.imaeil.com/page/view/2026072616485011475</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124206</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -536,114 +644,6 @@
   </url>
   <url>
     <loc>https://www.imaeil.com/page/view/2026072610045602597</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614195000326</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34453</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34452</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34450</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34449</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.ainews1.co.kr/news/articleView.html?idxno=34448</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614385238645</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11355</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614321932009</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614185147410</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614454926936</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124419</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28283</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28282</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614153610121</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072614255196982</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072610071740819</loc>
-    <lastmod>2026-07-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026072422473644164</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
