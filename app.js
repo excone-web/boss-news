@@ -312,14 +312,28 @@ function setupEventListeners() {
         });
     });
 
-    // 마스터 로그인 처리 (비밀번호: maya1009)
+    // 비밀번호 SHA-256 암호화 해시 함수 (소스코드 내 평문 노출 방지)
+    async function hashPassword(str) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(str);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // 마스터 비밀번호 SHA-256 해시값 (maya1009 의 해시값)
+    const MASTER_HASH = "5af81d6e446fdde8ffe170867ccb6327e2c1a30d0d647df249720a8edcac31d8";
+
+    // 마스터 로그인 처리
     const masterLoginBtn = document.getElementById("masterLoginBtn");
     const masterPwInput = document.getElementById("masterPassword");
     
-    function handleMasterLogin() {
+    async function handleMasterLogin() {
         const inputPw = masterPwInput.value;
         const authError = document.getElementById("masterAuthErrorMsg");
-        if (inputPw === "maya1009") {
+        const hashedInput = await hashPassword(inputPw);
+
+        if (hashedInput === MASTER_HASH) {
             isMaster = true;
             sessionStorage.setItem("bossNews_isMaster", "true");
             if (authError) authError.innerText = "";
