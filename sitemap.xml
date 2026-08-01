@@ -49,6 +49,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.imaeil.com/page/view/2026073116323505867</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28469</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11579</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.imaeil.com/page/view/2026080108321184675</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
@@ -169,13 +187,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11573</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11574</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11574</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11573</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -193,7 +211,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.imaeil.com/page/view/2026073119205668517</loc>
+    <loc>https://www.imaeil.com/page/view/2026073110264518463</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -205,7 +223,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.imaeil.com/page/view/2026073110264518463</loc>
+    <loc>https://www.imaeil.com/page/view/2026073119205668517</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -223,7 +241,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11569</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11567</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -235,7 +253,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11567</loc>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11569</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -626,24 +644,6 @@
   </url>
   <url>
     <loc>https://www.truthdaily.co.kr/news/articleView.html?idxno=5941</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026073116584639644</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026073116551659179</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11562</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
