@@ -49,6 +49,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11593</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.truthdaily.co.kr/news/articleView.html?idxno=5960</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.imaeil.com/page/view/2026080200314373562</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11586</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.hanmiilbo.kr/news/view.php?idx=11585</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
@@ -247,6 +271,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.truthdaily.co.kr/news/articleView.html?idxno=5959</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.imaeil.com/page/view/2026080114212378308</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
@@ -265,13 +295,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124849</loc>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124847</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124847</loc>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124849</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -589,19 +619,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124821</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124822</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124823</loc>
+    <loc>https://www.imaeil.com/page/view/2026072710563684462</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -613,37 +631,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.imaeil.com/page/view/2026072710563684462</loc>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124823</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.pennmike.com/news/articleView.html?idxno=124732</loc>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124822</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28465</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.hanmiilbo.kr/news/view.php?idx=11577</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freezinenews.com/news/articleView.html?idxno=28464</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.imaeil.com/page/view/2026080107013514754</loc>
+    <loc>https://www.pennmike.com/news/articleView.html?idxno=124821</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
