@@ -8,8 +8,9 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import urljoin
 
 from config import MEDIA_CONFIG, USER_AGENT, CRAWL_DELAY_SECONDS
-from database import save_articles, purge_old_articles, purge_duplicate_articles
+from database import save_articles, purge_old_articles, purge_duplicate_articles, get_existing_urls
 from category_agent import classify_article
+from translate import translate_title_to_ko, reset_translate_budget
 
 KST = timezone(timedelta(hours=9))
 
@@ -83,13 +84,27 @@ def normalize_title(title: str) -> str:
     """중복 방지를 위한 제목 공백/특수문자 정규화 키 생성"""
     return re.sub(r'[\s\W]+', '', title).lower()
 
-def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dict]:
-    """RSS 피드 파싱 (중복 방지 및 최근 96시간 기사 필터링)"""
+def fetch_rss_feed(
+    rss_url: str,
+    media_name: str,
+    raw_category: str,
+    lang: str = None,
+    url_contains: str = None,
+    known_urls: set = None,
+) -> list[dict]:
+    """RSS 피드 파싱 (중복 방지 및 최근 96시간 기사 필터링)
+
+    lang="en": 제목을 한글로 번역 (국내 매체는 기본값 None → 무번역).
+    url_contains: URL에 해당 부분 문자열이 없으면 스킵 (섹션 피드 오염 방어).
+    known_urls: 이미 DB에 있는 URL은 번역 스킵.
+    """
     articles = []
     if not rss_url:
         return articles
 
     headers = {"User-Agent": USER_AGENT}
+    known_urls = known_urls if known_urls is not None else set()
+    default_category = "IT/과학" if lang == "en" else None
 
     try:
         response = requests.get(rss_url, headers=headers, timeout=8)
@@ -106,6 +121,10 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             if not title or not url or not is_valid_article_title(title):
                 continue
 
+            if url_contains and url_contains not in url:
+                continue
+
+            # in-feed 중복은 원제 기준 (번역 전)
             norm_key = (media_name, normalize_title(title))
             if norm_key in seen_keys:
                 continue
@@ -122,15 +141,32 @@ def fetch_rss_feed(rss_url: str, media_name: str, raw_category: str) -> list[dic
             description = entry.get("summary", entry.get("description", ""))
             clean_body = ""
             if description:
+                # 긴 content:encoded 대신 summary만 사용 (해외 피드 본문 과다 방지)
                 soup = BeautifulSoup(description, "html.parser")
                 clean_body = soup.get_text(strip=True)
+                if len(clean_body) > 500:
+                    clean_body = clean_body[:500]
 
-            assigned_category = classify_article(title=title, content=clean_body, raw_category=raw_category)
+            # 분류는 원제 기준
+            assigned_category = classify_article(
+                title=title,
+                content=clean_body,
+                raw_category=raw_category,
+                default_category=default_category,
+            )
+
+            display_title = title
+            if lang == "en" and url not in known_urls:
+                try:
+                    display_title = translate_title_to_ko(title)
+                except Exception as te:
+                    print(f"[{media_name}] 번역 예외(원문 유지): {te}")
+                    display_title = title
 
             articles.append({
                 "media_name": media_name,
                 "category": assigned_category,
-                "title": title,
+                "title": display_title,
                 "url": url,
                 "published_at": published_at,
                 "summary": None,
@@ -269,31 +305,51 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
     return articles
 
 def run_news_crawler() -> int:
-    """보수 언론사 6곳 DUAL 크롤링 및 100% 교차 중복제거"""
+    """국내·해외 보수 언론 RSS/HTML 크롤링 및 중복 제거"""
     all_articles = []
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 보수 언론사 6곳 듀얼 크롤링 및 중복 검증 시작...")
+    reset_translate_budget()
+    known_urls = set()
+    try:
+        known_urls = get_existing_urls()
+    except Exception as e:
+        print(f"[Crawler Warning] known URL 조회 실패(전체 번역 가능): {e}")
+
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 뉴스 크롤링 시작 (known_urls={len(known_urls)})...")
 
     for category, media_list in MEDIA_CONFIG.items():
         for media in media_list:
             media_name = media["name"]
             rss_url = media.get("rss_url")
             site_url = media.get("site_url")
+            lang = media.get("lang")
+            url_contains = media.get("url_contains")
 
-            rss_articles = []
-            if rss_url:
-                rss_articles = fetch_rss_feed(rss_url, media_name, category)
-                all_articles.extend(rss_articles)
+            try:
+                rss_articles = []
+                if rss_url:
+                    rss_articles = fetch_rss_feed(
+                        rss_url,
+                        media_name,
+                        category,
+                        lang=lang,
+                        url_contains=url_contains,
+                        known_urls=known_urls,
+                    )
+                    all_articles.extend(rss_articles)
 
-            if len(rss_articles) < 15 and site_url:
-                html_articles = scrape_html_feed(site_url, media_name, category)
-                all_articles.extend(html_articles)
+                # HTML 폴백: site_url 있을 때만 (해외 RSS 전용은 스킵)
+                if len(rss_articles) < 15 and site_url:
+                    html_articles = scrape_html_feed(site_url, media_name, category)
+                    all_articles.extend(html_articles)
+            except Exception as e:
+                print(f"[{media_name}] 매체 수집 실패(계속 진행): {e}")
 
             time.sleep(CRAWL_DELAY_SECONDS)
 
     inserted_count = save_articles(all_articles)
     purge_old_articles(hours=96)
     purge_duplicate_articles()
-    
+
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 뉴스 크롤링 완료. 신규 기사 {inserted_count}건 저장됨.")
     return inserted_count
 

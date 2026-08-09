@@ -233,3 +233,12 @@ def get_db_stats() -> dict:
         "total_count": row["total_count"] if row else 0,
         "last_scraped": row["last_scraped"] if row and row["last_scraped"] else "수집 이력 없음"
     }
+
+def get_existing_urls() -> set:
+    """이미 DB에 있는 기사 URL 집합 (재번역·중복 수집 비용 절감용)"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT url FROM articles WHERE url IS NOT NULL AND url != ''")
+    rows = cursor.fetchall()
+    conn.close()
+    return {row["url"] for row in rows}

@@ -7,20 +7,20 @@ Category Management & Robust Auto-Classification Agent
 
 KEYWORDS_MAP = {
     "정치/외교": {
-        "high": ["대통령", "국회", "정당", "여당", "야당", "의원", "선거", "총리", "장관", "외교", "안보", "북한", "트럼프", "바이든", "조국", "이재명", "한동훈", "원내대표", "탄핵", "투표"],
+        "high": ["대통령", "국회", "정당", "여당", "야당", "의원", "선거", "총리", "장관", "외교", "안보", "북한", "트럼프", "바이든", "조국", "이재명", "한동훈", "원내대표", "탄핵", "투표", "Trump", "Biden", "Congress", "Senate"],
         "normal": ["정치", "정부", "국방", "공천", "외교부", "통일부", "입법", "법안"]
     },
     "경제/부동산": {
-        "high": ["아파트", "오피스텔", "부동산", "주택", "분양", "재건축", "재개발", "전세", "청약", "금리", "증시", "주식", "코스피", "코스닥", "환율", "코인", "비트코인", "매매", "물가"],
+        "high": ["아파트", "오피스텔", "부동산", "주택", "분양", "재건축", "재개발", "전세", "청약", "금리", "증시", "주식", "코스피", "코스닥", "환율", "코인", "비트코인", "매매", "물가", "Bitcoin", "crypto"],
         "normal": ["경제", "금융", "은행", "재정", "무역", "상장", "기업", "수출", "수입", "실적", "투자", "자산", "임대", "건설"]
     },
     "사회/사법": {
-        "high": ["검찰", "경찰", "법원", "재판", "범죄", "수사", "피의자", "구속", "판결", "사건", "사고", "음주운전", "폭행", "사기", "배임", "횡령"],
+        "high": ["검찰", "경찰", "법원", "재판", "범죄", "수사", "피의자", "구속", "판결", "사건", "사고", "음주운전", "폭행", "사기", "배임", "횡령", "Supreme Court", "censorship"],
         "normal": ["사회", "노동", "복지", "교육", "노조", "파업", "근로자", "임금", "연금", "학교", "대학", "의료", "병원", "화재", "재난"]
     },
     "IT/과학": {
-        "high": ["AI", "인공지능", "반도체", "IT", "과학", "로봇", "빅데이터", "플랫폼", "소프트웨어", "앱", "클라우드", "네이버", "카카오", "삼성전자", "SK하이닉스", "엔비디아", "애플", "구글", "통신"],
-        "normal": ["양자", "기술", "우주", "스마트폰", "디지털"]
+        "high": ["AI", "인공지능", "반도체", "IT", "과학", "로봇", "빅데이터", "플랫폼", "소프트웨어", "앱", "클라우드", "네이버", "카카오", "삼성전자", "SK하이닉스", "엔비디아", "애플", "구글", "통신", "Big Tech", "semiconductor", "privacy", "free speech", "OpenAI", "ChatGPT", "Meta", "Google", "Apple", "Microsoft", "NVIDIA", "cyber", "firmware", "blockchain"],
+        "normal": ["양자", "기술", "우주", "스마트폰", "디지털", "tech", "software", "digital", "internet", "online", "surveillance"]
     },
     "문화/연예/스포츠": {
         "high": ["연예", "스포츠", "방송", "영화", "공연", "K-POP", "전시", "미술", "음악", "드라마", "골프", "축구", "야구", "가수", "배우", "올림픽"],
@@ -32,7 +32,7 @@ KEYWORDS_MAP = {
     }
 }
 
-def classify_article(title: str, content: str = "", raw_category: str = "") -> str:
+def classify_article(title: str, content: str = "", raw_category: str = "", default_category: str = None) -> str:
     """기사 제목 및 내용을 분석하여 정확한 카테고리로 분류"""
     text_to_search = f"{title} {content}"
 
@@ -57,7 +57,7 @@ def classify_article(title: str, content: str = "", raw_category: str = "") -> s
     if category_scores[best_category] >= 2:
         return best_category
 
-    return "일반/종합"
+    return default_category if default_category else "일반/종합"
 
 def reclassify_all_articles_in_db():
     """DB 내 모든 기사를 정밀 카테고리로 전수 재분류 및 업데이트"""
