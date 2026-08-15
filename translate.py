@@ -7,7 +7,7 @@ import re
 import time
 
 # 1회 실행당 번역 상한 (rate-limit·CI 시간 보호)
-MAX_TRANSLATIONS_PER_RUN = 80
+MAX_TRANSLATIONS_PER_RUN = 200
 _TRANSLATE_SLEEP_SEC = 0.15
 
 _translated_count = 0

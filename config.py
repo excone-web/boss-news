@@ -12,8 +12,8 @@ CRAWL_DELAY_SECONDS = 0.2  # 미디어 간 수집 요청 간격 (서버 부하 �
 # HTTP 요청 헤더 (User-Agent)
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-# 보수 언론사 수집 대상 (국내 Dual RSS/HTML + 해외 IT RSS)
-# 해외 매체: lang="en" → 제목 한글 번역. Breitbart Tech는 tech 피드 오염으로 제외.
+# 보수 언론사 수집 대상 (국내 Dual RSS/HTML)
+# 해외 매체는 일시 중지. 복구 시 아래 해외IT 주석 블록을 MEDIA_CONFIG에 되돌린다.
 MEDIA_CONFIG = {
     "주요뉴스": [
         {
@@ -51,45 +51,22 @@ MEDIA_CONFIG = {
             "rss_url": "https://www.ainews1.co.kr/rss/allArticle.xml",
             "site_url": "https://www.ainews1.co.kr/",
             "type": "DUAL"
+        },
+        {
+            "name": "뉴스앤포스트",
+            "rss_url": None,
+            "site_url": "https://www.newsandpost.com/data/article.php?id=news",
+            "type": "HTML"
         }
     ],
-    # 해외 보수·우익 성향 IT/테크 (RSS 전용, 제목 한글 번역)
-    # 성향 참고: MBFC/AllSides 기준 Right ~ Right-Center (2026)
-    "해외IT": [
-        {
-            "name": "Reclaim The Net",
-            "rss_url": "https://reclaimthenet.org/feed/",
-            "site_url": None,
-            "type": "RSS",
-            "lang": "en",
-        },
-        {
-            "name": "The Federalist",
-            "rss_url": "https://thefederalist.com/category/technology/feed/",
-            "site_url": None,
-            "type": "RSS",
-            "lang": "en",
-        },
-        {
-            "name": "National Review",
-            "rss_url": "https://www.nationalreview.com/science-tech/feed/",
-            "site_url": None,
-            "type": "RSS",
-            "lang": "en",
-        },
-        {
-            "name": "Epoch Times",
-            "rss_url": "https://feed.theepochtimes.com/tech/feed",
-            "site_url": None,
-            "type": "RSS",
-            "lang": "en",
-        },
-        {
-            "name": "Epoch Times",
-            "rss_url": "https://feed.theepochtimes.com/science/feed",
-            "site_url": None,
-            "type": "RSS",
-            "lang": "en",
-        },
-    ],
+    # 해외 수집 일시 중지 (로그인/페이월). 복구 시 이 리스트를 채운다.
+    "해외IT": [],
 }
+
+# 해외 피드 보관 (수집 재개 시 MEDIA_CONFIG["해외IT"]로 복구)
+# Reclaim The Net  https://reclaimthenet.org/feed/
+# The Federalist   https://thefederalist.com/category/technology/feed/
+# National Review  https://www.nationalreview.com/science-tech/feed/
+# Epoch Times      us/china/world/opinion/business/tech/science/wellness/entertainment/special-series
+#   https://feed.theepochtimes.com/{section}/feed
+

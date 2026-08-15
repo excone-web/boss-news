@@ -48,6 +48,12 @@ def build_static_articles_json():
     except Exception as e:
         print(f"[Build Error] 뉴스 크롤링 중 오류: {e}")
 
+    # 해외 매체 잔여분 제거 (시드 JSON에 남아 있을 수 있음)
+    try:
+        database.purge_overseas_articles()
+    except Exception as e:
+        print(f"[Build Warning] 해외 기사 삭제 실패: {e}")
+
     # 2. 최근 96시간 기사 조회
     conn = database.get_connection()
     cursor = conn.cursor()

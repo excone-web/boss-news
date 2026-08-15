@@ -12,8 +12,8 @@ const ARTICLES_DATA_URLS = [
     "https://raw.githubusercontent.com/excone-web/boss-news/main/articles.json",
     "articles.json"
 ];
-// 해외 보수 IT 매체 (카테고리 탭 '해외IT' 필터용)
-const OVERSEAS_MEDIA = new Set([
+// 수집 중지된 해외 매체 — 잔여 articles.json도 화면에 올리지 않음
+const DISABLED_OVERSEAS_MEDIA = new Set([
     "Reclaim The Net",
     "The Federalist",
     "National Review",
@@ -103,6 +103,7 @@ async function loadArticlesData(isBackground = false) {
             nextUpdatedAt = data.updated_at || "";
             nextInterval = data.interval_hours || 2;
         }
+        nextArticles = nextArticles.filter(art => !DISABLED_OVERSEAS_MEDIA.has(art.media_name));
 
         if (!nextUpdatedAt && nextArticles.length > 0) {
             nextUpdatedAt = (nextArticles[0].published_at || "").substring(0, 16);
@@ -450,11 +451,11 @@ function applyFilters(resetPage = true) {
 
     filteredArticles = allArticles.filter(art => {
         let matchCat;
+        if (DISABLED_OVERSEAS_MEDIA.has(art.media_name)) {
+            return false;
+        }
         if (currentCategory === "전체") {
             matchCat = true;
-        } else if (currentCategory === "해외IT") {
-            // 해외 매체 전용 탭 (발행 시각이 국내보다 밀려 '전체' 1페이지에 안 보일 수 있음)
-            matchCat = OVERSEAS_MEDIA.has(art.media_name);
         } else {
             matchCat = art.category === currentCategory;
         }

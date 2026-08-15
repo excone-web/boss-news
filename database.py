@@ -115,6 +115,31 @@ def save_articles(articles: list[dict]) -> int:
     
     return inserted_count
 
+OVERSEAS_MEDIA_NAMES = (
+    "Reclaim The Net",
+    "The Federalist",
+    "National Review",
+    "Epoch Times",
+)
+
+
+def purge_overseas_articles() -> int:
+    """해외 매체 수집 중지 후 잔여 기사를 DB에서 제거"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    placeholders = ",".join("?" * len(OVERSEAS_MEDIA_NAMES))
+    cursor.execute(
+        f"DELETE FROM articles WHERE media_name IN ({placeholders})",
+        OVERSEAS_MEDIA_NAMES,
+    )
+    deleted_count = cursor.rowcount
+    conn.commit()
+    conn.close()
+    if deleted_count:
+        print(f"[Purge] 해외 매체 기사 {deleted_count}건 삭제")
+    return deleted_count
+
+
 def purge_old_articles(hours: int = 96) -> int:
     """96시간(4일)이 지난 오래된 기사 자동 삭제기능"""
     conn = get_connection()

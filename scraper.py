@@ -29,13 +29,20 @@ def parse_pub_date(raw_date: str) -> str:
 
     for fmt in (
         "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S", 
-        "%Y%m%dT%H%M%S", "%Y-%m-%d %H:%M:%S", "%Y.%m.%d %H:%M", "%Y/%m/%d %H:%M:%S", "%Y-%m-%d"
+        "%Y%m%dT%H%M%S", "%Y-%m-%d %H:%M:%S", "%Y.%m.%d %H:%M", "%Y/%m/%d %H:%M:%S"
     ):
         try:
             dt = datetime.strptime(raw_date, fmt)
             if dt.tzinfo is not None:
                 dt = dt.astimezone(KST)
             return dt.strftime("%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            continue
+
+    for fmt in ("%Y/%m/%d", "%Y.%m.%d", "%Y-%m-%d"):
+        try:
+            dt = datetime.strptime(raw_date, fmt)
+            return dt.strftime("%Y-%m-%d") + " 12:00:00"
         except ValueError:
             continue
 
@@ -91,12 +98,14 @@ def fetch_rss_feed(
     lang: str = None,
     url_contains: str = None,
     known_urls: set = None,
+    default_category: str = None,
 ) -> list[dict]:
     """RSS 피드 파싱 (중복 방지 및 최근 96시간 기사 필터링)
 
     lang="en": 제목을 한글로 번역 (국내 매체는 기본값 None → 무번역).
     url_contains: URL에 해당 부분 문자열이 없으면 스킵 (섹션 피드 오염 방어).
     known_urls: 이미 DB에 있는 URL은 번역 스킵.
+    default_category: 키워드 미매칭 시 카테고리. 없으면 영문은 IT/과학.
     """
     articles = []
     if not rss_url:
@@ -104,7 +113,8 @@ def fetch_rss_feed(
 
     headers = {"User-Agent": USER_AGENT}
     known_urls = known_urls if known_urls is not None else set()
-    default_category = "IT/과학" if lang == "en" else None
+    if not default_category:
+        default_category = "IT/과학" if lang == "en" else None
 
     try:
         response = requests.get(rss_url, headers=headers, timeout=8)
@@ -178,6 +188,18 @@ def fetch_rss_feed(
 
     return articles
 
+def canonicalize_newsandpost_url(full_url: str) -> str:
+    """목록 쿼리스트링을 제거하고 id=news&category=&no= 만 남긴다."""
+    no_m = re.search(r'[?&]no=(\d+)', full_url, re.I)
+    if not no_m:
+        return full_url
+    cat_m = re.search(r'[?&]category=(\d+)', full_url, re.I)
+    no = no_m.group(1)
+    if cat_m:
+        return f"https://www.newsandpost.com/data/read.php?id=news&category={cat_m.group(1)}&no={no}"
+    return f"https://www.newsandpost.com/data/read.php?id=news&no={no}"
+
+
 def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> str:
     """한미일보 본문 상세페이지에서 원래 승인/입력된 정확한 시각 추출"""
     try:
@@ -193,11 +215,120 @@ def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> 
         pass
     return ""
 
+NEWSANDPOST_NEWS_LIST = "https://www.newsandpost.com/data/article.php?id=news"
+NEWSANDPOST_MAX_PAGES = 8
+NEWSANDPOST_PAGE_CAP = 100
+
+
+def _newsandpost_article_from_link(a_tag, seen_urls: set, seen_titles: set):
+    href = a_tag.get("href", "").strip()
+    if not href:
+        return None
+    href_lower = href.lower()
+    if not re.search(r'read\.php\?[^#]*\bid=news\b', href_lower):
+        return None
+    if not re.search(r'(?:[?&])no=\d+', href_lower):
+        return None
+
+    full_url = canonicalize_newsandpost_url(urljoin(NEWSANDPOST_NEWS_LIST, href))
+    if full_url in seen_urls:
+        return None
+
+    title_el = a_tag.find(class_=["title", "subject", "tit", "headline"]) or a_tag.find(["h1", "h2", "h3", "h4", "strong", "b"])
+    if title_el:
+        clean_title = title_el.get_text(strip=True)
+    else:
+        lines = [line.strip() for line in a_tag.get_text("\n").split("\n") if line.strip()]
+        clean_title = lines[0] if lines else ""
+
+    if not is_valid_article_title(clean_title):
+        return None
+    if len(clean_title) > 120:
+        clean_title = clean_title[:120] + "..."
+
+    norm_key = normalize_title(clean_title)
+    if norm_key in seen_titles:
+        return None
+
+    pub_date = ""
+    date_node = a_tag.find_next(string=re.compile(r'20\d{2}/\d{2}/\d{2}'))
+    if date_node:
+        m_np = re.search(r'20\d{2}/\d{2}/\d{2}', str(date_node))
+        pub_date = parse_pub_date(m_np.group(0)) if m_np else ""
+    if not pub_date:
+        pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
+
+    seen_urls.add(full_url)
+    seen_titles.add(norm_key)
+    return {
+        "title": clean_title,
+        "url": full_url,
+        "published_at": pub_date,
+    }
+
+
+def scrape_newsandpost_news(raw_category: str) -> list[dict]:
+    """뉴스앤포스트 뉴스 게시판을 96시간이 끊길 때까지 페이지 순회."""
+    articles = []
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
+    seen_urls = set()
+    seen_titles = set()
+    media_name = "뉴스앤포스트"
+
+    for page in range(1, NEWSANDPOST_MAX_PAGES + 1):
+        list_url = f"{NEWSANDPOST_NEWS_LIST}&page={page}"
+        try:
+            response = session.get(list_url, timeout=8)
+        except Exception as e:
+            print(f"[{media_name}] 목록 요청 실패 (page={page}): {e}")
+            break
+        if response.status_code != 200:
+            break
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        page_kept = 0
+        page_listed = 0
+
+        for a_tag in soup.find_all("a"):
+            parsed = _newsandpost_article_from_link(a_tag, seen_urls, seen_titles)
+            if not parsed:
+                continue
+            page_listed += 1
+            if not is_within_hours(parsed["published_at"], hours=96):
+                continue
+
+            assigned_category = classify_article(title=parsed["title"], raw_category=raw_category)
+            articles.append({
+                "media_name": media_name,
+                "category": assigned_category,
+                "title": parsed["title"],
+                "url": parsed["url"],
+                "published_at": parsed["published_at"],
+                "summary": None,
+                "content_body": ""
+            })
+            page_kept += 1
+            if len(articles) >= NEWSANDPOST_PAGE_CAP:
+                print(f"[{media_name}] page={page} 수집 {len(articles)}건 (상한)")
+                return articles
+
+        print(f"[{media_name}] page={page} kept={page_kept} listed={page_listed} total={len(articles)}")
+        if page_listed == 0 or page_kept == 0:
+            break
+        time.sleep(CRAWL_DELAY_SECONDS)
+
+    return articles
+
+
 def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[dict]:
     """HTML 메인 및 뉴스 목록 정밀 스크래핑 (중복 교차 검증)"""
     articles = []
     if not site_url:
         return articles
+
+    if "newsandpost" in site_url:
+        return scrape_newsandpost_news(raw_category)
 
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
@@ -226,78 +357,80 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
             if "hanmiilbo" in site_url and not re.search(r'view\.php\?idx=\d+', href_lower):
                 continue
 
-            if any(k in href for k in ["idx=", "view", "article", "news", "read"]):
-                full_url = urljoin(site_url, href)
-                if full_url in seen_urls:
-                    continue
+            if not any(k in href for k in ["idx=", "view", "article", "news", "read"]):
+                continue
 
-                title_el = a_tag.find(class_=["title", "subject", "tit", "headline"]) or a_tag.find(["h1", "h2", "h3", "h4", "strong", "b"])
-                if title_el:
-                    clean_title = title_el.get_text(strip=True)
-                else:
-                    lines = [line.strip() for line in a_tag.get_text("\n").split("\n") if line.strip()]
-                    clean_title = lines[0] if lines else ""
+            full_url = urljoin(site_url, href)
+            if full_url in seen_urls:
+                continue
 
-                if not is_valid_article_title(clean_title):
-                    continue
+            title_el = a_tag.find(class_=["title", "subject", "tit", "headline"]) or a_tag.find(["h1", "h2", "h3", "h4", "strong", "b"])
+            if title_el:
+                clean_title = title_el.get_text(strip=True)
+            else:
+                lines = [line.strip() for line in a_tag.get_text("\n").split("\n") if line.strip()]
+                clean_title = lines[0] if lines else ""
 
-                if len(clean_title) > 120:
-                    clean_title = clean_title[:120] + "..."
+            if not is_valid_article_title(clean_title):
+                continue
 
-                norm_key = normalize_title(clean_title)
-                if norm_key in seen_titles:
-                    continue
+            if len(clean_title) > 120:
+                clean_title = clean_title[:120] + "..."
 
-                seen_urls.add(full_url)
-                seen_titles.add(norm_key)
+            norm_key = normalize_title(clean_title)
+            if norm_key in seen_titles:
+                continue
 
-                pub_date = ""
-                if "hanmiilbo" in site_url:
-                    pub_date = fetch_hanmiilbo_detail_date(session, full_url)
-                else:
-                    parent_text = a_tag.parent.get_text() if a_tag.parent else ""
-                    m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
-                    pub_date = parse_pub_date(m.group(0)) if m else ""
+            seen_urls.add(full_url)
+            seen_titles.add(norm_key)
 
-                if not pub_date:
-                    try:
-                        detail_res = session.get(full_url, timeout=3)
-                        if detail_res.status_code == 200:
-                            m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_res.text, re.I)
-                            if m_det:
-                                pub_date = parse_pub_date(m_det.group(1))
-                            if not pub_date:
-                                m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_res.text)
-                                if m_body:
-                                    pub_date = parse_pub_date(m_body.group(1))
-                    except Exception:
-                        pass
+            pub_date = ""
+            if "hanmiilbo" in site_url:
+                pub_date = fetch_hanmiilbo_detail_date(session, full_url)
+            else:
+                parent_text = a_tag.parent.get_text() if a_tag.parent else ""
+                m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
+                pub_date = parse_pub_date(m.group(0)) if m else ""
 
-                if not pub_date:
-                    m_url = re.search(r'(20\d{2})(\d{2})(\d{2})', full_url)
-                    if m_url:
-                        pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
+            if not pub_date:
+                try:
+                    detail_res = session.get(full_url, timeout=3)
+                    if detail_res.status_code == 200:
+                        m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_res.text, re.I)
+                        if m_det:
+                            pub_date = parse_pub_date(m_det.group(1))
+                        if not pub_date:
+                            m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_res.text)
+                            if m_body:
+                                pub_date = parse_pub_date(m_body.group(1))
+                except Exception:
+                    pass
 
-                if not pub_date:
-                    pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
+            if not pub_date:
+                m_url = re.search(r'(20\d{2})(\d{2})(\d{2})', full_url)
+                if m_url:
+                    pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
 
-                if not is_within_hours(pub_date, hours=96):
-                    continue
+            if not pub_date:
+                pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 
-                assigned_category = classify_article(title=clean_title, raw_category=raw_category)
+            if not is_within_hours(pub_date, hours=96):
+                continue
 
-                articles.append({
-                    "media_name": media_name,
-                    "category": assigned_category,
-                    "title": clean_title,
-                    "url": full_url,
-                    "published_at": pub_date,
-                    "summary": None,
-                    "content_body": ""
-                })
+            assigned_category = classify_article(title=clean_title, raw_category=raw_category)
 
-                if len(articles) >= 100:
-                    break
+            articles.append({
+                "media_name": media_name,
+                "category": assigned_category,
+                "title": clean_title,
+                "url": full_url,
+                "published_at": pub_date,
+                "summary": None,
+                "content_body": ""
+            })
+
+            if len(articles) >= 100:
+                break
 
     except Exception as e:
         print(f"[{media_name}] HTML 스크래핑 에러 ({site_url}): {e}")
@@ -323,6 +456,7 @@ def run_news_crawler() -> int:
             site_url = media.get("site_url")
             lang = media.get("lang")
             url_contains = media.get("url_contains")
+            default_category = media.get("default_category")
 
             try:
                 rss_articles = []
@@ -334,6 +468,7 @@ def run_news_crawler() -> int:
                         lang=lang,
                         url_contains=url_contains,
                         known_urls=known_urls,
+                        default_category=default_category,
                     )
                     all_articles.extend(rss_articles)
 
