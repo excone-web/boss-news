@@ -103,6 +103,11 @@ def save_articles(articles: list[dict]) -> int:
             ))
             if cursor.rowcount > 0:
                 inserted_count += 1
+            elif item.get("media_name") == "뉴스앤포스트" and item.get("url") and item.get("published_at"):
+                cursor.execute(
+                    "UPDATE articles SET published_at = ? WHERE url = ? AND IFNULL(published_at, '') != ?",
+                    (item["published_at"], item["url"], item["published_at"]),
+                )
         except sqlite3.Error as e:
             print(f"[DB Error] 기사 저장 중 오류 발생: {e}")
             continue

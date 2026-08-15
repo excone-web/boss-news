@@ -200,6 +200,23 @@ def canonicalize_newsandpost_url(full_url: str) -> str:
     return f"https://www.newsandpost.com/data/read.php?id=news&no={no}"
 
 
+def fetch_newsandpost_detail_date(session: requests.Session, article_url: str) -> str:
+    """본문의 '기사입력: YYYY-MM-DD HH:MM:SS' 시각을 추출"""
+    try:
+        res = session.get(article_url, timeout=3)
+        if res.status_code != 200:
+            return ""
+        m = re.search(r'기사입력:\s*(20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})', res.text)
+        if m:
+            return parse_pub_date(m.group(1))
+        m2 = re.search(r'기사입력:\s*(20\d{2}-\d{2}-\d{2}\s+\d{2}:\d{2})', res.text)
+        if m2:
+            return parse_pub_date(m2.group(1))
+    except Exception:
+        pass
+    return ""
+
+
 def fetch_hanmiilbo_detail_date(session: requests.Session, article_url: str) -> str:
     """한미일보 본문 상세페이지에서 원래 승인/입력된 정확한 시각 추출"""
     try:
@@ -297,6 +314,12 @@ def scrape_newsandpost_news(raw_category: str) -> list[dict]:
             page_listed += 1
             if not is_within_hours(parsed["published_at"], hours=96):
                 continue
+
+            detail_date = fetch_newsandpost_detail_date(session, parsed["url"])
+            if detail_date:
+                parsed["published_at"] = detail_date
+                if not is_within_hours(parsed["published_at"], hours=96):
+                    continue
 
             assigned_category = classify_article(title=parsed["title"], raw_category=raw_category)
             articles.append({
