@@ -57,7 +57,35 @@ MEDIA_CONFIG = {
             "rss_url": None,
             "site_url": "https://www.newsandpost.com/data/article.php?id=news",
             "type": "HTML"
-        }
+        },
+        *[
+            {
+                "name": "에포크타임스",
+                "rss_url": rss_url,
+                "site_url": ("https://www.epochtimes.kr/" if i == 0 else None),
+                "type": "DUAL" if i == 0 else "RSS",
+                "url_contains": "epochtimes.kr",
+            }
+            for i, rss_url in enumerate((
+                "https://www.epochtimes.kr/feed/",
+                "https://www.epochtimes.kr/category/politics/feed/",
+                "https://www.epochtimes.kr/category/economics/feed/",
+                "https://www.epochtimes.kr/category/society/feed/",
+                "https://www.epochtimes.kr/category/international/feed/",
+                "https://www.epochtimes.kr/category/usa/feed/",
+                "https://www.epochtimes.kr/category/china/feed/",
+                "https://www.epochtimes.kr/category/middle-east/feed/",
+                "https://www.epochtimes.kr/category/culture-history/feed/",
+                "https://www.epochtimes.kr/category/nature-science/feed/",
+                "https://www.epochtimes.kr/category/opinion/feed/",
+                "https://www.epochtimes.kr/category/interview/feed/",
+                "https://www.epochtimes.kr/category/permium/feed/",
+                "https://www.epochtimes.kr/category/culture-brief/feed/",
+                "https://www.epochtimes.kr/category/bright/feed/",
+                "https://www.epochtimes.kr/category/shenyun/feed/",
+                "https://www.epochtimes.kr/category/falungong-founder/feed/",
+            ))
+        ],
     ],
     # 해외 수집 일시 중지 (로그인/페이월). 복구 시 이 리스트를 채운다.
     "해외IT": [],
@@ -67,6 +95,4 @@ MEDIA_CONFIG = {
 # Reclaim The Net  https://reclaimthenet.org/feed/
 # The Federalist   https://thefederalist.com/category/technology/feed/
 # National Review  https://www.nationalreview.com/science-tech/feed/
-# Epoch Times      us/china/world/opinion/business/tech/science/wellness/entertainment/special-series
-#   https://feed.theepochtimes.com/{section}/feed
 

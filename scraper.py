@@ -48,6 +48,23 @@ def parse_pub_date(raw_date: str) -> str:
 
     return ""
 
+
+def parse_epoch_kr_ko_datetime(html: str) -> str:
+    """에포크타임스 본문 '2026년 08월 16일 오전 11:18' 시각."""
+    m = re.search(
+        r'(20\d{2})년\s*(\d{1,2})월\s*(\d{1,2})일\s*(오전|오후)\s*(\d{1,2}):(\d{2})',
+        html or "",
+    )
+    if not m:
+        return ""
+    year, month, day, ampm, hour, minute = m.groups()
+    hour_i = int(hour)
+    if ampm == "오후" and hour_i < 12:
+        hour_i += 12
+    if ampm == "오전" and hour_i == 12:
+        hour_i = 0
+    return f"{year}-{int(month):02d}-{int(day):02d} {hour_i:02d}:{minute}:00"
+
 def now_kst() -> datetime:
     """GitHub Actions(UTC)에서도 발행시각(KST)과 동일 기준으로 비교하기 위함"""
     return datetime.now(KST).replace(tzinfo=None)
@@ -371,17 +388,22 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 continue
 
             href_lower = href.lower()
+            is_epoch_kr = "epochtimes.kr" in site_url
 
             # 목록/카테고리/섹션/검색 URL 제외
             if any(ex in href_lower for ex in ["list.php", "section.php", "category", "pdf_list", "search", "tag", "member", "login", "user"]):
                 continue
 
-            # 한미일보 기사 뷰 URL (view.php?idx=숫자) 전용 검증
-            if "hanmiilbo" in site_url and not re.search(r'view\.php\?idx=\d+', href_lower):
-                continue
+            if is_epoch_kr:
+                if not re.search(r'/20\d{2}/\d{2}/\d+\.html', href_lower):
+                    continue
+            else:
+                # 한미일보 기사 뷰 URL (view.php?idx=숫자) 전용 검증
+                if "hanmiilbo" in site_url and not re.search(r'view\.php\?idx=\d+', href_lower):
+                    continue
 
-            if not any(k in href for k in ["idx=", "view", "article", "news", "read"]):
-                continue
+                if not any(k in href for k in ["idx=", "view", "article", "news", "read"]):
+                    continue
 
             full_url = urljoin(site_url, href)
             if full_url in seen_urls:
@@ -426,6 +448,8 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                             m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_res.text)
                             if m_body:
                                 pub_date = parse_pub_date(m_body.group(1))
+                        if not pub_date and is_epoch_kr:
+                            pub_date = parse_epoch_kr_ko_datetime(detail_res.text)
                 except Exception:
                     pass
 
