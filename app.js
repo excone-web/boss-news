@@ -19,6 +19,16 @@ const DISABLED_OVERSEAS_MEDIA = new Set([
     "National Review",
     "Epoch Times"
 ]);
+const MEDIA_NAME_ALIASES = {
+    "에포크타임스": ["에포크타임스", "에포크타임즈"]
+};
+
+function mediaNameMatches(articleName, selectedMedia) {
+    if (selectedMedia === "전체") return true;
+    if (articleName === selectedMedia) return true;
+    const aliases = MEDIA_NAME_ALIASES[selectedMedia];
+    return !!(aliases && aliases.includes(articleName));
+}
 let refreshTimer = null;
 let isLoadingArticles = false;
 
@@ -69,18 +79,26 @@ async function loadArticlesData(isBackground = false) {
         const cacheKey = Date.now();
         let data = null;
 
-        for (const baseUrl of ARTICLES_DATA_URLS) {
+        const fetched = [];
+        await Promise.all(ARTICLES_DATA_URLS.map(async (baseUrl) => {
             try {
                 const sep = baseUrl.includes("?") ? "&" : "?";
                 const response = await fetch(baseUrl + sep + "v=" + cacheKey, {
                     cache: "no-cache"
                 });
-                if (!response.ok) continue;
-                data = await response.json();
-                break;
+                if (!response.ok) return;
+                fetched.push(await response.json());
             } catch (fetchErr) {
                 console.warn("articles 소스 실패:", baseUrl, fetchErr);
             }
+        }));
+        if (fetched.length) {
+            fetched.sort((a, b) => {
+                const ta = (!Array.isArray(a) && a.updated_at) || "";
+                const tb = (!Array.isArray(b) && b.updated_at) || "";
+                return tb.localeCompare(ta);
+            });
+            data = fetched[0];
         }
 
         if (!data) {
@@ -174,7 +192,8 @@ function restoreAppState() {
         sessionStorage.removeItem("bossNews_appState");
 
         if (state.category) {
-            currentCategory = state.category;
+            const tab = document.querySelector(`.tab-btn[data-category="${state.category}"]`);
+            currentCategory = tab ? state.category : "전체";
             document.querySelectorAll(".tab-btn").forEach(b => {
                 b.classList.toggle("active", b.getAttribute("data-category") === currentCategory);
             });
@@ -459,7 +478,7 @@ function applyFilters(resetPage = true) {
         } else {
             matchCat = art.category === currentCategory;
         }
-        const matchMedia = (selectedMedia === "전체") || (art.media_name === selectedMedia);
+        const matchMedia = mediaNameMatches(art.media_name, selectedMedia);
         const matchKeyword = !keyword || (art.title && art.title.toLowerCase().includes(keyword));
         return matchCat && matchMedia && matchKeyword;
     });
