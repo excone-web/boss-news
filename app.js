@@ -12,12 +12,13 @@ const ARTICLES_DATA_URLS = [
     "https://raw.githubusercontent.com/excone-web/boss-news/main/articles.json",
     "articles.json"
 ];
-// 수집 중지된 해외 매체 — 잔여 articles.json도 화면에 올리지 않음
+// 수집 중지 매체 — 잔여 articles.json도 화면에 올리지 않음
 const DISABLED_OVERSEAS_MEDIA = new Set([
     "Reclaim The Net",
     "The Federalist",
     "National Review",
-    "Epoch Times"
+    "Epoch Times",
+    "데일리안"
 ]);
 const MEDIA_NAME_ALIASES = {
     "에포크타임스": ["에포크타임스", "에포크타임즈"]

@@ -64,12 +64,7 @@ MEDIA_CONFIG = {
             "site_url": "https://www.newdaily.co.kr/",
             "type": "HTML"
         },
-        {
-            "name": "데일리안",
-            "rss_url": None,
-            "site_url": "https://www.dailian.co.kr/",
-            "type": "HTML"
-        },
+        # 데일리안은 입력 시각 파싱이 불안정해 수집에서 제외. 복구 시 HTML 항목을 되돌린다.
         *[
             {
                 "name": "에포크타임스",

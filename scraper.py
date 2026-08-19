@@ -94,29 +94,6 @@ def extract_html_title(html: str) -> str:
     return ""
 
 
-def parse_dailian_input_time(html: str) -> str:
-    """데일리안 본문 '입력 YYYY.MM.DD HH:MM' (수정 시각 제외)."""
-    if not html:
-        return ""
-    text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
-    m = re.search(
-        r"입력\s*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
-        text,
-    )
-    if m:
-        y, mo, d, h, mi = m.groups()
-        return f"{y}-{mo}-{d} {int(h):02d}:{mi}:00"
-    m_html = re.search(
-        r"입력(?:\s|&nbsp;|<[^>]+>)*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
-        html,
-        re.I,
-    )
-    if not m_html:
-        return ""
-    y, mo, d, h, mi = m_html.groups()
-    return f"{y}-{mo}-{d} {int(h):02d}:{mi}:00"
-
-
 def now_kst() -> datetime:
     """GitHub Actions(UTC)에서도 발행시각(KST)과 동일 기준으로 비교하기 위함"""
     return datetime.now(KST).replace(tzinfo=None)
@@ -442,7 +419,6 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
             href_lower = href.lower()
             is_epoch_kr = "epochtimes.kr" in site_url
             is_newdaily = "newdaily.co.kr" in site_url
-            is_dailian = "dailian.co.kr" in site_url
 
             # 목록/카테고리/섹션/검색 URL 제외
             if any(ex in href_lower for ex in ["list.php", "section.php", "category", "pdf_list", "search", "tag", "member", "login", "user"]):
@@ -450,9 +426,6 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
             if is_newdaily:
                 if not re.search(r'/site/data/html/20\d{2}/\d{2}/\d{2}/\d+\.html', href_lower):
-                    continue
-            elif is_dailian:
-                if not re.search(r'/news/view/\d+', href_lower):
                     continue
             elif is_epoch_kr:
                 if not re.search(r'/20\d{2}/\d{2}/\d+\.html', href_lower):
@@ -492,7 +465,7 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
             pub_date = ""
             if "hanmiilbo" in site_url:
                 pub_date = fetch_hanmiilbo_detail_date(session, full_url)
-            elif not is_dailian:
+            else:
                 parent_text = a_tag.parent.get_text() if a_tag.parent else ""
                 m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
                 pub_date = parse_pub_date(m.group(0)) if m else ""
@@ -506,7 +479,7 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                     if not pub_date:
                         pub_date = url_day
 
-            if not pub_date or is_newdaily or is_dailian:
+            if not pub_date or is_newdaily:
                 try:
                     detail_res = session.get(full_url, timeout=3)
                     if detail_res.status_code == 200:
@@ -515,26 +488,15 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                             detail_title = extract_html_title(detail_html)
                             if is_valid_article_title(detail_title):
                                 clean_title = detail_title[:120] + "..." if len(detail_title) > 120 else detail_title
-                        if is_dailian:
-                            pub_date = parse_dailian_input_time(detail_html)
-                            if not pub_date:
-                                m_det = re.search(
-                                    r'article:published_time["\']?\s*content=["\']?([^"\'\s>]+)',
-                                    detail_html,
-                                    re.I,
-                                )
-                                if m_det:
-                                    pub_date = parse_pub_date(m_det.group(1))
-                        else:
-                            m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_html, re.I)
-                            if m_det:
-                                pub_date = parse_pub_date(m_det.group(1))
-                            if not pub_date:
-                                m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_html)
-                                if m_body:
-                                    pub_date = parse_pub_date(m_body.group(1))
-                            if not pub_date and is_epoch_kr:
-                                pub_date = parse_epoch_kr_ko_datetime(detail_html)
+                        m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_html, re.I)
+                        if m_det:
+                            pub_date = parse_pub_date(m_det.group(1))
+                        if not pub_date:
+                            m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_html)
+                            if m_body:
+                                pub_date = parse_pub_date(m_body.group(1))
+                        if not pub_date and is_epoch_kr:
+                            pub_date = parse_epoch_kr_ko_datetime(detail_html)
                 except Exception:
                     pass
 
@@ -544,8 +506,6 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                     pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
 
             if not pub_date:
-                if is_dailian:
-                    continue
                 pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 
             if not is_within_hours(pub_date, hours=96):

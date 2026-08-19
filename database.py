@@ -108,7 +108,7 @@ def save_articles(articles: list[dict]) -> int:
                     "UPDATE articles SET published_at = ? WHERE url = ? AND IFNULL(published_at, '') != ?",
                     (item["published_at"], item["url"], item["published_at"]),
                 )
-            elif item.get("media_name") in ("뉴데일리", "데일리안") and item.get("url"):
+            elif item.get("media_name") == "뉴데일리" and item.get("url"):
                 cursor.execute(
                     """UPDATE articles SET title = COALESCE(?, title), published_at = COALESCE(?, published_at)
                        WHERE url = ? AND (IFNULL(title, '') != IFNULL(?, '') OR IFNULL(published_at, '') != IFNULL(?, ''))""",
@@ -132,6 +132,19 @@ OVERSEAS_MEDIA_NAMES = (
     "National Review",
     "Epoch Times",
 )
+
+
+def purge_dailian_articles() -> int:
+    """데일리안 수집 중지 후 잔여 기사를 DB에서 제거"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM articles WHERE media_name = ?", ("데일리안",))
+    deleted_count = cursor.rowcount
+    conn.commit()
+    conn.close()
+    if deleted_count:
+        print(f"[Purge] 데일리안 기사 {deleted_count}건 삭제")
+    return deleted_count
 
 
 def purge_overseas_articles() -> int:
