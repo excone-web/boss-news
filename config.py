@@ -14,14 +14,27 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 # 보수 언론사 수집 대상 (국내 Dual RSS/HTML)
 # 해외 매체는 일시 중지. 복구 시 아래 해외IT 주석 블록을 MEDIA_CONFIG에 되돌린다.
+def _section_rss(name, urls):
+    return [
+        {
+            "name": name,
+            "rss_url": rss_url,
+            "site_url": None,
+            "type": "RSS",
+        }
+        for rss_url in urls
+    ]
+
+
 MEDIA_CONFIG = {
     "주요뉴스": [
-        {
-            "name": "매일신문",
-            "rss_url": "https://www.imaeil.com/rss/",
-            "site_url": "https://www.imaeil.com/",
-            "type": "DUAL"
-        },
+        *_section_rss("매일신문", (
+            "https://www.imaeil.com/rss?cate=politics",
+            "https://www.imaeil.com/rss?cate=economy",
+            "https://www.imaeil.com/rss?cate=society",
+            "https://www.imaeil.com/rss?cate=nations",
+            "https://www.imaeil.com/rss?cate=opinion",
+        )),
         {
             "name": "한미일보",
             "rss_url": None,
@@ -31,26 +44,26 @@ MEDIA_CONFIG = {
         {
             "name": "프리진뉴스",
             "rss_url": "https://www.freezinenews.com/rss/allArticle.xml",
-            "site_url": "https://www.freezinenews.com/",
-            "type": "DUAL"
+            "site_url": None,
+            "type": "RSS"
         },
         {
             "name": "트루스데일리",
             "rss_url": "https://www.truthdaily.co.kr/rss/allArticle.xml",
-            "site_url": "https://www.truthdaily.co.kr/",
-            "type": "DUAL"
+            "site_url": None,
+            "type": "RSS"
         },
-        {
-            "name": "펜앤드마이크",
-            "rss_url": "https://www.pennmike.com/rss/allArticle.xml",
-            "site_url": "https://www.pennmike.com/",
-            "type": "DUAL"
-        },
+        *_section_rss("펜앤드마이크", (
+            "https://www.pennmike.com/rss/S1N2.xml",
+            "https://www.pennmike.com/rss/S1N4.xml",
+            "https://www.pennmike.com/rss/S1N6.xml",
+            "https://www.pennmike.com/rss/S1N1.xml",
+        )),
         {
             "name": "독립신문",
             "rss_url": "https://www.ainews1.co.kr/rss/allArticle.xml",
-            "site_url": "https://www.ainews1.co.kr/",
-            "type": "DUAL"
+            "site_url": None,
+            "type": "RSS"
         },
         {
             "name": "뉴스앤포스트",
@@ -70,12 +83,11 @@ MEDIA_CONFIG = {
             {
                 "name": "에포크타임스",
                 "rss_url": rss_url,
-                "site_url": ("https://www.epochtimes.kr/" if i == 0 else None),
-                "type": "DUAL" if i == 0 else "RSS",
+                "site_url": None,
+                "type": "RSS",
                 "url_contains": "epochtimes.kr",
             }
-            for i, rss_url in enumerate((
-                "https://www.epochtimes.kr/feed/",
+            for rss_url in (
                 "https://www.epochtimes.kr/category/politics/feed/",
                 "https://www.epochtimes.kr/category/economics/feed/",
                 "https://www.epochtimes.kr/category/society/feed/",
@@ -83,16 +95,9 @@ MEDIA_CONFIG = {
                 "https://www.epochtimes.kr/category/usa/feed/",
                 "https://www.epochtimes.kr/category/china/feed/",
                 "https://www.epochtimes.kr/category/middle-east/feed/",
-                "https://www.epochtimes.kr/category/culture-history/feed/",
-                "https://www.epochtimes.kr/category/nature-science/feed/",
                 "https://www.epochtimes.kr/category/opinion/feed/",
                 "https://www.epochtimes.kr/category/interview/feed/",
-                "https://www.epochtimes.kr/category/permium/feed/",
-                "https://www.epochtimes.kr/category/culture-brief/feed/",
-                "https://www.epochtimes.kr/category/bright/feed/",
-                "https://www.epochtimes.kr/category/shenyun/feed/",
-                "https://www.epochtimes.kr/category/falungong-founder/feed/",
-            ))
+            )
         ],
     ],
     # 해외 수집 일시 중지 (로그인/페이월). 복구 시 이 리스트를 채운다.

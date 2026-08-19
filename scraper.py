@@ -122,11 +122,16 @@ INVALID_SECTION_TITLES = {
     "실시간 뉴스", "최신기사", "인기기사", "전체기사", "분야별 뉴스", "공지사항", "이벤트"
 }
 
+SKIP_TITLE_RE = re.compile(r"^\[(?:포토|영상|사진|오늘날씨)\]|뉴데툰|윤서인")
+
+
 def is_valid_article_title(title: str) -> bool:
     clean = title.strip()
     if not clean or len(clean) < 8:
         return False
     if clean in INVALID_SECTION_TITLES:
+        return False
+    if SKIP_TITLE_RE.search(clean):
         return False
     # 기사 제목은 2개 이상의 단어로 이루어지므로 띄어쓰기 필수
     if " " not in clean:
@@ -283,7 +288,6 @@ NEWSANDPOST_MAX_PAGES = 8
 NEWSANDPOST_PAGE_CAP = 100
 
 NEWDAILY_ARTICLE_RE = re.compile(r"/site/data/html/20\d{2}/\d{2}/\d{2}/\d+\.html", re.I)
-NEWDAILY_SKIP_TITLE_RE = re.compile(r"^\[(?:포토|영상)\]|뉴데툰|윤서인")
 NEWDAILY_REGIONAL_HOSTS = (
     "tk.newdaily.co.kr",
     "gg.newdaily.co.kr",
@@ -420,7 +424,7 @@ def newdaily_url_day(url: str) -> str:
 
 
 def is_newdaily_skip_title(title: str) -> bool:
-    return bool(NEWDAILY_SKIP_TITLE_RE.search(title or ""))
+    return bool(SKIP_TITLE_RE.search(title or ""))
 
 
 def fetch_newdaily_detail(session: requests.Session, url: str, title: str) -> tuple[str, str]:
