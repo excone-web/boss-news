@@ -58,6 +58,7 @@ MEDIA_CONFIG = {
             "site_url": "https://www.newsandpost.com/data/article.php?id=news",
             "type": "HTML"
         },
+        # 홈이 아니라 정치·사회·북한·외교국방·칼럼·경제 섹션만 수집
         {
             "name": "뉴데일리",
             "rss_url": None,

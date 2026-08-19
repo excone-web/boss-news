@@ -282,6 +282,28 @@ NEWSANDPOST_NEWS_LIST = "https://www.newsandpost.com/data/article.php?id=news"
 NEWSANDPOST_MAX_PAGES = 8
 NEWSANDPOST_PAGE_CAP = 100
 
+NEWDAILY_ARTICLE_RE = re.compile(r"/site/data/html/20\d{2}/\d{2}/\d{2}/\d+\.html", re.I)
+NEWDAILY_SKIP_TITLE_RE = re.compile(r"^\[(?:포토|영상)\]|뉴데툰|윤서인")
+NEWDAILY_REGIONAL_HOSTS = (
+    "tk.newdaily.co.kr",
+    "gg.newdaily.co.kr",
+    "gj.newdaily.co.kr",
+    "cc.newdaily.co.kr",
+    "pk.newdaily.co.kr",
+    "ic.newdaily.co.kr",
+    "gw.newdaily.co.kr",
+)
+NEWDAILY_SECTIONS = (
+    ("정치", "https://www.newdaily.co.kr/news/section_list_all.html?catid=2"),
+    ("사회", "https://www.newdaily.co.kr/news/section_list_all.html?catid=3"),
+    ("북한", "https://www.newdaily.co.kr/news/section_list_all.html?catid=4"),
+    ("외교국방", "https://www.newdaily.co.kr/news/section_list_all.html?catid=X"),
+    ("칼럼", "https://www.newdaily.co.kr/news/section_list_all.html?catid=F"),
+    ("경제", "https://biz.newdaily.co.kr/news/section_list_all.html?catid=all"),
+)
+NEWDAILY_MAX_PAGES = 4
+NEWDAILY_CAP = 150
+
 
 def _newsandpost_article_from_link(a_tag, seen_urls: set, seen_titles: set):
     href = a_tag.get("href", "").strip()
@@ -390,6 +412,147 @@ def scrape_newsandpost_news(raw_category: str) -> list[dict]:
     return articles
 
 
+def newdaily_url_day(url: str) -> str:
+    m = re.search(r"/site/data/html/(20\d{2})/(\d{2})/(\d{2})/", url or "")
+    if not m:
+        return ""
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)} 12:00:00"
+
+
+def is_newdaily_skip_title(title: str) -> bool:
+    return bool(NEWDAILY_SKIP_TITLE_RE.search(title or ""))
+
+
+def fetch_newdaily_detail(session: requests.Session, url: str, title: str) -> tuple[str, str]:
+    """본문 og:title + 입력 시각."""
+    clean_title = title
+    pub_date = ""
+    try:
+        detail_res = session.get(url, timeout=3)
+        if detail_res.status_code != 200:
+            return clean_title, pub_date
+        detail_html = decode_html_bytes(detail_res.content, detail_res.headers.get("Content-Type", ""))
+        detail_title = extract_html_title(detail_html)
+        if is_valid_article_title(detail_title) and not is_newdaily_skip_title(detail_title):
+            clean_title = detail_title[:120] + "..." if len(detail_title) > 120 else detail_title
+        m_det = re.search(
+            r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)',
+            detail_html,
+            re.I,
+        )
+        if m_det:
+            pub_date = parse_pub_date(m_det.group(1))
+        if not pub_date:
+            m_body = re.search(
+                r"(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)",
+                detail_html,
+            )
+            if m_body:
+                pub_date = parse_pub_date(m_body.group(1))
+    except Exception:
+        pass
+    return clean_title, pub_date
+
+
+def scrape_newdaily_sections(raw_category: str) -> list[dict]:
+    """뉴데일리 정치·사회·북한·외교국방·칼럼·경제 섹션만 96시간 수집."""
+    articles = []
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
+    seen_urls = set()
+    seen_titles = set()
+    media_name = "뉴데일리"
+
+    for section_name, list_url in NEWDAILY_SECTIONS:
+        for page in range(1, NEWDAILY_MAX_PAGES + 1):
+            page_url = list_url if page == 1 else f"{list_url}&pn={page}"
+            try:
+                response = session.get(page_url, timeout=8)
+            except Exception as e:
+                print(f"[{media_name}] {section_name} 목록 실패 (page={page}): {e}")
+                break
+            if response.status_code != 200:
+                break
+
+            soup = BeautifulSoup(
+                decode_html_bytes(response.content, response.headers.get("Content-Type", "")),
+                "html.parser",
+            )
+            page_kept = 0
+            page_listed = 0
+
+            for a_tag in soup.find_all("a"):
+                href = a_tag.get("href", "").strip()
+                if not href or not NEWDAILY_ARTICLE_RE.search(href):
+                    continue
+                full_url = urljoin(list_url, href)
+                host = full_url.split("/")[2].lower() if "://" in full_url else ""
+                if host in NEWDAILY_REGIONAL_HOSTS:
+                    continue
+                if full_url in seen_urls:
+                    continue
+
+                title_el = a_tag.find(class_=["title", "subject", "tit", "headline"]) or a_tag.find(
+                    ["h1", "h2", "h3", "h4", "strong", "b"]
+                )
+                if title_el:
+                    clean_title = title_el.get_text(strip=True)
+                else:
+                    lines = [line.strip() for line in a_tag.get_text("\n").split("\n") if line.strip()]
+                    clean_title = lines[0] if lines else ""
+
+                if is_newdaily_skip_title(clean_title):
+                    continue
+                if not is_valid_article_title(clean_title):
+                    continue
+                if len(clean_title) > 120:
+                    clean_title = clean_title[:120] + "..."
+
+                url_day = newdaily_url_day(full_url)
+                if url_day and not is_within_hours(url_day, hours=96):
+                    continue
+
+                page_listed += 1
+                seen_urls.add(full_url)
+
+                clean_title, pub_date = fetch_newdaily_detail(session, full_url, clean_title)
+                if is_newdaily_skip_title(clean_title):
+                    continue
+                if not pub_date:
+                    pub_date = url_day
+                if not pub_date or not is_within_hours(pub_date, hours=96):
+                    continue
+
+                norm_key = normalize_title(clean_title)
+                if norm_key in seen_titles:
+                    continue
+                seen_titles.add(norm_key)
+
+                articles.append({
+                    "media_name": media_name,
+                    "category": classify_article(title=clean_title, raw_category=raw_category),
+                    "title": clean_title,
+                    "url": full_url,
+                    "published_at": pub_date,
+                    "summary": None,
+                    "content_body": "",
+                })
+                page_kept += 1
+                if len(articles) >= NEWDAILY_CAP:
+                    print(f"[{media_name}] {section_name} page={page} 수집 {len(articles)}건 (상한)")
+                    return articles
+
+            print(
+                f"[{media_name}] {section_name} page={page} kept={page_kept} listed={page_listed} total={len(articles)}"
+            )
+            if page_listed == 0 or page_kept == 0:
+                break
+            time.sleep(CRAWL_DELAY_SECONDS)
+        time.sleep(CRAWL_DELAY_SECONDS)
+
+    return articles
+
+
 def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[dict]:
     """HTML 메인 및 뉴스 목록 정밀 스크래핑 (중복 교차 검증)"""
     articles = []
@@ -398,6 +561,9 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
     if "newsandpost" in site_url:
         return scrape_newsandpost_news(raw_category)
+
+    if "newdaily.co.kr" in site_url:
+        return scrape_newdaily_sections(raw_category)
 
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
@@ -418,16 +584,12 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
             href_lower = href.lower()
             is_epoch_kr = "epochtimes.kr" in site_url
-            is_newdaily = "newdaily.co.kr" in site_url
 
             # 목록/카테고리/섹션/검색 URL 제외
             if any(ex in href_lower for ex in ["list.php", "section.php", "category", "pdf_list", "search", "tag", "member", "login", "user"]):
                 continue
 
-            if is_newdaily:
-                if not re.search(r'/site/data/html/20\d{2}/\d{2}/\d{2}/\d+\.html', href_lower):
-                    continue
-            elif is_epoch_kr:
+            if is_epoch_kr:
                 if not re.search(r'/20\d{2}/\d{2}/\d+\.html', href_lower):
                     continue
             else:
@@ -470,24 +632,11 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
                 pub_date = parse_pub_date(m.group(0)) if m else ""
 
-            if is_newdaily:
-                m_nd = re.search(r'/site/data/html/(20\d{2})/(\d{2})/(\d{2})/', full_url)
-                if m_nd:
-                    url_day = f"{m_nd.group(1)}-{m_nd.group(2)}-{m_nd.group(3)} 12:00:00"
-                    if not is_within_hours(url_day, hours=96):
-                        continue
-                    if not pub_date:
-                        pub_date = url_day
-
-            if not pub_date or is_newdaily:
+            if not pub_date:
                 try:
                     detail_res = session.get(full_url, timeout=3)
                     if detail_res.status_code == 200:
                         detail_html = decode_html_bytes(detail_res.content, detail_res.headers.get("Content-Type", ""))
-                        if is_newdaily:
-                            detail_title = extract_html_title(detail_html)
-                            if is_valid_article_title(detail_title):
-                                clean_title = detail_title[:120] + "..." if len(detail_title) > 120 else detail_title
                         m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_html, re.I)
                         if m_det:
                             pub_date = parse_pub_date(m_det.group(1))

@@ -110,9 +110,19 @@ def save_articles(articles: list[dict]) -> int:
                 )
             elif item.get("media_name") == "뉴데일리" and item.get("url"):
                 cursor.execute(
-                    """UPDATE articles SET title = COALESCE(?, title), published_at = COALESCE(?, published_at)
-                       WHERE url = ? AND (IFNULL(title, '') != IFNULL(?, '') OR IFNULL(published_at, '') != IFNULL(?, ''))""",
-                    (item.get("title"), item.get("published_at"), item["url"], item.get("title"), item.get("published_at")),
+                    """UPDATE articles SET title = COALESCE(?, title), published_at = COALESCE(?, published_at),
+                       category = COALESCE(?, category)
+                       WHERE url = ? AND (IFNULL(title, '') != IFNULL(?, '') OR IFNULL(published_at, '') != IFNULL(?, '')
+                            OR IFNULL(category, '') != IFNULL(?, ''))""",
+                    (
+                        item.get("title"),
+                        item.get("published_at"),
+                        item.get("category"),
+                        item["url"],
+                        item.get("title"),
+                        item.get("published_at"),
+                        item.get("category"),
+                    ),
                 )
         except sqlite3.Error as e:
             print(f"[DB Error] 기사 저장 중 오류 발생: {e}")
@@ -132,6 +142,37 @@ OVERSEAS_MEDIA_NAMES = (
     "National Review",
     "Epoch Times",
 )
+
+
+def purge_newdaily_offtopic_articles() -> int:
+    """홈 수집 잔여: 지역판·포토·영상·툰."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        DELETE FROM articles
+        WHERE media_name = '뉴데일리'
+          AND (
+            url LIKE '%://tk.newdaily.co.kr/%'
+            OR url LIKE '%://gg.newdaily.co.kr/%'
+            OR url LIKE '%://gj.newdaily.co.kr/%'
+            OR url LIKE '%://cc.newdaily.co.kr/%'
+            OR url LIKE '%://pk.newdaily.co.kr/%'
+            OR url LIKE '%://ic.newdaily.co.kr/%'
+            OR url LIKE '%://gw.newdaily.co.kr/%'
+            OR title LIKE '[포토]%'
+            OR title LIKE '[영상]%'
+            OR title LIKE '%뉴데툰%'
+            OR title LIKE '%윤서인%'
+          )
+        """
+    )
+    deleted_count = cursor.rowcount
+    conn.commit()
+    conn.close()
+    if deleted_count:
+        print(f"[Purge] 뉴데일리 제외 주제 {deleted_count}건 삭제")
+    return deleted_count
 
 
 def purge_dailian_articles() -> int:

@@ -52,6 +52,7 @@ def build_static_articles_json():
     try:
         database.purge_overseas_articles()
         database.purge_dailian_articles()
+        database.purge_newdaily_offtopic_articles()
     except Exception as e:
         print(f"[Build Warning] 중지 매체 기사 삭제 실패: {e}")
 
