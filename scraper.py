@@ -96,14 +96,24 @@ def extract_html_title(html: str) -> str:
 
 def parse_dailian_input_time(html: str) -> str:
     """데일리안 본문 '입력 YYYY.MM.DD HH:MM' (수정 시각 제외)."""
+    if not html:
+        return ""
+    text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
     m = re.search(
-        r"입력(?:\s|&nbsp;)*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
-        html or "",
+        r"입력\s*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
+        text,
+    )
+    if m:
+        y, mo, d, h, mi = m.groups()
+        return f"{y}-{mo}-{d} {int(h):02d}:{mi}:00"
+    m_html = re.search(
+        r"입력(?:\s|&nbsp;|<[^>]+>)*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
+        html,
         re.I,
     )
-    if not m:
+    if not m_html:
         return ""
-    y, mo, d, h, mi = m.groups()
+    y, mo, d, h, mi = m_html.groups()
     return f"{y}-{mo}-{d} {int(h):02d}:{mi}:00"
 
 
@@ -506,7 +516,15 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                             if is_valid_article_title(detail_title):
                                 clean_title = detail_title[:120] + "..." if len(detail_title) > 120 else detail_title
                         if is_dailian:
-                            pub_date = parse_dailian_input_time(detail_html) or pub_date
+                            pub_date = parse_dailian_input_time(detail_html)
+                            if not pub_date:
+                                m_det = re.search(
+                                    r'article:published_time["\']?\s*content=["\']?([^"\'\s>]+)',
+                                    detail_html,
+                                    re.I,
+                                )
+                                if m_det:
+                                    pub_date = parse_pub_date(m_det.group(1))
                         else:
                             m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_html, re.I)
                             if m_det:
@@ -526,6 +544,8 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                     pub_date = f"{m_url.group(1)}-{m_url.group(2)}-{m_url.group(3)} 12:00:00"
 
             if not pub_date:
+                if is_dailian:
+                    continue
                 pub_date = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 
             if not is_within_hours(pub_date, hours=96):
