@@ -58,6 +58,18 @@ MEDIA_CONFIG = {
             "site_url": "https://www.newsandpost.com/data/article.php?id=news",
             "type": "HTML"
         },
+        {
+            "name": "뉴데일리",
+            "rss_url": None,
+            "site_url": "https://www.newdaily.co.kr/",
+            "type": "HTML"
+        },
+        {
+            "name": "데일리안",
+            "rss_url": None,
+            "site_url": "https://www.dailian.co.kr/",
+            "type": "HTML"
+        },
         *[
             {
                 "name": "에포크타임스",

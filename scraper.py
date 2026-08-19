@@ -389,12 +389,20 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
             href_lower = href.lower()
             is_epoch_kr = "epochtimes.kr" in site_url
+            is_newdaily = "newdaily.co.kr" in site_url
+            is_dailian = "dailian.co.kr" in site_url
 
             # 목록/카테고리/섹션/검색 URL 제외
             if any(ex in href_lower for ex in ["list.php", "section.php", "category", "pdf_list", "search", "tag", "member", "login", "user"]):
                 continue
 
-            if is_epoch_kr:
+            if is_newdaily:
+                if not re.search(r'/site/data/html/20\d{2}/\d{2}/\d{2}/\d+\.html', href_lower):
+                    continue
+            elif is_dailian:
+                if not re.search(r'/news/view/\d+', href_lower):
+                    continue
+            elif is_epoch_kr:
                 if not re.search(r'/20\d{2}/\d{2}/\d+\.html', href_lower):
                     continue
             else:
@@ -437,7 +445,16 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
                 pub_date = parse_pub_date(m.group(0)) if m else ""
 
-            if not pub_date:
+            if is_newdaily:
+                m_nd = re.search(r'/site/data/html/(20\d{2})/(\d{2})/(\d{2})/', full_url)
+                if m_nd:
+                    url_day = f"{m_nd.group(1)}-{m_nd.group(2)}-{m_nd.group(3)} 12:00:00"
+                    if not is_within_hours(url_day, hours=96):
+                        continue
+                    if not pub_date:
+                        pub_date = url_day
+
+            if not pub_date or is_newdaily or is_dailian:
                 try:
                     detail_res = session.get(full_url, timeout=3)
                     if detail_res.status_code == 200:
