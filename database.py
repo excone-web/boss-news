@@ -2,6 +2,7 @@ import sqlite3
 import re
 from datetime import datetime, timedelta, timezone
 from config import DB_PATH
+from media_policy import is_collectible_article
 
 KST = timezone(timedelta(hours=9))
 
@@ -87,6 +88,10 @@ def save_articles(articles: list[dict]) -> int:
     scraped_at = now_kst_naive().strftime("%Y-%m-%d %H:%M:%S")
 
     for item in articles:
+        title = item.get("title") or ""
+        url = item.get("url") or ""
+        if not is_collectible_article(title, url, item.get("category") or ""):
+            continue
         try:
             cursor.execute("""
                 INSERT OR IGNORE INTO articles (
@@ -95,8 +100,8 @@ def save_articles(articles: list[dict]) -> int:
             """, (
                 item.get("media_name"),
                 item.get("category"),
-                item.get("title"),
-                item.get("url"),
+                title,
+                url,
                 item.get("published_at"),
                 item.get("summary"),
                 scraped_at
@@ -142,6 +147,25 @@ OVERSEAS_MEDIA_NAMES = (
     "National Review",
     "Epoch Times",
 )
+
+
+def purge_offtopic_articles() -> int:
+    """스포츠·공연·포토 등 정책 제외 기사를 DB에서 제거."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, title, url, category FROM articles")
+    drop_ids = [
+        row["id"]
+        for row in cursor.fetchall()
+        if not is_collectible_article(row["title"] or "", row["url"] or "", row["category"] or "")
+    ]
+    for article_id in drop_ids:
+        cursor.execute("DELETE FROM articles WHERE id = ?", (article_id,))
+    conn.commit()
+    conn.close()
+    if drop_ids:
+        print(f"[Purge] 제외 주제 기사 {len(drop_ids)}건 삭제")
+    return len(drop_ids)
 
 
 def purge_newdaily_offtopic_articles() -> int:

@@ -23,6 +23,14 @@ const DISABLED_OVERSEAS_MEDIA = new Set([
 const MEDIA_NAME_ALIASES = {
     "에포크타임스": ["에포크타임스", "에포크타임즈"]
 };
+const SKIP_TOPIC_RE = /\[(?:포토|영상|사진|오늘날씨)\]|뉴데툰|윤서인|라이온즈|랜더스|프로야구|프로축구|연주회|합창단|예술제|클래식|국악|걸그룹|K팝|K-POP|아이돌|뮤지컬/i;
+
+function isOfftopicArticle(art) {
+    if (!art) return true;
+    if (DISABLED_OVERSEAS_MEDIA.has(art.media_name)) return true;
+    if (art.category === "문화/연예/스포츠") return true;
+    return SKIP_TOPIC_RE.test(art.title || "");
+}
 
 function mediaNameMatches(articleName, selectedMedia) {
     if (selectedMedia === "전체") return true;
@@ -122,7 +130,7 @@ async function loadArticlesData(isBackground = false) {
             nextUpdatedAt = data.updated_at || "";
             nextInterval = data.interval_hours || 2;
         }
-        nextArticles = nextArticles.filter(art => !DISABLED_OVERSEAS_MEDIA.has(art.media_name));
+        nextArticles = nextArticles.filter(art => !isOfftopicArticle(art));
 
         if (!nextUpdatedAt && nextArticles.length > 0) {
             nextUpdatedAt = (nextArticles[0].published_at || "").substring(0, 16);
@@ -471,7 +479,7 @@ function applyFilters(resetPage = true) {
 
     filteredArticles = allArticles.filter(art => {
         let matchCat;
-        if (DISABLED_OVERSEAS_MEDIA.has(art.media_name)) {
+        if (isOfftopicArticle(art)) {
             return false;
         }
         if (currentCategory === "전체") {

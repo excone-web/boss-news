@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 import database
 import scraper
 from generate_sitemap import generate_sitemap
+from media_policy import is_collectible_article
 
 KST = timezone(timedelta(hours=9))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +26,12 @@ def seed_db_from_articles_json() -> int:
         with open(JSON_PATH, encoding="utf-8") as f:
             data = json.load(f)
         articles = data if isinstance(data, list) else (data.get("articles") or [])
+        if not articles:
+            return 0
+        articles = [
+            a for a in articles
+            if is_collectible_article(a.get("title") or "", a.get("url") or "", a.get("category") or "")
+        ]
         if not articles:
             return 0
         seeded = database.save_articles(articles)
@@ -53,6 +60,7 @@ def build_static_articles_json():
         database.purge_overseas_articles()
         database.purge_dailian_articles()
         database.purge_newdaily_offtopic_articles()
+        database.purge_offtopic_articles()
     except Exception as e:
         print(f"[Build Warning] 중지 매체 기사 삭제 실패: {e}")
 
@@ -71,7 +79,10 @@ def build_static_articles_json():
     rows = cursor.fetchall()
     conn.close()
 
-    articles = [dict(row) for row in rows]
+    articles = [
+        row for row in (dict(r) for r in rows)
+        if is_collectible_article(row.get("title") or "", row.get("url") or "", row.get("category") or "")
+    ]
 
     build_time = now_kst_str()
     export_data = {

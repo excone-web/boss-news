@@ -36,10 +36,18 @@ BLOCKED_ARTICLE_PATH_RE = re.compile(
 )
 
 SKIP_TITLE_RE = re.compile(r"^\[(?:포토|영상|사진|오늘날씨)\]|뉴데툰|윤서인")
+SKIP_TOPIC_RE = re.compile(
+    r"라이온즈|랜더스|프로야구|프로축구|KBO|K리그|선발투수|홈런|"
+    r"연주회|합창단|예술제|클래식|국악|"
+    r"걸그룹|K팝|K-POP|아이돌|뮤지컬",
+    re.I,
+)
+SKIP_CATEGORIES = frozenset({"문화/연예/스포츠"})
 
 
 def is_skipped_title(title: str) -> bool:
-    return bool(SKIP_TITLE_RE.search(title or ""))
+    t = title or ""
+    return bool(SKIP_TITLE_RE.search(t) or SKIP_TOPIC_RE.search(t))
 
 
 def is_blocked_source_url(url: str) -> bool:
@@ -50,10 +58,12 @@ def is_blocked_article_url(url: str) -> bool:
     return bool(url and BLOCKED_ARTICLE_PATH_RE.search(url))
 
 
-def is_collectible_article(title: str, url: str) -> bool:
+def is_collectible_article(title: str, url: str, category: str = "") -> bool:
     if is_skipped_title(title):
         return False
     if is_blocked_article_url(url):
+        return False
+    if category in SKIP_CATEGORIES:
         return False
     return True
 
