@@ -108,6 +108,12 @@ def save_articles(articles: list[dict]) -> int:
                     "UPDATE articles SET published_at = ? WHERE url = ? AND IFNULL(published_at, '') != ?",
                     (item["published_at"], item["url"], item["published_at"]),
                 )
+            elif item.get("media_name") in ("뉴데일리", "데일리안") and item.get("url"):
+                cursor.execute(
+                    """UPDATE articles SET title = COALESCE(?, title), published_at = COALESCE(?, published_at)
+                       WHERE url = ? AND (IFNULL(title, '') != IFNULL(?, '') OR IFNULL(published_at, '') != IFNULL(?, ''))""",
+                    (item.get("title"), item.get("published_at"), item["url"], item.get("title"), item.get("published_at")),
+                )
         except sqlite3.Error as e:
             print(f"[DB Error] 기사 저장 중 오류 발생: {e}")
             continue

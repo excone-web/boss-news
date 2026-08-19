@@ -65,6 +65,48 @@ def parse_epoch_kr_ko_datetime(html: str) -> str:
         hour_i = 0
     return f"{year}-{int(month):02d}-{int(day):02d} {hour_i:02d}:{minute}:00"
 
+
+def decode_html_bytes(raw: bytes, content_type: str = "") -> str:
+    """헤더 charset이 없어도 UTF-8/EUC-KR 본문을 깨지지 않게 디코드."""
+    m = re.search(r"charset=([^\s;]+)", content_type or "", re.I)
+    header_enc = (m.group(1).strip("\"'") if m else "").lower()
+    for enc in (header_enc, "utf-8", "euc-kr", "cp949"):
+        if not enc:
+            continue
+        try:
+            text = raw.decode(enc)
+        except (LookupError, UnicodeDecodeError):
+            continue
+        if re.search(r"[가-힣]", text):
+            return text
+        if enc == header_enc and header_enc not in ("iso-8859-1", "latin-1", "windows-1252"):
+            return text
+    return raw.decode("utf-8", errors="replace")
+
+
+def extract_html_title(html: str) -> str:
+    m = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+    if m:
+        return BeautifulSoup(m.group(1), "html.parser").get_text(strip=True)
+    m = re.search(r"<title>([^<]+)</title>", html, re.I)
+    if m:
+        return BeautifulSoup(m.group(1), "html.parser").get_text(strip=True).split(" | ")[0].split(" - ")[0].strip()
+    return ""
+
+
+def parse_dailian_input_time(html: str) -> str:
+    """데일리안 본문 '입력 YYYY.MM.DD HH:MM' (수정 시각 제외)."""
+    m = re.search(
+        r"입력(?:\s|&nbsp;)*(20\d{2})[.\-/](\d{2})[.\-/](\d{2})\s+(\d{1,2}):(\d{2})",
+        html or "",
+        re.I,
+    )
+    if not m:
+        return ""
+    y, mo, d, h, mi = m.groups()
+    return f"{y}-{mo}-{d} {int(h):02d}:{mi}:00"
+
+
 def now_kst() -> datetime:
     """GitHub Actions(UTC)에서도 발행시각(KST)과 동일 기준으로 비교하기 위함"""
     return datetime.now(KST).replace(tzinfo=None)
@@ -378,7 +420,7 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
         if response.status_code != 200:
             return articles
 
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(decode_html_bytes(response.content, response.headers.get("Content-Type", "")), "html.parser")
         seen_urls = set()
         seen_titles = set()
 
@@ -440,7 +482,7 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
             pub_date = ""
             if "hanmiilbo" in site_url:
                 pub_date = fetch_hanmiilbo_detail_date(session, full_url)
-            else:
+            elif not is_dailian:
                 parent_text = a_tag.parent.get_text() if a_tag.parent else ""
                 m = re.search(r'20\d{2}[-./]\d{2}[-./]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?', parent_text)
                 pub_date = parse_pub_date(m.group(0)) if m else ""
@@ -458,15 +500,23 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
                 try:
                     detail_res = session.get(full_url, timeout=3)
                     if detail_res.status_code == 200:
-                        m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_res.text, re.I)
-                        if m_det:
-                            pub_date = parse_pub_date(m_det.group(1))
-                        if not pub_date:
-                            m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_res.text)
-                            if m_body:
-                                pub_date = parse_pub_date(m_body.group(1))
-                        if not pub_date and is_epoch_kr:
-                            pub_date = parse_epoch_kr_ko_datetime(detail_res.text)
+                        detail_html = decode_html_bytes(detail_res.content, detail_res.headers.get("Content-Type", ""))
+                        if is_newdaily:
+                            detail_title = extract_html_title(detail_html)
+                            if is_valid_article_title(detail_title):
+                                clean_title = detail_title[:120] + "..." if len(detail_title) > 120 else detail_title
+                        if is_dailian:
+                            pub_date = parse_dailian_input_time(detail_html) or pub_date
+                        else:
+                            m_det = re.search(r'(?:article:published_time|og:regdate|pubdate)["\']?\s*content=["\']?([^"\'\s>]+)', detail_html, re.I)
+                            if m_det:
+                                pub_date = parse_pub_date(m_det.group(1))
+                            if not pub_date:
+                                m_body = re.search(r'(?:승인|입력|등록|작성)?\s*(20\d{2}[-./]\d{2}[-./]\d{2}\s+\d{2}:\d{2}(:\d{2})?)', detail_html)
+                                if m_body:
+                                    pub_date = parse_pub_date(m_body.group(1))
+                            if not pub_date and is_epoch_kr:
+                                pub_date = parse_epoch_kr_ko_datetime(detail_html)
                 except Exception:
                     pass
 
