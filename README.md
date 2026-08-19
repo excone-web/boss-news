@@ -24,6 +24,8 @@
 ├── articles.json              # 최근 96시간 기사 데이터 (배포 산출물)
 ├── _headers                   # Cloudflare Pages 캐시 정책
 ├── config.py                  # 언론사·크롤러 설정
+├── media_policy.py            # 수집 섹션 정책 (정치·경제·사회·국제·칼럼)
+├── AGENTS.md                  # 새 매체 추가 시 동일 기준
 ├── database.py                # SQLite CRUD
 ├── scraper.py                 # RSS + HTML 스크래핑
 ├── category_agent.py          # 기사 카테고리 분류

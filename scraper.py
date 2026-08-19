@@ -8,6 +8,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import urljoin
 
 from config import MEDIA_CONFIG, USER_AGENT, CRAWL_DELAY_SECONDS
+from media_policy import is_collectible_article, is_skipped_title
 from database import save_articles, purge_old_articles, purge_duplicate_articles, get_existing_urls
 from category_agent import classify_article
 from translate import translate_title_to_ko, reset_translate_budget
@@ -122,16 +123,13 @@ INVALID_SECTION_TITLES = {
     "실시간 뉴스", "최신기사", "인기기사", "전체기사", "분야별 뉴스", "공지사항", "이벤트"
 }
 
-SKIP_TITLE_RE = re.compile(r"^\[(?:포토|영상|사진|오늘날씨)\]|뉴데툰|윤서인")
-
-
 def is_valid_article_title(title: str) -> bool:
     clean = title.strip()
     if not clean or len(clean) < 8:
         return False
     if clean in INVALID_SECTION_TITLES:
         return False
-    if SKIP_TITLE_RE.search(clean):
+    if is_skipped_title(clean):
         return False
     # 기사 제목은 2개 이상의 단어로 이루어지므로 띄어쓰기 필수
     if " " not in clean:
@@ -180,6 +178,8 @@ def fetch_rss_feed(
             url = entry.get("link", "").strip()
 
             if not title or not url or not is_valid_article_title(title):
+                continue
+            if not is_collectible_article(title, url):
                 continue
 
             if url_contains and url_contains not in url:
@@ -393,6 +393,9 @@ def scrape_newsandpost_news(raw_category: str) -> list[dict]:
                 if not is_within_hours(parsed["published_at"], hours=96):
                     continue
 
+            if not is_collectible_article(parsed["title"], parsed["url"]):
+                continue
+
             assigned_category = classify_article(title=parsed["title"], raw_category=raw_category)
             articles.append({
                 "media_name": media_name,
@@ -424,7 +427,7 @@ def newdaily_url_day(url: str) -> str:
 
 
 def is_newdaily_skip_title(title: str) -> bool:
-    return bool(SKIP_TITLE_RE.search(title or ""))
+    return is_skipped_title(title)
 
 
 def fetch_newdaily_detail(session: requests.Session, url: str, title: str) -> tuple[str, str]:
@@ -525,6 +528,8 @@ def scrape_newdaily_sections(raw_category: str) -> list[dict]:
                 if not pub_date:
                     pub_date = url_day
                 if not pub_date or not is_within_hours(pub_date, hours=96):
+                    continue
+                if not is_collectible_article(clean_title, full_url):
                     continue
 
                 norm_key = normalize_title(clean_title)
@@ -663,6 +668,8 @@ def scrape_html_feed(site_url: str, media_name: str, raw_category: str) -> list[
 
             if not is_within_hours(pub_date, hours=96):
                 continue
+            if not is_collectible_article(clean_title, full_url):
+                continue
 
             assigned_category = classify_article(title=clean_title, raw_category=raw_category)
 
@@ -704,6 +711,7 @@ def run_news_crawler() -> int:
             lang = media.get("lang")
             url_contains = media.get("url_contains")
             default_category = media.get("default_category")
+            section_urls = media.get("section_urls") or []
 
             try:
                 rss_articles = []
@@ -719,10 +727,16 @@ def run_news_crawler() -> int:
                     )
                     all_articles.extend(rss_articles)
 
-                # HTML 폴백: site_url 있을 때만 (해외 RSS 전용은 스킵)
-                if len(rss_articles) < 15 and site_url:
-                    html_articles = scrape_html_feed(site_url, media_name, category)
-                    all_articles.extend(html_articles)
+                html_pages = []
+                if media.get("custom_scraper") or media.get("allow_homepage"):
+                    if site_url:
+                        html_pages.append(site_url)
+                html_pages.extend(u for u in section_urls if u and u not in html_pages)
+
+                if len(rss_articles) < 15 and html_pages:
+                    for page_url in html_pages:
+                        html_articles = scrape_html_feed(page_url, media_name, category)
+                        all_articles.extend(html_articles)
             except Exception as e:
                 print(f"[{media_name}] 매체 수집 실패(계속 진행): {e}")
 
